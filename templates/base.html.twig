@@ -12,7 +12,9 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    <body {{ stimulus_controller('symfony/ux-swup/swup') }}>
+    <div id="swup" class="transition-fade">
         {% block body %}{% endblock %}
+    </div>
     </body>
 </html>
