@@ -1,0 +1,65 @@
+{# {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+{{ form_start(form) }}
+    {{ form_row(form.titre) }}
+    {{ form_row(form.auteur) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.readingTime) }}
+    {{ form_row(form.image) }}
+    {# {{ form_row(form.publishAt) }}
+    {{ form_row(form.modifiedAt) }} #}
+    <button type="button" class="btn btn-primary" id="new_sub_part">Ajouter une sous-partie</button>
+    {{ form_row(form.subPart) }}
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+{% block formScript %}
+    <script>
+    let newSubPart = document.querySelector('#new_sub_part')
+    // On récupère la div contenant l'attribut  data-prototype
+    // puis le contenu de l'attribut 
+    let subPartCollection = document.querySelector('#guide_subPart')
+    let dataPrototypeString = subPartCollection.dataset.prototype
+    
+    newSubPart.addEventListener('click',addSubPart)
+
+    //Nombre d'élément enfant du CollectionType
+    let SubPartIndex = subPartCollection.querySelectorAll('fieldset').length
+
+    function addSubPart() {
+
+        let container = document.createElement("div")
+        container.classList.add("form-subpart-container")
+        subPartCollection.append(container)
+
+        //On remplace le name et id dans la chaine par l'SubPartIndex 
+        container.innerHTML += dataPrototypeString
+        //peut être source d'erreur
+        .replace(/__name__/g,SubPartIndex)
+        .replace(/label__/g," sous-partie")
+
+        addTagFormDeleteBtn(container);
+        SubPartIndex++
+}
+   //On crée un bouton de suppression qu'on attache au container
+    let addTagFormDeleteBtn = (item) => {
+
+    let removeFormButton = document.createElement('button');
+    removeFormButton.innerText = 'Delete this tag';
+    removeFormButton.setAttribute("class","btn btn-danger")
+
+    item.append(removeFormButton);
+
+    removeFormButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        // remove the li for the tag form
+        item.remove();
+        SubPartIndex--
+    });
+}
+
+
+</script>
+{% endblock %}

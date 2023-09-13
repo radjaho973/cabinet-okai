@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guide index{% endblock %}
+
+{% block body %}
+    <h1>Guide index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Auteur</th>
+                <th>Description</th>
+                <th>ReadingTime</th>
+                <th>Image</th>
+                <th>Slug</th>
+                <th>PublishAt</th>
+                <th>ModifiedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for guide in guides %}
+            <tr>
+                <td>{{ guide.id }}</td>
+                <td>{{ guide.titre }}</td>
+                <td>{{ guide.auteur }}</td>
+                <td>{{ guide.description }}</td>
+                <td>{{ guide.readingTime }}</td>
+                <td>{{ guide.image }}</td>
+                <td>{{ guide.slug }}</td>
+                <td>{{ guide.publishAt ? guide.publishAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ guide.modifiedAt ? guide.modifiedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_guide_show', {'id': guide.id}) }}">show</a>
+                    <a href="{{ path('app_guide_edit', {'id': guide.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_guide_new') }}">Create new</a>
+{% endblock %}

@@ -40,6 +40,9 @@ class Guide
     #[ORM\OneToMany(mappedBy: 'guide', targetEntity: SubPart::class, orphanRemoval: true)]
     private Collection $subParts;
 
+    #[ORM\Column(length: 500)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->subParts = new ArrayCollection();
@@ -160,6 +163,18 @@ class Guide
                 $subPart->setGuide(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }
