@@ -1,0 +1,32 @@
+//? COLORS //
+
+$black : #111111;
+$lightgrey : #00000029;
+$lightblue : #CADCF9;
+$midblue : #2B5094;
+$highblue : #2D5299;
+$grey : #00000095;
+
+
+//* Flex //
+
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+%flex-center-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+%center-space-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

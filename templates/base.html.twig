@@ -12,9 +12,44 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+    <header>
+        <a class="logo-container" href="{{ path("app_home")}}">
+            <img class="logo" src="{{asset("images/logo.png")}}" alt="">
+        </a>
+        <nav class="hidden">
+        <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/hamburger-menu.png")}}" alt="">
+            <ul class="list-container">
+            <li><a href="#"></a>Qui sommes-nous</li>
+            <li><a href="#"></a>Expertise</li>
+            <li><a href="#"></a>Documents d'urbanisme</li>
+            <li><a href="#"></a>Guides</li>
+            <li><a href="#"></a>Studio OKAÏ</li>
+            <li><a href="#"></a>Contacter-nous</li>
+            </ul>
+        </nav>
+        <img id="menu_icon" class="menu-icon" src="{{asset("images/hamburger-menu.png")}}" alt="">
+    </header>
+
     <body {{ stimulus_controller('symfony/ux-swup/swup') }}>
+    
     <div id="swup" class="transition-fade">
         {% block body %}{% endblock %}
     </div>
+
     </body>
+    <script>
+    let menuIcon = document.querySelector("#menu_icon")
+    let menuIconClose = document.querySelector("#menu_icon_close")
+    let nav = document.querySelector("nav")
+
+    menuIcon.addEventListener("click",() =>{
+        nav.classList.toggle("show")
+        
+    })
+    menuIconClose.addEventListener("click",() =>{
+        nav.classList.toggle("show")
+        
+    })
+    </script>
+
 </html>

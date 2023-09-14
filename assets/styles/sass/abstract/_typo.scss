@@ -1,0 +1,180 @@
+@import url("https://p.typekit.net/p.css?s=1&k=hps1gxf&ht=tk&f=30349.30350.30355.47613.47614&a=25653109&app=typekit&e=css");
+
+@font-face {
+font-family:"forma-djr-display-bold";
+src:url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"forma-djr-display-black";
+src:url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
+}
+@font-face {
+    font-family: "Nunito-light";
+    src: url(../../fonts/Nunito-Light.ttf);
+}
+@font-face {
+    font-family: "Nunito-black";
+    src: url(../../fonts/Nunito-Black.ttf);
+}
+@font-face {
+    font-family: "Nunito-regular";
+    src: url(../../fonts/Nunito-Regular.ttf);
+}
+
+//? =========FONTS PLACEHOLDERS========= //
+
+%nunito-r40{
+    font-family: "Nunito-regular";
+    font-size: 40px;
+    color: white;
+    line-height: 54px;
+}
+%nunito-bl50{
+    font-family: "Nunito-black";
+    font-size: 50px;
+    color: white;
+    line-height: 47px;
+}
+%nunito-bl40{
+    font-family: "Nunito-black";
+    font-size: 40px;
+    color: white;
+    line-height: 54px;
+}
+%nunito-bl35{
+    font-family: "Nunito-black";
+    font-size: 35px;
+    color: white;
+    line-height: 50px;
+}
+%nunito-r35{
+    font-family: "Nunito-regular";
+    font-size: 35px;
+    color: white;
+    line-height: 50px;
+}
+%nunito-r40{
+    font-family: "Nunito-regular";
+    font-size: 40px;
+    color: white;
+    line-height: 60px;
+}
+%nunito-r30{
+    font-family: "Nunito-regular";
+    font-size: 30px;
+    color: white;
+    line-height: 45px;
+}
+%nunito-r30--space{
+    font-family: "Nunito-regular";
+    font-size: 30px;
+    color: white;
+    line-height: 45px;
+    letter-spacing: 7px;
+}
+%nunito-l30{
+    font-family: "Nunito-light";
+    font-size: 30px;
+    color: white;
+    line-height: 41px;
+}
+%nunito-bl30{
+    font-family: "Nunito-black";
+    font-size: 30px;
+    color: white;
+    line-height: 45px;
+}
+%nunito-bl25--blue{
+    font-family: "Nunito-black";
+    font-size: 25px;
+    color: #2B5094;
+    line-height: 34px;
+}
+%nunito-bl25{
+    font-family: "Nunito-black";
+    font-size: 25px;
+    color: white;
+    line-height: 34px;
+}
+%nunito-bl25--softblue{
+    font-family: "Nunito-black";
+    font-size: 25px;
+    color:#CADCF9;
+    line-height: 42px;
+}
+%nunito-bl20--softblue{
+    font-family: "Nunito-black";
+    font-size: 20px;
+    color:#CADCF9;
+    line-height: 42px;
+}
+%nunito-r25{
+    font-family: "Nunito-regular";
+    font-size: 25px;
+    color: white;
+    line-height: 34px;
+}
+%nunito-r25--softblue{
+    font-family: "Nunito-regular";
+    font-size: 25px;
+    color: #CADCF9;
+    line-height: 34px;
+}
+%nunito-r20{
+    font-family: "Nunito-regular";
+    font-size: 20px;
+    color: white;
+    line-height: 27px;
+}
+%nunito-r20--softblue{
+    font-family: "Nunito-regular";
+    font-size: 20px;
+    color: #CADCF9;
+    line-height: 27px;
+}
+
+%fdb-b80{
+    font-family: "forma-djr-display-bold";
+    font-size: 80px;
+    color: white;
+    line-height: 96px;
+    text-transform: uppercase;
+}
+%fdb-bl80{
+    font-family: "forma-djr-display-black";
+    font-size: 80px;
+    color: white;
+    line-height: 96px;
+    text-transform: uppercase;
+}
+%fdb-bl60{
+    font-family: "forma-djr-display-black";
+    font-size: 60px;
+    color: white;
+    line-height: 72px;
+    text-transform: uppercase;
+}
+%fdb-bl60--softblue{
+    font-family: "forma-djr-display-black";
+    font-size: 60px;
+    color: #CADCF9;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+%fdb-bl70{
+    font-family: "forma-djr-display-black";
+    font-size: 70px;
+    color: white;
+    line-height: 84px;
+    text-transform: uppercase;
+}
+%fdb-b25{
+    font-family: "forma-djr-display-bold";
+    font-size: clamp(1rem, 0.8393rem + 0.8036vw, 1.5625rem);
+    color: white;
+    line-height: 30px;
+    letter-spacing: 1.52px;
+}
