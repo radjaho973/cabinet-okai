@@ -17,14 +17,14 @@
             <img class="logo" src="{{asset("images/logo.png")}}" alt="">
         </a>
         <nav class="hidden">
-        <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/hamburger-menu.png")}}" alt="">
+            <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/hamburger-menu.png")}}" alt="">
             <ul class="list-container">
-            <li><a href="#"></a>Qui sommes-nous</li>
-            <li><a href="#"></a>Expertise</li>
-            <li><a href="#"></a>Documents d'urbanisme</li>
-            <li><a href="#"></a>Guides</li>
-            <li><a href="#"></a>Studio OKAÏ</li>
-            <li><a href="#"></a>Contacter-nous</li>
+            <li><a class="nav-link" href="#">Qui sommes-nous</a></li>
+            <li><a class="nav-link" href="#">Expertise</a></li>
+            <li><a class="nav-link" href="#">Documents d'urbanisme</a></li>
+            <li><a class="nav-link" href="{{ path("app_guide_index")}}">Guides</a></li>
+            <li><a class="nav-link" href="#">Studio OKAÏ</a></li>
+            <li class="btn-container"><a class="btn-contact" href="#">Contacter-nous</a></li>
             </ul>
         </nav>
         <img id="menu_icon" class="menu-icon" src="{{asset("images/hamburger-menu.png")}}" alt="">
@@ -36,20 +36,35 @@
         {% block body %}{% endblock %}
     </div>
 
-    </body>
-    <script>
+</body>
+<script>
     let menuIcon = document.querySelector("#menu_icon")
     let menuIconClose = document.querySelector("#menu_icon_close")
+    let list = document.getElementsByTagName("li")
     let nav = document.querySelector("nav")
+   
+   window.addEventListener("load",(showMobileMenu))
+   window.addEventListener("resize",(showMobileMenu))
 
-    menuIcon.addEventListener("click",() =>{
+    function showMobileMenu() {
+       
+        if (window.innerWidth <= 1265) {
+            
+            menuIcon.addEventListener("click",toggleNav)
+            
+            //fais disparaitre le menu après avoir cliqué sur le lien
+            Array.from(list).forEach(element => {
+                element.addEventListener("click",toggleNav)
+            });
+
+            menuIconClose.addEventListener("click",toggleNav)
+            
+        }
+    }
+    function toggleNav() {
         nav.classList.toggle("show")
-        
-    })
-    menuIconClose.addEventListener("click",() =>{
-        nav.classList.toggle("show")
-        
-    })
-    </script>
+    }
+
+</script>
 
 </html>

@@ -1,14 +1,19 @@
 @use '../abstract/' as *;
 
 /* Mobile */
+body{
+    overflow-x: hidden;
+}
 
 header{
-    background-color: white;
-    backdrop-filter: blur(19px);
     justify-content: space-between;
     padding-inline: 40px;
     @extend %flex-center;
     height: 90px;
+    background-color: transparent;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0px 15px 1.5px #31313175;
     
     .logo-container{
         display: block;
@@ -23,11 +28,11 @@ header{
         position: absolute;
         top: 0;
         transition: all 0.2s ease-in-out;
-        height: 100vh;
+        height: 99vh;
         width: 100vw;
         background: rgb(17,17,17);
         background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(202,220,249,1) 100%); 
-        padding-inline: 58px ;
+        padding-inline: 14vw ;
         padding-top: 133px;
 
         &>ul.list-container{
@@ -35,14 +40,24 @@ header{
             flex-direction: column;
             gap: 35px;
             align-items: self-start;
-
+            
             &>li{
-                list-style: none;
-                @extend %fdb-b25;
-                
+                list-style: none; 
             }
         }
-        
+        .nav-link{
+            @extend %fdb-b25;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .btn-contact{
+                margin-top: 189px;
+                @extend %btn-contact;
+            }
+        }
     }
     nav.hidden{
         right: -100vw;
@@ -57,12 +72,67 @@ header{
         
         &-close{
             position: absolute;
-            top: 46px;
-            right: 47px;
+            top: 37px;
+            right: 41px;
         }
-        
     }
 }
 html{
     background-color: #111111;
 }
+
+/* Medium devices (landscape tablets, 1265px and up) */
+@media screen and (min-width: 1265px) {
+    
+    header{
+        height: 115px;
+        justify-content: space-between;
+        padding-left: 65px;
+        padding-right: 95px;
+        
+        &>nav{
+            position: relative;
+            width: auto;
+            height: auto;
+            display: block;
+            right: auto !important;
+            background: none;
+            padding: 0;
+            
+                &>ul.list-container{
+                display: flex;
+                flex-direction: row;
+                gap: 50px;
+                justify-content: center; 
+                align-items: center;
+
+                    .nav-link{
+                        font-size: clamp(0.625rem, 0.1964rem + 0.8929vw, 1rem);
+                        font-family: "Nunito-regular";
+                        line-height: 0px;
+                    }
+                    &>.btn-container{
+                        margin-left: 35px;
+                        width: auto;
+
+                        &>.btn-contact{
+                            margin: 0;
+                        }
+                    }
+                }
+        }
+    }
+    // bouton menu mobile
+    header > #menu_icon{
+        display: none;
+    }
+    nav>#menu_icon_close{
+        display: none;
+    }
+}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {...}
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {...}

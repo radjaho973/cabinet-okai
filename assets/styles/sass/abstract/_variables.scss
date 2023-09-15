@@ -30,3 +30,18 @@ $grey : #00000095;
     align-items: center;
     justify-content: space-between;
 }
+
+
+//? Buttons //
+
+%btn-contact{
+  background-color: white;
+  border-radius: 30px;
+  width: 200px;
+  height: 48px;
+  @extend %flex-center;
+  text-align: center;
+  color: $midblue;
+  font-family: "Nunito-black";
+  font-size: 18px;
+}
