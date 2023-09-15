@@ -1,11 +1,15 @@
 @use '../abstract/' as *;
 
-/* Mobile */
+//!==========================
+//!=========Mobile==========
+//!==========================
 body{
     overflow-x: hidden;
 }
 
 header{
+    position:fixed;
+    width: 100vw;
     justify-content: space-between;
     padding-inline: 40px;
     @extend %flex-center;
@@ -27,10 +31,9 @@ header{
     nav{
         position: absolute;
         top: 0;
-        transition: all 0.2s ease-in-out;
+        transition: right 0.2s ease-in-out;
         height: 99vh;
         width: 100vw;
-        background: rgb(17,17,17);
         background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(202,220,249,1) 100%); 
         padding-inline: 14vw ;
         padding-top: 133px;
@@ -60,7 +63,7 @@ header{
         }
     }
     nav.hidden{
-        right: -100vw;
+        right: -130vw;
     }
     nav.show{
         right: 0;

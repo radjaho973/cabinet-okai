@@ -45,3 +45,20 @@ $grey : #00000095;
   font-family: "Nunito-black";
   font-size: 18px;
 }
+.btn-contact{
+    @extend %btn-contact;
+}
+%btn-info{
+    background-color: rgba(255, 255, 255, 0.247);
+    border-radius: 30px;
+    width: 200px;
+    height: 48px;
+    @extend %flex-center;
+    text-align: center;
+    color: white;
+    font-family: "Nunito-black";
+    font-size: 18px;
+}
+.btn-info{
+    @extend %btn-info;
+}

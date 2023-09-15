@@ -58,7 +58,7 @@ font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
 }
 %nunito-r40{
     font-family: "Nunito-regular";
-    font-size: 40px;
+    font-size: clamp(1rem, 0.6887rem + 1.5094vw, 2.5rem);
     color: white;
     line-height: 60px;
 }
@@ -145,7 +145,7 @@ font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
 }
 %fdb-bl80{
     font-family: "forma-djr-display-black";
-    font-size: 80px;
+    font-size: clamp(1.5rem, 0.7736rem + 3.522vw, 5rem);
     color: white;
     line-height: 96px;
     text-transform: uppercase;
@@ -166,10 +166,9 @@ font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
 }
 %fdb-bl70{
     font-family: "forma-djr-display-black";
-    font-size: 70px;
+    font-size: clamp(1rem, 0.2995rem + 3.3962vw, 4.375rem);
     color: white;
     line-height: 84px;
-    text-transform: uppercase;
 }
 %fdb-b25{
     font-family: "forma-djr-display-bold";

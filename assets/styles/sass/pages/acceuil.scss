@@ -1,0 +1,70 @@
+@use '../abstract/' as *;
+
+.acceuil-container{
+
+    section#acceuil{
+        background-color: $black;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 36vh;
+        padding-left: 12vw;
+        padding-bottom: 14vh;
+
+        &>h1{
+            @extend %fdb-bl80;
+        }
+        &>p{
+            @extend %nunito-r40;
+        }
+        &>.btn-container{
+            display: flex;
+            gap: 77px;
+        }
+    }
+    section#activity{
+        // background: url();
+        background-color: gainsboro;
+        height: 100vh;
+        
+        &>h2{
+            @extend %fdb-bl60;
+            padding-block: 21vh ;
+        }
+        &>.container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            &>p{
+                line-height: 54px;
+                padding-bottom: 39px;
+                @extend %nunito-r40;
+            }
+
+            &>.title-container{
+                background-color: rgba(255, 255, 255, 0.247);
+                border-radius: 50px;
+                width: 25vw;
+                height: 22vh;
+                position: relative;
+
+                &>p{
+                    // font-size: 48px;
+                    @extend %fdb-bl70;
+                    position: absolute;
+                    top: -50%;
+                    left: -35px;
+                }
+
+            }
+        }
+        &>.btn-info{
+            margin-block: 12vh;
+            margin-inline: auto;
+        }
+    }
+}
