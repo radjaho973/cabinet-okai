@@ -25,33 +25,45 @@
             gap: 77px;
         }
     }
+
+
     section#activity{
-        // background: url();
-        background-color: gainsboro;
+        background: url('../../../../public/Images/double-ligne-bg.png');
+        background-size: 101%;
+        background-position: center;
         height: 100vh;
+        padding-left: 11vw;
+        padding-right: 5vw;
         
         &>h2{
             @extend %fdb-bl60;
-            padding-block: 21vh ;
+            padding-top: 11vh;
+            padding-bottom: 33vh ;
         }
         &>.container{
             display: flex;
-            justify-content: space-around;
+            gap: 5vw;
             align-items: center;
 
             &>p{
+                // transform: rotateY(30deg);
+                // transform: rotate3d(0.3,1,0,25deg);
+                transform: rotate3d(0, 80, 0, 45deg);
                 line-height: 54px;
                 padding-bottom: 39px;
                 @extend %nunito-r40;
             }
 
             &>.title-container{
-                background-color: rgba(255, 255, 255, 0.247);
+                background-color: rgba(255, 255, 255, 0.13);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                // box-shadow: 0 0px 15px 1.5px #31313175;
                 border-radius: 50px;
                 width: 25vw;
                 height: 22vh;
                 position: relative;
-
+                
                 &>p{
                     // font-size: 48px;
                     @extend %fdb-bl70;
@@ -63,8 +75,348 @@
             }
         }
         &>.btn-info{
+            background-color: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             margin-block: 12vh;
+            margin-inline: 29vw auto;
+        }
+    }
+
+
+    section#advantages{
+        height: 100vh;
+        background-color: $black;
+        margin-bottom: 186px;
+
+        &>h2{
+            margin-left: 10vw;
+            @extend %fdb-bl60;
+            margin-bottom: 70px;
+        }
+        &>p{
+            margin-left: 10vw;
+            margin-bottom: 40px;
+            @extend %nunito-r30;
+            
+            .discover-link{
+                @extend %nunito-bl30;
+            }
+        }
+        &>.card-container{
+            @extend %flex-center;
+            gap: 74px;
+
+            &>.card{
+                background-color: rgba(255, 255, 255, 0.247);
+                border-radius: 55px;
+                width: 26vw;
+                height: 42vh;
+                transition: background-color 0.2s ease;
+                
+                
+                &>.card-title{
+                    @extend %nunito-bl40;
+                    text-align: center;
+                    margin-top: 48px;
+                    margin-inline: auto;
+                    margin-bottom: 72px;
+                }
+                &>.card-text{
+                    @extend %nunito-r30;
+                    text-align: center;
+                    padding-bottom: 29px;
+                    &>gras{
+                        @extend %nunito-bl30;
+                    }
+                }
+            }
+            &>.card:hover{
+                background-color: $highblue;
+            }
+            &>.card:nth-child(3)>.card-title{
+                margin-bottom: 28px;
+                
+            }
+            
+        }
+        &>.btn-contact{
+            margin-top: 102px;
             margin-inline: auto;
+        }
+    }
+    
+
+    section#urbanisme{
+        background-color: $black;
+
+        &>h2{
+            @extend %fdb-bl60;
+            margin-bottom: 138px;
+            margin-left: 10vw;
+        }
+        &>.selector-container{
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            justify-content: space-between;
+
+            &>.selector-display{
+                width: 48.8vw;
+                border-radius: 0px 30px 30px 0px;
+                background-color: rgba(255, 255, 255, 0.247);
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: end;
+
+                &>.sel-card:nth-child(1){
+                    gap: 3vh;
+                }
+                &>.sel-card{
+                    position: absolute;
+                    top: 110px;
+                    right: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 7vh;
+                    margin-inline: 21% 13%;
+                    transition: all 0.5s ease-in-out;
+
+                    &>.sel-card-title{
+                        font-size: 29px;
+                        width: 32vw;
+                        text-align: center;
+                        @extend %nunito-bl50;
+                    }
+                    &>.sel-card-text{
+                        font-size: clamp(1rem, -0.0938rem + 2.1875vw, 1.875rem);
+                        width: 31vw;
+                        @extend %nunito-r30;
+                    }
+
+                }
+                &>.sel-card-hidden{
+                    // top: 110px;
+                    right: 50vw;
+                    opacity: 0;
+                }
+                &>.sel-card-show{
+                    right: 0;
+                    opacity: 1;
+                }
+                &>.btn-contact{
+                    margin-bottom: 77px;
+                }
+            }
+            &>.selector{
+                width: 43vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 21px;
+
+                &>a{
+                    font-size: clamp(1.25rem, 0.1563rem + 2.1875vw, 2.125rem);
+                    @extend %fdb-bl40;
+                    transition: all 0.2s ease-in-out;
+                }
+                &>a:hover{
+                    color: $lightblue;
+                    scale: .9;
+                }
+
+            }
+        }
+        &>.btn-info{
+            margin-block: 100px 206px;
+            margin-inline: auto;
+        }
+    }
+
+
+    section#cto{
+        padding-bottom: 189px;
+
+        &>h2{
+            @extend %fdb-bl60;
+            margin-bottom: 120px;
+            margin-left: 10vw;
+
+        }
+        &>p{
+            @extend %nunito-r40;
+            margin-bottom: 102px;
+            text-align: center
+        }
+        
+        &>.card-container{
+            @extend %flex-center;
+            gap: 74px;
+
+            &>.card{
+                background-color: rgba(255, 255, 255, 0.247);
+                border-radius: 55px;
+                width: 26vw;
+                height: 42vh;
+                @extend %flex-center-column;
+                gap: 32px;
+                padding-inline: 15px;
+                
+                .card-icon{
+                    width: 100%;
+                    @extend %flex-center;
+                    height: 50px;
+
+                    &>img{
+                        margin: auto;
+                        width: 15%;
+                    }
+                }
+                
+                &>.card-title{
+                    font-size: 23px;
+                    @extend %nunito-bl40;
+                    text-align: center;
+                    
+                }
+                &>.card-text{
+                    font-size: 18px;
+                    @extend %nunito-r35;
+                    text-align: center;
+                    // padding-bottom: 29px;
+                    &>a{
+                        font-size: 18px;
+                        @extend %nunito-bl35;
+                    }
+                    &>a.link{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .btn-contact{
+            margin-inline: auto;
+            margin-top: 122px;
+        }
+    }
+
+
+    section#partners{
+        height: 989px;
+        background: url('../../../../public/images/4.1.webp');
+        background-size: 100%;
+        background-position: center;
+
+        &>h2{
+            padding-top: 123px;
+            margin-bottom: 155px;
+            margin-left: 124px;
+            @extend %fdb-bl60;
+        }
+        .image-container{
+            border: solid 3px $lightblue;
+            border-radius: 30px 0 0 30px;
+            border-right-width: 0px;
+            background-color: transparent;
+            backdrop-filter: blur(12px);
+            margin-left: 12vw;
+            height: 471px;
+            @extend %flex-center;
+            gap: 196px;
+
+            &>img{
+                width: 411px;
+            }
+        }
+    }
+
+
+    section#realisations{
+        margin: 26vh 17vh;
+        height: 50vh;
+
+        &>h2{
+            @extend %fdb-bl60;
+            margin-bottom: 166px;
+        }
+        .swiper {
+        width: 100%;
+        height: 100%;
+        margin-left: 10vw;
+        }
+
+        .swiper-slide {
+            cursor: grab;
+        text-align: center;
+        font-size: 18px;
+        // background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        }
+        
+        .swiper-slide img {
+            display: block;
+            width: 70%;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+        .swiper-slide h4{
+            font-weight: normal;
+            width: 70%;
+            margin-block: 33px 20px;
+            font-size: 21px;
+            line-height: initial;
+            font-family: "nunito-black";
+            color: white;
+        }
+        .swiper-slide p{
+            width: 70%;
+            margin-bottom: 8vh;
+            @extend %nunito-l20;
+        }
+    }
+
+
+    section#contact{
+        @extend %flex-center;
+        background: url('../../../../public/images/4.1.webp');
+        background-size: 100%;
+        background-position: center;
+        height: 792px;
+        
+        .contact-container{
+            display: flex;
+            gap: 18vw;
+            margin-inline: 140px;
+        }
+        .text-container{
+            align-items: start;
+            @extend %flex-center-column;
+            gap: 50px;
+
+            &>h2{
+                @extend %fdb-b80;
+            }
+            &>h3{
+                @extend %nunito-bl50;
+            }
+            &>p{
+                @extend %nunito-r35;
+            }
+
+        }
+        .form-container{
+            border-radius: 21px;
+            width: 100%;
+            background-color: transparent;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(12px);
+
         }
     }
 }

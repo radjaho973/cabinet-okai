@@ -12,8 +12,8 @@
          qui résonnent avec l’âme de la Guadeloupe</p>
 
         <div class="btn-container">
-            <a class="btn-contact" href="#">PRENDRE RDV</a>
-            <a class="btn-info" href="#">EN SAVOIR +</a>
+            <button class="btn-contact" href="#">PRENDRE RDV</button>
+            <button class="btn-info" href="#">EN SAVOIR +</button>
         </div>
     </section>
     
@@ -33,19 +33,249 @@
             </div>
 
         </div>
-        <a class="btn-info"href="#">EN SAVOIR +</a>
+      
+            <button class="btn-info"href="#">EN SAVOIR +<//button>
+       
     </section>
 
     <section id="advantages">
-        <h2>CONCEPTION & CRÉATION : LES AVANTAGES D’UN EXPERT À VOS CÔTÉS</h2>
+        <h2>CONCEPTION & CRÉATION :<br> LES AVANTAGES D’UN EXPERT À VOS CÔTÉS</h2>
 
-        <p>Avec Okai, vivez l’expertise guadeloupéenne, 
-        l’engagement et une vision audacieuse. Découvrez-nous !</p>
+        <p>Avec le Cabinet Okaï, vivez l’expertise guadeloupéenne, 
+        l’engagement et une vision <br>
+        audacieuse. <br>
+         <a class="discover-link" href="#">Découvrez-nous.</a></p>
 
         <div class="card-container">
-            <h3 class="card-title">Expertise locale</h3>
-            <p class="card-text"></p>
+            <div class="card">
+                <h3 class="card-title">Expertise locale</h3>
+                <p class="card-text"><gras>Compréhension</gras> profonde du <gras>contexte guadeloupéen</gras>.
+                 <gras>Collaboration</gras> étroite avec les <gras>acteurs locaux.</gras></p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Vision Écologique</h3>
+                <p class="card-text">Engagement pour des <gras>solutions durables.</gras>
+                 Promotion de l’<gras>éco-construction.</gras></p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Accompagnement Personnalisé</h3>
+                <p class="card-text"><gras>Écoute active</gras> de vos besoins et ambitions.<br>
+                 <gras>Suivi régulier</gras> tout au long du processus.</p>
+            </div>
         </div>
+        
+        <button class="btn-contact" href="#">NOUS CONTACTER</button>
+        
+    </section>
+
+    <section id="urbanisme">
+        <h2>NOS SERVICES EN URBANISME</h2>
+
+        <div class="selector-container" {{stimulus_controller("selector")}}>
+            <div class="selector-display">
+                <div class="sel-card " id="1">
+                    <h3 class="sel-card-title">
+                        Urbanisme pour particuliers
+                    </h3>
+                    <svg width="518" height="1" viewBox="0 0 518 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.972168" y1="0.5" x2="517.622" y2="0.5" stroke="black"/>
+                    </svg>
+                    <p class="sel-card-text">
+                        Nous croyons que chaque particulier mérite une expertise en urbanisme de qualité. De la conception d’un espace de vie à la navigation dans les réglementations locales de la Guadeloupe, notre service vous accompagne dans la réalisation de vos rêves urbains, alliant harmonie et durabilité.
+                    </p>
+                    <button class="btn-contact">NOUS CONTACTER</button>
+                </div>
+                <div class="sel-card sel-card-hidden" id="2">
+                    <h3 class="sel-card-title">
+                        Autorisations préalables de travaux
+                    </h3>
+                    <p class="sel-card-text">
+                        Les autorisations préalables de travaux valident la conformité des aménagements mineurs aux règles d’urbanisme locales. Elles sont un passage clé pour garantir une réalisation sans encombre et harmonieuse de votre projet.
+                    </p>
+                    <button class="btn-contact">NOUS CONTACTER</button>
+                </div>
+                <div class="sel-card sel-card-hidden" id="3">
+                    <h3 class="sel-card-title">
+                        Dossiers SMGEAG
+                    </h3>
+                    <p class="sel-card-text">
+                        Les autorisations préalables de travaux valident la conformité des aménagements mineurs aux règles d’urbanisme locales. Elles sont un passage clé pour garantir une réalisation sans encombre et harmonieuse de votre projet.
+                    </p>
+                    <button class="btn-contact">NOUS CONTACTER</button>
+                </div>
+                <div class="sel-card sel-card-hidden" id="4">
+                    <h3 class="sel-card-title">
+                        Suivi des demandes administratives
+                    </h3>
+                    <p class="sel-card-text">
+                        Les autorisations préalables de travaux valident la conformité des aménagements mineurs aux règles d’urbanisme locales. Elles sont un passage clé pour garantir une réalisation sans encombre et harmonieuse de votre projet.
+                    </p>
+                    <button class="btn-contact">NOUS CONTACTER</button>
+                </div>
+                <div class="sel-card sel-card-hidden" id="5">
+                    <h3 class="sel-card-title">
+                        Étude de faisabilité avant-projet
+                    </h3>
+                    <p class="sel-card-text">
+                        Avant chaque grand projet se cache une étude approfondie. Nous sondons les terrains techniques et environnementaux pour que votre vision urbanistique se concrétise sereinement.
+                    </p>
+                    <button class="btn-contact">NOUS CONTACTER</button>
+                </div>
+                <div class="sel-card sel-card-hidden" id="6">
+                    <h3 class="sel-card-title">
+                        Dessin architectural
+                    </h3>
+                    <p class="sel-card-text">
+                        Avant chaque grand projet se cache une étude approfondie. Nous sondons les terrains techniques et environnementaux pour que votre vision urbanistique se concrétise sereinement.
+                    </p>
+                    <button class="btn-contact">NOUS CONTACTER</button>
+                </div>
+            </div>
+            <div class="selector">
+                    <a href="#" id="1">Urbanisme pour particuliers</a>
+                    <a href="#" id="2">Autorisations préalables de travaux</a>
+                    <a href="#" id="3">Dossiers SMGEAG</a>
+                    <a href="#" id="4">Suivi des demandes administratives</a>
+                    <a href="#" id="5">Étude de faisabilité avant-projet</a>
+                    <a href="#" id="6">Dessin architectural</a>
+            </div>
+        </div>
+            <button class="btn-info"href="#">EN SAVOIR +</button>
+    </section>
+
+    <section id="cto">
+        <h2>FAIRE APPEL À NOS SERVICES</h2>
+
+        <p>Vous souhaitez faire appel à notre expertise dans le cadre d’un de vos futurs projets urbain ou immobilier ?</p>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">
+                    <img src="{{asset("/images/calendrier.svg")}}" alt="">
+                </div>
+                <h3 class="card-title">
+                    Contactez - nous
+                </h3>
+                <p class="card-text">
+                    Contactez notre cabinet par téléphone au <a href="tel:0690 97 32 17">0690 97 32 17</a> ou via <a class="link" href="#contact">notre formulaire de contact</a>
+                    <br>
+                    <br>
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <img src="{{asset("/images/mail.svg")}}" alt="">
+                </div>
+                <h3 class="card-title">
+                    Prise de rdv
+                </h3>
+                <p class="card-text">
+                    Notre urbaniste conviendra d’un RDV avec vous pour affiner votre projet et vous accompagner au mieux.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <img src="{{asset("/images/message.svg")}}" alt="">
+                </div>
+                <h3 class="card-title">
+                    Contact privilégié
+                </h3>
+                <p class="card-text">
+                    Une fois votre cahier des charges validé, notre équipe vous informera régulièrement de l’évolution de votre dossier jusqu’à sa remise.
+                </p>
+            </div>
+        </div>
+
+        <button class="btn-contact">NOUS CONTACTER</button>
+    </section>
+
+    <section id="partners">
+        <h2>ILS NOUS FONT CONFIANCE</h2>
+        <div class="image-container">
+            <img src="{{asset("/images/epf.png")}}" alt="">
+            <img src="{{asset("/images/epf.png")}}" alt="">
+        </div>
+    </section>
+
+    <section id="realisations">
+        <h2>NOS RÉALISATIONS</h2>
+        <div {{stimulus_controller("swiper")}} class="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
+            <div class="swiper-wrapper" id="swiper-wrapper-cf6646dfbec0e433" aria-live="polite">
+                <div class="swiper-slide swiper-slide-active" style="width: 620px; margin-right: 30px;" role="group" aria-label="1 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide swiper-slide-next" style="width: 620px; margin-right: 30px;" role="group" aria-label="2 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="3 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="4 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="5 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="6 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="7 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="8 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+                <div class="swiper-slide" style="width: 620px; margin-right: 30px;" role="group" aria-label="9 / 9">
+                    <img src="{{asset("/images/4.1.webp")}}" alt="">
+                    <h4>TITRE DU PROJET EN URBANISME</h4>
+                    <p>Court descriptif du projet traité en d’urbanisme…  <br>
+                    Lorem Ipsum dolor sit amet, seum sat ipsum dolor sit.</p>
+                </div>
+            </div>
+            
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+        </div>
+    </section>
+    <section id="contact">
+    <div class="contact-container">
+        <div class="text-container">
+            <h2>FORMULAIRE</h2>
+            <h3>Mettons en scène les villes de demain !</h3>
+            <p>Confiez-nous vos coordonnées et entrons ensemble dans l’ère d’un urbanisme renouvelé.</p>
+        </div>
+        <div class="form-container">
+        
+        </div>
+    </div>
+
     </section>
 </div>
 {% endblock %}
+
+

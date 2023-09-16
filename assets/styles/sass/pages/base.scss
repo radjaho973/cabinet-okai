@@ -8,6 +8,7 @@ body{
 }
 
 header{
+    z-index: 1000;
     position:fixed;
     width: 100vw;
     justify-content: space-between;
@@ -81,7 +82,7 @@ header{
     }
 }
 html{
-    background-color: #111111;
+    background-color: $black;
 }
 
 /* Medium devices (landscape tablets, 1265px and up) */

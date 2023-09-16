@@ -35,10 +35,11 @@ $grey : #00000095;
 //? Buttons //
 
 %btn-contact{
+    border: none;
   background-color: white;
   border-radius: 30px;
-  width: 200px;
-  height: 48px;
+  padding-inline: 65px;
+  padding-block: 22px;
   @extend %flex-center;
   text-align: center;
   color: $midblue;
@@ -48,11 +49,17 @@ $grey : #00000095;
 .btn-contact{
     @extend %btn-contact;
 }
+.btn-contact-small{
+    padding-inline: 40px;
+    padding-block: 15px;
+    @extend %btn-contact;
+}
 %btn-info{
+    border: none;
     background-color: rgba(255, 255, 255, 0.247);
     border-radius: 30px;
-    width: 200px;
-    height: 48px;
+    padding-block: 24px;
+    padding-inline: 77px;
     @extend %flex-center;
     text-align: center;
     color: white;
