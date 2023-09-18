@@ -36,7 +36,42 @@
         {% block body %}{% endblock %}
     </div>
     <footer>
-        
+        <div class="logo-container">
+            <img src="{{asset("images/logo.png")}}" alt="">
+        </div>
+        <div class="container">
+            
+            <div class="text">
+                <p>
+                    <gras>Cabinet OKAÏ</gras>, votre référence en urbanisme en Guadeloupe.<br>
+                     Études et conception de plans urbains.
+                </p>
+            </div>
+
+            <ul class="links">
+                    <li><a class="nav-link" href="#">Qui sommes-nous</a></li>
+                    <li><a class="nav-link" href="#">Expertise</a></li>
+                    <li><a class="nav-link" href="#">Documents d'urbanisme</a></li>
+                    <li><a class="nav-link" href="{{ path("app_guide_index")}}">Guides</a></li>
+                    <li><a class="nav-link" href="#">Studio OKAÏ</a></li>
+            </ul>
+
+            <div class="contact">
+                <p>Suivez-nous pour vous tenir informé de
+                 nos offres et astuces !
+                </p>
+                 <div class="rs">
+                    <img src="{{asset("/images/facebook.svg")}}" alt="">
+                    <img src="{{asset("/images/instagram.svg")}}" alt="">
+                 </div>
+                 <button class="btn-contact-small">CONTACTER-NOUS</button>
+            </div>
+        </div>
+        <p>
+            <a class="smalltext" href="#">Politique de confidentialité</a> 
+            <a class="smalltext" href="#">Mentions légales</a>
+        </p>
+        <a class="smalltext" href="#">Site Cabinet Okaï - 2023</a>
     </footer>
 </body>
 <script>

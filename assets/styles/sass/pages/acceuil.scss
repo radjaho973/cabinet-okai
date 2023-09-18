@@ -126,9 +126,7 @@
                     @extend %nunito-r30;
                     text-align: center;
                     padding-bottom: 29px;
-                    &>gras{
-                        @extend %nunito-bl30;
-                    }
+                    
                 }
             }
             &>.card:hover{
@@ -416,7 +414,6 @@
             background-color: transparent;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(12px);
-
         }
     }
 }
