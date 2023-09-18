@@ -13,7 +13,7 @@ body{
 header{
     z-index: 1000;
     position:fixed;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     padding-inline: 40px;
     @extend %flex-center;
@@ -84,8 +84,112 @@ header{
         }
     }
 }
+
 footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 56px 64px;
+
+    &>.logo-container{
+        width: 123px;
+        height: 69px;
+        background-color: #CADCF9;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 75px;
+        
+        &>img{
+            width: 75%;
+            height: 75%;
+        }
+    }
+    &>.container{
+        @extend %flex-center-column;
+        gap: 36px;
+        padding-inline: 30px;
+
+        &>.text{
+            &>p{
+                text-align: center;
+                @extend %nunito-r25--softblue;
+
+                &>gras{
+                    color: $lightblue;
+                }
+            }
+        }
+        &>.links{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-inline: 6vw 11vw;
+            list-style: none;
+            
+            .nav-link{
+                @extend %nunito-r25--softblue;
+            }
+
+            
+        }
+        &>.contact{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 35px;
+
+            &>p{
+                text-align: center;
+                @extend %nunito-r25--softblue;
+            }
+
+            &>.rs{
+                width: 150px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #111A2B;
+                border-radius: 20px;
+                border: 1px solid $lightblue;
+           
+                
+                &>a{
+                    width: 37%;
+                    height: 43%;
+
+                    &>img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            .btn-contact-small{
+                display: none;
+            }
+        }
+    }
+    .small-line{
+        height: 2px;
+        background-color: $lightblue;
+        width: 100%;
+        margin-right: -25vw;
+        margin-top: 46px;
+        margin-bottom: 20px;
+    }
+    &>p{
+        margin-bottom: 11px;
+    }
     
+    .smalltext{
+        color: $lightblue;
+        font-size: 11px;
+    }
 }
 
 
@@ -93,7 +197,6 @@ footer{
 @media screen and (min-width: 1265px) {
     
     header{
-        height: 115px;
         justify-content: space-between;
         padding-left: 65px;
         padding-right: 95px;
@@ -142,14 +245,11 @@ footer{
 // /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 789px) {
     footer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        
 
         &>.logo-container{
-            max-width: 309px;
-            max-height: 174px;
+            width: 210px;
+            height: 118px;
             
             &>img{
                 max-width: 309px;
@@ -158,29 +258,12 @@ footer{
             }
         }
         &>.container{
-            display: flex;
-            justify-content: center;
-
-            &>.text{
-                
-            }
+            flex-direction: row;
+            align-items: start;
             &>.links{
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                margin-inline: 6vw 11vw;
-
-                &>li{
-                    list-style: none;
-
-                }
+                align-items: start;
             }
             &>.contact{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                gap: 35px;
 
                 &>.rs{
                     width: 183px;
@@ -196,6 +279,9 @@ footer{
                         width: 37%;
                         height: 43%;
                     }
+                }
+                &>.btn-contact-small{
+                    display: inline-block;
                 }
             }
         }

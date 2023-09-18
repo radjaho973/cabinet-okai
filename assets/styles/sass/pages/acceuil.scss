@@ -14,7 +14,7 @@
         padding-left: 12vw;
         padding-bottom: 14vh;
 
-        &>h1{
+        .titre{
             @extend %fdb-bl80;
         }
         &>p{
@@ -31,6 +31,7 @@
         background: url('../../../../public/Images/double-ligne-bg.png');
         background-size: 101%;
         background-position: center;
+        background-repeat: no-repeat;
         height: 100vh;
         padding-left: 11vw;
         padding-right: 5vw;
@@ -38,7 +39,7 @@
         &>h2{
             @extend %fdb-bl60;
             padding-top: 11vh;
-            padding-bottom: 33vh ;
+            padding-bottom: 33vh;
         }
         &>.container{
             display: flex;
@@ -197,7 +198,6 @@
 
                 }
                 &>.sel-card-hidden{
-                    // top: 110px;
                     right: 50vw;
                     opacity: 0;
                 }
@@ -356,7 +356,7 @@
         align-items: center;
         flex-direction: column;
         }
-        
+     
         .swiper-slide img {
             display: block;
             width: 70%;
@@ -379,13 +379,13 @@
         }
     }
 
-
     section#contact{
         @extend %flex-center;
         background: url('../../../../public/images/4.1.webp');
         background-size: 100%;
         background-position: center;
         height: 792px;
+        background-repeat: no-repeat;
         
         .contact-container{
             display: flex;
@@ -415,5 +415,71 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(12px);
         }
+    }
+}
+@media screen and (max-width:768px) {
+    .acceuil-container{
+
+        section#acceuil{
+            justify-content: end;
+            align-items: center;
+            padding-left: 0;
+            padding-bottom: 10vh;
+            background:  url(../../../../public/Images/ligne-bg-up-down.png);
+            background-size: 101%;
+            background-repeat: no-repeat;
+            background-position-y: 85%;
+
+            .line-break{
+                display: block;
+            }
+            &>h1>.lightblue{
+                color: $lightblue;
+
+            }
+            &>.btn-container{
+                gap: 3vw;
+            }
+        }
+        
+        section#activity{
+            background:  url("../../../../public/Images/ligne-bg.png");
+            background-size: 101%;
+            background-position-y: 25%;
+            background-repeat: no-repeat;
+            &>h2{
+                padding-bottom: 27px;
+            }
+            
+            &>.container{
+                display: inline-block;
+                // padding-inline: 21px;
+                
+
+                &>p{
+                    line-height: 1.5;
+                    transform: none;
+                    padding-bottom: 75px;
+
+                }
+                &>.title-container:nth-child(1){
+                    
+                    margin-bottom: 105px !important;
+                }
+                &>.title-container{
+                    width: 221px ;
+                    height: 112px;
+                    margin-bottom: 65px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:500px) {
+    .acceuil-container>section#acceuil>.btn-container{
+        gap: 80px;
+    }
+    .acceuil-container>section#acceuil>.titre{
+        line-height: 34px;
     }
 }
