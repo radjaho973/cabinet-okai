@@ -46,9 +46,17 @@ gras{
 }
 %nunito-bl40{
     font-family: "Nunito-black";
-    font-size: 40px;
     color: white;
-    line-height: 54px;
+    @media screen and (max-width:768px) {
+        // 19 - 30
+        font-size: clamp(1.1875rem, 0.6964rem + 2.4554vw, 1.875rem);
+        line-height: 27px;
+    }
+    @media screen and (min-width:768px) {
+        
+        font-size: 20px
+        // line-height: 54px;
+    }
 }
 %nunito-bl35{
     font-family: "Nunito-black";
@@ -80,17 +88,22 @@ gras{
 }
 %nunito-r30{
     font-family: "Nunito-regular";
-    font-size: 30px;
+    
     color: white;
-    line-height: 50px;
+    @media screen and (max-width:768px) {
+        // 16 - 20 
+        line-height: 30px;
+        font-size: clamp(1rem, 0.8214rem + 0.8929vw, 1.25rem);
+        
+    }
+    @media screen and (min-width:768px) {
+        // 20 - 25
+        // line-height: 96px;
+        line-height: 50px;
+        font-size: clamp(1.25rem, 0.8929rem + 0.744vw, 1.5625rem);
+    }
 }
-%nunito-r30--space{
-    font-family: "Nunito-regular";
-    font-size: 30px;
-    color: white;
-    line-height: 45px;
-    letter-spacing: 7px;
-}
+
 %nunito-l30{
     font-family: "Nunito-light";
     font-size: 30px;
@@ -99,7 +112,7 @@ gras{
 }
 %nunito-bl30{
     font-family: "Nunito-black";
-    font-size: clamp(0.9375rem, 0.6696rem + 1.3393vw, 1.875rem);
+    font-size: clamp(1.25rem, 0.1563rem + 2.1875vw, 2.125rem);
     color: white;
     line-height: 45px;
 }
@@ -184,15 +197,15 @@ gras{
 }
 %fdb-bl60{
     font-family: "forma-djr-display-black";
-    font-size: 60px;
     color: white;
-    line-height: 72px;
     text-transform: uppercase;
     @media screen and (max-width:768px) {
         // 20 - 25
+        line-height: 49px;
         font-size: clamp(1.25rem, 1.0268rem + 1.1161vw, 1.5625rem);
     }
     @media screen and (min-width:768px) {
+        line-height: 72px;
         font-size: clamp(1.5625rem, 0.4911rem + 2.2321vw, 2.5rem);
     }
 }
@@ -205,9 +218,7 @@ gras{
 }
 %fdb-bl70{
     font-family: "forma-djr-display-black";
-    font-size: clamp(1.5rem, 0.9033rem + 2.8931vw, 4.375rem);
     color: white;
-    line-height: 84px;
 
     @media screen and (max-width:768px) {
         // 21 - 25
@@ -220,12 +231,7 @@ gras{
         line-height: 44px;
     }
 }
-%fdb-bl60{
-    font-family: "forma-djr-display-black";
-    font-size: clamp(1.5rem, 1.033rem + 2.2642vw, 3.75rem);
-    color: white;
-    line-height: 84px;
-}
+
 %fdb-bl40{
     font-family: "forma-djr-display-black";
     font-size: clamp(1.25rem, 0.8784rem + 1.8018vw, 2.5rem);

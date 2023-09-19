@@ -50,7 +50,7 @@
                 // transform: rotateY(30deg);
                 // transform: rotate3d(0.3,1,0,25deg);
                 transform: rotate3d(0, 80, 0, 45deg);
-                line-height: 54px;
+                line-height: 37px;
                 padding-bottom: 39px;
                 @extend %nunito-r40;
             }
@@ -62,8 +62,9 @@
                 // box-shadow: 0 0px 15px 1.5px #31313175;
                 border-radius: 50px;
                 width: 25vw;
-                height: 22vh;
+                height: 15vh;
                 position: relative;
+                padding-inline: 10px;
                 
                 &>p{
                     // font-size: 48px;
@@ -106,13 +107,13 @@
         }
         &>.card-container{
             @extend %flex-center;
-            gap: 74px;
+            gap: 50px;
 
             &>.card{
                 background-color: rgba(255, 255, 255, 0.247);
                 border-radius: 55px;
                 width: 26vw;
-                height: 42vh;
+                height: 26vw;
                 transition: background-color 0.2s ease;
                 
                 
@@ -168,6 +169,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: end;
+                backdrop-filter: blur(12px);
 
                 &>.sel-card:nth-child(1){
                     gap: 3vh;
@@ -188,7 +190,7 @@
                         font-size: 29px;
                         width: 32vw;
                         text-align: center;
-                        @extend %nunito-bl50;
+                        @extend %nunito-bl30;
                     }
                     &>.sel-card-text{
                         font-size: clamp(1rem, -0.0938rem + 2.1875vw, 1.875rem);
@@ -447,6 +449,8 @@
             background-size: 101%;
             background-position-y: 25%;
             background-repeat: no-repeat;
+            margin-bottom: 89px;
+
             &>h2{
                 padding-bottom: 27px;
             }
@@ -462,14 +466,67 @@
                     padding-bottom: 75px;
 
                 }
-                &>.title-container:nth-child(1){
-                    
-                    margin-bottom: 105px !important;
+                &>.title-container:first-of-type{
+                    float: right;
+                    margin-left: 50px;
+                    margin-bottom: 105px ;
+                    margin-right: 0;
                 }
                 &>.title-container{
-                    width: 221px ;
-                    height: 112px;
+                    position: relative;
+                    display: block;
+                    border-radius: 30px;
+                    width: 221px !important ;
+                    height: 112px !important;
                     margin-bottom: 65px;
+                    float: left;
+                    margin-right: 50px;
+
+                    &>p{
+                        position: absolute !important;
+                        text-align: start !important;
+                        top: -24%;
+                        left: -21px;
+                    }
+                }
+            }
+            .btn-info{
+                float: right;
+                margin: 0;
+            }
+        }
+
+        section#advantages{
+
+            &>h2{
+                margin-bottom: 60px;
+            }
+            &>.card-container{
+                flex-direction: column;
+                
+                &>.card{
+                    width: 87vw;
+                    padding-inline: 10px;
+                    
+                }
+            }
+        }
+
+        section#urbanisme{
+            background:  url('../../../../public/images/ligne-bg.png');
+            background-position-y:top;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &>.selector-container{
+                flex-direction: column;
+                align-items: center;
+
+                &>.selector-display{
+                    border-radius: 40px;
+                    align-items: center;
+                    flex-shrink: 0;
+                    
                 }
             }
         }
@@ -481,5 +538,47 @@
     }
     .acceuil-container>section#acceuil>.titre{
         line-height: 34px;
+    }
+}
+@media screen and (max-width:1000px) {
+    .acceuil-container>section#activity>.container{
+
+        &>p{
+            line-height: 32px;
+        }
+        .title-container{
+            width: 31vw;
+            height: 196px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &>p{
+                position: unset;
+                text-align: center;
+            }
+        }
+    }
+    .acceuil-container{
+        section#advantages{
+
+            &>h2{
+                margin-bottom: 60px;
+            }
+            &>.card-container{
+                flex-direction: column;
+                
+                &>.card{
+                    width: 87vw;
+                    padding-inline: 15px;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
     }
 }
