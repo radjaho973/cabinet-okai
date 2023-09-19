@@ -6,7 +6,7 @@ $lightblue : #CADCF9;
 $midblue : #2B5094;
 $highblue : #2D5299;
 $grey : #00000095;
-
+$transparent : rgba(57, 53, 53, 0.43);
 
 //* Flex //
 
@@ -24,6 +24,12 @@ $grey : #00000095;
     align-items: center;
     flex-direction: column;
 }
+%flex-center-down{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+}
 
 %center-space-between{
     display: flex;
@@ -38,9 +44,9 @@ $grey : #00000095;
     cursor: pointer;
     border: none;
   background-color: white;
-  border-radius: 30px;
-  padding-inline: 65px;
-  padding-block: 22px;
+  border-radius: 20px;
+  width: 230px;
+  height: 59px;
   @extend %flex-center;
   text-align: center;
   color: $midblue;
@@ -57,17 +63,18 @@ $grey : #00000095;
     @extend %btn-contact;
 }
 .btn-contact-small{
-    padding-inline: 40px;
-    padding-block: 15px;
+    width: 190px;
+    height: 46px;
     @extend %btn-contact;
 }
+
 %btn-info{
     cursor: pointer;
     border: none;
     background-color: rgba(255, 255, 255, 0.247);
-    border-radius: 30px;
-    padding-block: 24px;
-    padding-inline: 77px;
+    border-radius: 20px;
+    height: 59px;
+    width: 230px;
     @extend %flex-center;
     text-align: center;
     color: white;

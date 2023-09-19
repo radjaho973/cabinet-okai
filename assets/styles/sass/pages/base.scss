@@ -18,11 +18,9 @@ header{
     padding-inline: 40px;
     @extend %flex-center;
     height: 90px;
-    background: #80808014;
-    background-color: transparent;
+    background:$transparent;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 0px 15px 1.5px #31313175;
     
     .logo-container{
         display: block;

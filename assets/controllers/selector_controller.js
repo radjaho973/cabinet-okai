@@ -41,7 +41,7 @@ export default class extends Controller {
                
                 if (idNumber == cardObject.id) {
 
-                    cardObject.card.classList.add("sel-card-show")
+                    cardObject.card.classList.replace("sel-card-hidden","sel-card-show")
 
                 }else{
 

@@ -4,7 +4,7 @@
 
     section#acceuil{
         background-color: $black;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: start;
@@ -28,18 +28,20 @@
 
 
     section#activity{
-        background: url('../../../../public/Images/double-ligne-bg.png');
+        background: url('../../../../public/images/double-ligne-bg.png');
         background-size: 101%;
         background-position: center;
         background-repeat: no-repeat;
-        height: 100vh;
+        min-height: 100vh;
         padding-left: 11vw;
         padding-right: 5vw;
+        margin-bottom: 232px;
+        margin-top:285px ;
         
         &>h2{
             @extend %fdb-bl60;
-            padding-top: 11vh;
-            padding-bottom: 33vh;
+            
+            padding-bottom: 229px;
         }
         &>.container{
             display: flex;
@@ -51,7 +53,6 @@
                 // transform: rotate3d(0.3,1,0,25deg);
                 transform: rotate3d(0, 80, 0, 45deg);
                 line-height: 37px;
-                padding-bottom: 39px;
                 @extend %nunito-r40;
             }
 
@@ -62,7 +63,8 @@
                 // box-shadow: 0 0px 15px 1.5px #31313175;
                 border-radius: 50px;
                 width: 25vw;
-                height: 15vh;
+                // height: 15vh;
+                height: 170px;
                 position: relative;
                 padding-inline: 10px;
                 
@@ -80,14 +82,14 @@
             background-color: rgba(255, 255, 255, 0.13);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            margin-block: 12vh;
+            margin-top: 120px;
             margin-inline: 29vw auto;
         }
     }
 
 
     section#advantages{
-        height: 100vh;
+        min-height: 100vh;
         background-color: $black;
         margin-bottom: 186px;
 
@@ -113,7 +115,7 @@
                 background-color: rgba(255, 255, 255, 0.247);
                 border-radius: 55px;
                 width: 26vw;
-                height: 26vw;
+                height: 454px;
                 transition: background-color 0.2s ease;
                 
                 
@@ -165,50 +167,49 @@
                 width: 48.8vw;
                 border-radius: 0px 30px 30px 0px;
                 background-color: rgba(255, 255, 255, 0.247);
-                position: relative;
                 display: flex;
                 justify-content: center;
-                align-items: end;
+                align-items: center;
                 backdrop-filter: blur(12px);
 
                 &>.sel-card:nth-child(1){
-                    gap: 3vh;
+                    // gap: 3vh;
                 }
                 &>.sel-card{
-                    position: absolute;
-                    top: 110px;
-                    right: 0;
+                    
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
-                    gap: 7vh;
-                    margin-inline: 21% 13%;
-                    transition: all 0.5s ease-in-out;
+                    gap: 6vh;
+                    transition: all 0.5s cubic-bezier(.6,-0.28,.74,.05);
 
                     &>.sel-card-title{
-                        font-size: 29px;
                         width: 32vw;
                         text-align: center;
                         @extend %nunito-bl30;
                     }
                     &>.sel-card-text{
-                        font-size: clamp(1rem, -0.0938rem + 2.1875vw, 1.875rem);
+                        font-size: clamp(1rem, 0.5982rem + 2.0089vw, 1.5625rem);
                         width: 31vw;
-                        @extend %nunito-r30;
+                       line-height: 30px;
+                       font-family: "Nunito-regular";
+                       color: white;
+                    }
+                    &>.btn-contact{
+                        padding-inline:36px ;
                     }
 
                 }
                 &>.sel-card-hidden{
-                    right: 50vw;
+                    position: absolute;
                     opacity: 0;
+                    transform: translateX(-100%);
                 }
                 &>.sel-card-show{
-                    right: 0;
+                    position: initial;
                     opacity: 1;
-                }
-                &>.btn-contact{
-                    margin-bottom: 77px;
+                    
                 }
             }
             &>.selector{
@@ -216,7 +217,7 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                gap: 21px;
+                
 
                 &>a{
                     font-size: clamp(1.25rem, 0.1563rem + 2.1875vw, 2.125rem);
@@ -241,26 +242,29 @@
         padding-bottom: 189px;
 
         &>h2{
-            @extend %fdb-bl60;
+            @extend %fdb-bl40;
             margin-bottom: 120px;
             margin-left: 10vw;
 
         }
         &>p{
-            @extend %nunito-r40;
+            @extend %nunito-r30;
             margin-bottom: 102px;
-            text-align: center
+            text-align: center;
+            padding-inline: 15px; 
         }
         
         &>.card-container{
             @extend %flex-center;
             gap: 74px;
+            max-width: 1319px;
+            margin-inline: auto;
 
             &>.card{
                 background-color: rgba(255, 255, 255, 0.247);
                 border-radius: 55px;
                 width: 26vw;
-                height: 42vh;
+                height: 396px;
                 @extend %flex-center-column;
                 gap: 32px;
                 padding-inline: 15px;
@@ -277,16 +281,13 @@
                 }
                 
                 &>.card-title{
-                    font-size: 23px;
                     @extend %nunito-bl40;
                     text-align: center;
                     
                 }
                 &>.card-text{
-                    font-size: 18px;
-                    @extend %nunito-r35;
+                    @extend %nunito-r30;
                     text-align: center;
-                    // padding-bottom: 29px;
                     &>a{
                         font-size: 18px;
                         @extend %nunito-bl35;
@@ -420,6 +421,9 @@
     }
 }
 @media screen and (max-width:768px) {
+    .line-break{
+        display: block;
+    }
     .acceuil-container{
 
         section#acceuil{
@@ -427,14 +431,11 @@
             align-items: center;
             padding-left: 0;
             padding-bottom: 10vh;
-            background:  url(../../../../public/Images/ligne-bg-up-down.png);
+            background:  url(../../../../public/images/ligne-bg-up-down.png);
             background-size: 101%;
             background-repeat: no-repeat;
             background-position-y: 85%;
 
-            .line-break{
-                display: block;
-            }
             &>h1>.lightblue{
                 color: $lightblue;
 
@@ -445,7 +446,7 @@
         }
         
         section#activity{
-            background:  url("../../../../public/Images/ligne-bg.png");
+            background:  url("../../../../public/images/ligne-bg.png");
             background-size: 101%;
             background-position-y: 25%;
             background-repeat: no-repeat;
@@ -512,21 +513,93 @@
             }
         }
 
+        section#cto{
+
+            &>h2{
+                margin-bottom: 44px;
+            }
+        }
+
         section#urbanisme{
             background:  url('../../../../public/images/ligne-bg.png');
             background-position-y:top;
             background-repeat: no-repeat;
             background-size: cover;
 
+            &>h2{
+                margin-bottom: 53px;
+            }
             &>.selector-container{
                 flex-direction: column;
                 align-items: center;
+                justify-content: normal;
+                gap: 20px;
 
                 &>.selector-display{
                     border-radius: 40px;
                     align-items: center;
                     flex-shrink: 0;
+                    width: 81vw;
+                    min-height: 81vw;
+                    padding: 8px;
                     
+                    &>.sel-card{
+                        transition: all 0.5s ease-in-out;
+                        gap: 1vw;
+                        // position:initial;
+                        margin-inline: 0px;
+
+                        &>.sel-card-title{
+                            text-align: center;
+                            width: auto;
+                            line-height: normal;
+                        }
+                        &>.sel-card-text{
+                            font-size: clamp(1rem, 0.5982rem + 2.0089vw, 1.5625rem);
+                            text-align: center;
+                            line-height: normal;
+                            width: auto;
+                        }
+                        &>.btn-contact{
+                            display: none;
+                        }
+                    }
+
+                    &>.sel-card-hidden{
+                        transform: none;
+                    }
+                    
+                }
+                &>.selector{
+                    width: 81vw;
+                    height: 81vw;
+                    overflow-y: scroll;
+                }
+            }
+            &>.btn-info{
+                margin-top: 51px;
+                margin-bottom: 68px;
+            }
+        }
+
+        section#cto{
+            &>p{
+                margin-bottom: 44px;
+                text-align: start;
+                line-height: 49px;
+                width: 80vw;
+            }
+            &>.card-container{
+                flex-direction: column;
+
+                &>.card{
+                    width: 80vw;
+                    height: 80vw;
+                    gap: 10vw;
+                
+                    &>.card-icon{
+                        
+                    }
                 }
             }
         }
@@ -580,5 +653,13 @@
                 }
             }
         }
+    }
+}
+@media screen and (max-width:420px) {
+    .acceuil-container>section#cto>.card-container>.card{    
+                
+        &>.card-icon{
+                    display: none;
+                }
     }
 }
