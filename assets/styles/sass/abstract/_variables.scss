@@ -36,7 +36,21 @@ $transparent : rgba(57, 53, 53, 0.43);
     align-items: center;
     justify-content: space-between;
 }
+//? Aide texte //
+.line-break-md{
+    display: block;
+}
+@media screen and (max-width:768px) {
+    .line-break-md{
+        display: inline;
+    }
+}
 
+@media screen and (max-width:768px) {
+    .line-break{
+        display: block;
+    }
+}
 
 //? Buttons //
 
@@ -54,9 +68,11 @@ $transparent : rgba(57, 53, 53, 0.43);
   font-size: 18px;
 
   @media screen and (max-width:768px) {
-    padding-inline: 34px;
-    padding-block: 11px;
-    font-size: 11px;
+    width: 178px;
+    height: 45px;
+    font-size: 13px;
+    border-radius: 30px;
+
   }
 }
 .btn-contact{
@@ -80,11 +96,12 @@ $transparent : rgba(57, 53, 53, 0.43);
     color: white;
     font-family: "Nunito-black";
     font-size: 18px;
-
+    
     @media screen and (max-width:768px) {
-        padding-block: 11px;
-        padding-inline: 24px;
-        font-size: 11px;
+        width: 178px;
+        height: 45px;
+        font-size: 13px;
+        border-radius: 30px;
     }
 }
 .btn-info{

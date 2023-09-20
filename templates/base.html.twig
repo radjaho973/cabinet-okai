@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="icon" type="image/png" href="{{asset("images/logo.png")}}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -17,7 +17,7 @@
             <img class="logo" src="{{asset("images/logo.png")}}" alt="">
         </a>
         <nav class="hidden">
-            <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/hamburger-menu.png")}}" alt="">
+            <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/menu-croix.svg")}}" alt="">
             <ul class="list-container">
             <li><a class="nav-link" href="#">Qui sommes-nous</a></li>
             <li><a class="nav-link" href="#">Expertise</a></li>
@@ -26,8 +26,16 @@
             <li><a class="nav-link" href="#">Studio OKAÏ</a></li>
             <li class="btn-container"><button class="btn-contact-small" href="#">Contacter-nous</button></li>
             </ul>
+            <div class="rs">
+                    <a href="https://www.facebook.com/cabinetokai/">
+                        <img src="{{asset("/images/facebook-white.svg")}}" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/cabinet.okai/">
+                        <img src="{{asset("/images/instagram-white.svg")}}" alt="">
+                    </a>
+            </div>
         </nav>
-        <img id="menu_icon" class="menu-icon" src="{{asset("images/hamburger-menu.png")}}" alt="">
+        <img id="menu_icon" class="menu-icon" src="{{asset("images/menu-burger.svg")}}" alt="">
     </header>
 
     <body {{ stimulus_controller('symfony/ux-swup/swup') }}>

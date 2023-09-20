@@ -7,13 +7,20 @@
 <div class="fixed-column">
     <div class="column-line"></div>
     <div class="rs">
-        <img src="{{asset("images/instagram-white.svg")}}" alt="">
-        <img src="{{asset("images/facebook-white.svg")}}" alt="">
-        <img src="{{asset("images/arrow-down-white.svg")}}" alt="">
+            <a href="https://www.facebook.com/cabinetokai/">
+                <img src="{{asset("/images/facebook-white.svg")}}" alt="">
+            </a>
+            <a href="https://www.instagram.com/cabinet.okai/">
+                <img src="{{asset("/images/instagram-white.svg")}}" alt="">
+            </a>
+            <a href="#">
+                <img src="{{asset("images/arrow-down-white.svg")}}" alt="">
+            </a>
     </div>
 </div>
     <section id="hero">
-        <h1>L’URBANISME À VOTRE SERVICE !</h1>
+        <h1 class ="titre">L’URBANISME <span class="line-break-md"></span> À <span class="line-break"></span>
+        <span class="titre lightblue"> VOTRE SERVICE !</span></h1>
         
         <p>Donnez vie à vos visions urbaines en Guadeloupe.
         Expertise, innovation et transition écologique au
@@ -38,7 +45,7 @@
     </section>
 
     <section id="values">
-        <h2>VALEURS & ENGAGEMENTS</h2>
+        <h2>VALEURS &<br> ENGAGEMENTS</h2>
         <div class="card-container">
             <div class="card">
                 <div class="icon">
@@ -78,12 +85,17 @@
     </section>
 
     <section id="studio-okai">
+        <div class="img-container">
+            <img src="{{asset("images/epf.png")}}" alt="">
+        </div>
+
         <div class="cover">
             <h2>PROJETEZ-VOUS DANS VOS PROJETS IMMOBILIERS
             </h2>
             <a target="_blank" href="https://studio-okai.com/" 
             class="btn-transparent">Découvrir notre site</a>
         </div>
+        <div class="bg-overlay"></div>
     </section>
 </div>
 {% endblock %}

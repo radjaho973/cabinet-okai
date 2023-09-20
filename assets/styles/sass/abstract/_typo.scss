@@ -23,6 +23,10 @@ font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
     font-family: "Nunito-regular";
     src: url(../../fonts/Nunito-Regular.ttf);
 }
+@font-face {
+    font-family: "Nunito-semibold";
+    src: url(../../fonts/Nunito-SemiBold.ttf);
+}
 
 gras{
     @extend %nunito-bl30;
