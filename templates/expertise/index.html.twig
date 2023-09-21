@@ -4,15 +4,30 @@
 
 {% block body %}
 <div class="expertise-container">
+<div class="fixed-column">
+    <div class="column-line"></div>
+    <div class="rs">
+            <a href="https://www.facebook.com/cabinetokai/">
+                <img src="{{asset("/images/facebook-white.svg")}}" alt="">
+            </a>
+            <a href="https://www.instagram.com/cabinet.okai/">
+                <img src="{{asset("/images/instagram-white.svg")}}" alt="">
+            </a>
+            <a href="#footer">
+                <img src="{{asset("images/arrow-down-white.svg")}}" alt="">
+            </a>
+    </div>
+</div>
     <section id="hero">
         <h1>ÉCLAIRER LES DÉCISIONS URBAINES DE DEMAIN 
         AVEC NOTRE EXPERTISE D’AUJOURD’HUI</h1>
-        <a class="btn-contact" href="#"></a>
+        <a class="btn-contact" href="#">PRENDRE RDV</a>
         <div class="bg-overlay"></div>
+        <div class="bg-overlay-gradient"></div>
     </section>
 
     <section id="about">
-        <h2>NOTRE CABINET AU SERVICE DE VOS PROJETS !</h2>
+        <h2>NOTRE CABINET AU <span class="line-break-md"></span> SERVICE DE VOS PROJETS !</h2>
         <div class="text-container">
             <p>
             L’urbanisme requiert une compréhension nuancée et une analyse approfondie
@@ -55,16 +70,16 @@
     </section>
 
     <section id="guide">
-        <h2>VOUS AVEZ BESOIN D’UNE EXPERTISE EN URBANISME ?</h2>
+        <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
         <a href="#" class="btn-contact">CONTACTEZ-NOUS</a>
-        <h2>DÉCOUVREZ NOS GUIDES SUR L’URBANISME</h2>
+        <h2 class="second-title">DÉCOUVREZ NOS GUIDES <span class="line-break-md"></span> SUR L’URBANISME</h2>
         <p>
-        Explorez notre collection de guides sur l’urbanisme, conçus pour éclairer
+        <gras>Explorez notre collection de guides sur l’urbanisme</gras>, conçus pour éclairer
          et informer. Du professionnel passionné à l’étudiant curieux, chacun y 
          trouvera des insights pertinents pour façonner le paysage urbain de demain.
         </p>
 
-        <div {{stimulus_controller("swiper")}} class="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
+        <div {{stimulus_controller("swiper")}} class="temp-hidden swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
             
             <div class="swiper-wrapper" id="swiper-wrapper-cf6646dfbec0e433" aria-live="polite">
                 
@@ -129,7 +144,10 @@
         </div>
     </section>
 
-    <section id="faq">
+</div>
+
+    <div class="expertise-container2">
+        <section id="faq">
         <h2>FAQ</h2>
         <p>Des questions sur l’urbanisme ? Notre FAQ détaille nos services pour vous.</p>
 
@@ -178,5 +196,5 @@
             
         </div>
     </section>
-</div>
+    </div>
 {% endblock %}

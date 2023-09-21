@@ -19,10 +19,10 @@
         <nav class="hidden">
             <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/menu-croix.svg")}}" alt="">
             <ul class="list-container">
-            <li><a class="nav-link" href="#">Qui sommes-nous</a></li>
-            <li><a class="nav-link" href="#">Expertise</a></li>
+            <li><a class="nav-link" href="{{path("app_about")}}">Qui sommes-nous</a></li>
+            <li><a class="nav-link" href="{{path("app_expertise")}}">Expertise</a></li>
             <li><a class="nav-link" href="#">Documents d'urbanisme</a></li>
-            <li><a class="nav-link" href="{{ path("app_guide_index")}}">Guides</a></li>
+            <li><a class="temp-hidden nav-link" href="{{ path("app_guide_index")}}">Guides</a></li>
             <li><a class="nav-link" href="#">Studio OKAÏ</a></li>
             <li class="btn-container"><button class="btn-contact-small" href="#">Contacter-nous</button></li>
             </ul>
@@ -38,12 +38,12 @@
         <img id="menu_icon" class="menu-icon" src="{{asset("images/menu-burger.svg")}}" alt="">
     </header>
 
-    <body {{ stimulus_controller('symfony/ux-swup/swup') }}>
+    <body {{ stimulus_controller('swup') }}>
     
     <div id="swup" class="transition-fade">
         {% block body %}{% endblock %}
     </div>
-    <footer>
+    <footer id="footer">
         <div class="logo-container">
             <img src="{{asset("images/logo-footer.svg")}}" alt="">
         </div>

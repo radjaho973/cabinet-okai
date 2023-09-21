@@ -1,0 +1,235 @@
+@use '../abstract/' as *;
+
+.expertise-container{
+    section#hero{
+        min-height: 100vh;
+        justify-content: end;
+        align-items: end;
+        @extend %flex-center-column;
+        background: url("../../../../public/images/4.1.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        &>h1{
+            @extend %fdb-b80;
+            text-align: end;
+            z-index: 1;
+            margin-right: 50px;
+        }
+        &>.btn-contact{
+            margin-top: 100px;
+            margin-bottom: 100px;
+            z-index: 1;
+            margin-right: 50px;
+        }
+        .bg-overlay-gradient{
+            position: absolute;
+                background: linear-gradient(180deg, rgba(255,255,255,0) 91%, rgba(17,17,17,1) 100%);
+                height: 100%;
+                width: 100%;
+                z-index: 2;
+            }
+            .bg-overlay{
+                position: absolute;
+                background: #00000085;
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+        }
+    }
+
+    section#about{
+        margin-top: 100px;
+        margin-bottom: 202px;
+        min-height: 100vh;
+        
+        &>h2{
+            line-height: 75px;
+            margin-left: 13vw;
+            margin-bottom: 136px;
+            @extend %fdb-bl70;
+        }
+        &>.text-container{
+            
+            width: 75vw;
+            background-color: $transparent;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            margin-inline: auto;
+            padding-inline: 8vw ;
+            padding-block: 100px ;
+            border-radius: 30px;
+
+            &>p{
+                text-align: center;
+                @extend %nunito-r25;
+            }
+        }
+    }
+
+    section#prestation{
+        min-height: 100vh;
+        margin-bottom: 150px;
+
+        &>h2{
+            margin-bottom: 88px;
+            margin-left: 8vw;
+            @extend %fdb-bl70;
+        }
+        &>p{
+            text-align: center;
+            width: 85vw;
+            margin: auto;
+            @extend %nunito-r25;
+            margin-bottom: 70px;
+        }
+        &>.card-container{
+            width: 70vw;
+            height: 400px;
+            @extend %flex-center;
+            margin-inline: auto;
+            gap: 2%;
+
+            .card{
+                padding-top: 100px;
+                justify-content: start;
+                @extend %flex-center-column;
+                background-color: $transparent;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                width: 30%;
+                height: 100%;
+                border-radius: 45px;
+                // gap: 5vw;
+
+                .card-title{
+                    margin-bottom: 100px;
+                    line-height: 24px;
+                    font-size: 20px;
+                    text-align: center;
+                    @extend %nunito-bl30;
+                    padding-inline: 5px;
+                    
+                }
+                .card-text{
+                    padding-inline: 1vw;
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-align: center;
+                    @extend %nunito-r25;
+                }
+            }
+        }
+    }
+    section#guide{
+        min-width: 100vh;
+
+        &>.first-title{
+            margin-inline: auto;
+            text-align: center;
+            @extend %fdb-bl70;
+            line-height: 75px;
+            margin-bottom: 110px;
+        }
+        &>.btn-contact{
+            margin-inline: auto;
+            margin-bottom: 140px;
+        }
+        &>.second-title{
+            @extend %fdb-bl70;
+            line-height: 75px;
+            margin-left: 13vw;
+            margin-bottom: 150px;
+        }
+        &>p{
+            @extend %nunito-r25;
+            width: 50vw;
+            float: right;
+            text-align: right;
+            margin-right: 50px;
+            margin-bottom: 100px;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+            margin-left: 10vw;
+        }
+    
+            .swiper-slide {
+                cursor: grab;
+            text-align: center;
+            font-size: 18px;
+            // background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            }
+         
+            .swiper-slide img {
+                display: block;
+                width: 70%;
+                object-fit: cover;
+                border-radius: 30px;
+            }
+            .swiper-slide h4{
+                font-weight: normal;
+                width: 70%;
+                margin-block: 33px 20px;
+                font-size: 21px;
+                line-height: initial;
+                font-family: "nunito-black";
+                color: white;
+            }
+            .swiper-slide p{
+                width: 70%;
+                margin-bottom: 8vh;
+                @extend %nunito-l20;
+            }
+    }
+    
+}
+.expertise-container2{
+    section#faq{
+        min-width: 100vh;
+        clear: both;
+
+        &>h2{
+            margin-inline: auto;
+            margin-bottom: 88px;
+            @extend %fdb-bl70;
+            text-align: center;
+        }
+        &>p{
+            @extend %nunito-bl30;
+            text-align: center;
+            margin-inline: auto;
+            margin-bottom: 100px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 30px;
+            margin-inline: 5vw;
+
+            &>.card{
+                @extend %flex-center-column;
+                background-color: gray;
+                height: 416px;
+                border-radius: 20px;
+                gap: 50px;
+                padding-inline: 15px;
+
+                &>h6{
+                    @extend %nunito-bl25;
+                }
+                &>p{
+                    @extend %nunito-r25;
+                    line-height: 30px;
+                }
+            }
+        }    
+    }
+}

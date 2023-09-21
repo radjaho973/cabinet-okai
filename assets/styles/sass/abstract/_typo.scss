@@ -36,12 +36,12 @@ gras{
 
 
 
-%nunito-r40{
-    font-family: "Nunito-regular";
-    font-size: 40px;
-    color: white;
-    line-height: 54px;
-}
+// %nunito-r40{
+//     font-family: "Nunito-regular";
+//     font-size: 40px;
+//     color: white;
+//     line-height: 54px;
+// }
 %nunito-bl50{
     font-family: "Nunito-black";
     font-size: 50px;
@@ -76,7 +76,7 @@ gras{
 }
 %nunito-r40{
     font-family: "Nunito-regular";
-    font-size: clamp(1rem, 0.6887rem + 1.5094vw, 2.5rem);
+    // font-size: clamp(1rem, 0.6887rem + 1.5094vw, 2.5rem);
     color: white;
     line-height: 60px;
     @media screen and (max-width:768px) {
@@ -156,9 +156,19 @@ gras{
 }
 %nunito-r25{
     font-family: "Nunito-regular";
-    font-size: 25px;
+    // font-size: clamp(1rem, 0.6887rem + 1.5094vw, 2.5rem);
     color: white;
-    line-height: 34px;
+    line-height: 60px;
+    @media screen and (max-width:768px) {
+        // 15 - 20
+        font-size: clamp(0.9375rem, 0.7143rem + 1.1161vw, 1.25rem);
+        line-height: 27px;
+    }
+    @media screen and (min-width:768px) {
+        // 20 - 25
+        font-size: clamp(1.25rem, 0.8929rem + 0.744vw, 1.5625rem);
+        line-height: 54px;
+    }
 }
 %nunito-r25--softblue{
     font-family: "Nunito-regular";

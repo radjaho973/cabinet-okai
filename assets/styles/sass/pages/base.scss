@@ -8,6 +8,7 @@ html{
 }
 body{
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -137,9 +138,10 @@ footer{
             &>p{
                 text-align: center;
                 @extend %nunito-r25--softblue;
-
+                
                 &>gras{
-                    color: $lightblue;
+                    font-family: "Nunito-black";
+                    @extend %nunito-r25--softblue;
                 }
             }
         }

@@ -12,7 +12,7 @@ class ExpertiseController extends AbstractController
     public function index(): Response
     {
         return $this->render('expertise/index.html.twig', [
-            'controller_name' => 'ExpertiseController',
+            
         ]);
     }
 }
