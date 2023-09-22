@@ -417,6 +417,28 @@
             background-color: transparent;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(12px);
+            @extend %flex-center;
+
+            #contact{
+                align-items: end;
+                gap: 50px;
+                @extend %flex-center-column;
+
+                &>div{
+                    display: flex;
+                    justify-content: end;
+                    gap: 50px;
+
+                    &>input{
+                        border: none;
+                        background-color: $lightblue;
+                        border-radius: 12px;
+                    }
+                    &>input:focus{
+                        
+                    }
+                }
+            }
         }
     }
 }
