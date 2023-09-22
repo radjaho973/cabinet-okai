@@ -44,7 +44,7 @@
         min-height: 100vh;
         
         &>h2{
-            line-height: 75px;
+            // line-height: 75px;
             margin-left: 13vw;
             margin-bottom: 136px;
             @extend %fdb-bl70;
@@ -112,7 +112,7 @@
                     
                 }
                 .card-text{
-                    padding-inline: 1vw;
+                    width: 80%;
                     font-size: 16px;
                     line-height: 26px;
                     text-align: center;
@@ -122,13 +122,13 @@
         }
     }
     section#guide{
-        min-width: 100vh;
+        min-height: 100vh;
 
         &>.first-title{
             margin-inline: auto;
             text-align: center;
             @extend %fdb-bl70;
-            line-height: 75px;
+            // line-height: 75px;
             margin-bottom: 110px;
         }
         &>.btn-contact{
@@ -187,11 +187,10 @@
                 @extend %nunito-l20;
             }
     }
-    
 }
 .expertise-container2{
     section#faq{
-        min-width: 100vh;
+        min-height: 100vh;
         clear: both;
 
         &>h2{
@@ -205,6 +204,7 @@
             text-align: center;
             margin-inline: auto;
             margin-bottom: 100px;
+            padding-inline: 5px;
         }
         .grid-container {
             display: grid;
@@ -212,24 +212,166 @@
             grid-template-rows: repeat(4, 1fr);
             grid-column-gap: 20px;
             grid-row-gap: 30px;
-            margin-inline: 5vw;
+            margin-inline: 3vw;
 
             &>.card{
                 @extend %flex-center-column;
-                background-color: gray;
+                background-color: $transparent;
                 height: 416px;
                 border-radius: 20px;
                 gap: 50px;
                 padding-inline: 15px;
 
                 &>h6{
-                    @extend %nunito-bl25;
+                    font-family: "Nunito-black";
+                    @extend %nunito-r25;
                 }
-                &>p{
+                &>.accordion-content>p{
                     @extend %nunito-r25;
                     line-height: 30px;
                 }
             }
+            &>.card:last-of-type{
+                grid-column-start: 2;
+            }
         }    
     }
+}
+
+@media screen and (max-width:1300px) {
+    .expertise-container2>section#faq>.grid-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:768px) {
+    .expertise-container{
+        section#hero{
+            &>h1{
+               font-family: "forma-djr-display-black";
+               font-size: clamp(1.5625rem, 0.8562rem + 3.4247vw, 2.5rem);
+               line-height: 30px;
+               margin-inline: auto;
+               text-align: center;
+               
+               &>.lightblue{
+                font-family: "forma-djr-display-black";
+                font-size: clamp(1.5625rem, 0.8562rem + 3.4247vw, 2.5rem);
+                color: $lightblue;
+               }
+            }
+            &>.btn-contact{
+                margin-inline: auto;
+            }
+        }
+        section#about{
+            margin-bottom: 0;
+            &>h2{
+                line-height: 37px;
+            }
+        }
+        section#prestation{
+            &>.card-container{
+                flex-direction: column;
+                height: auto;
+                gap: 20px;
+                width: 90vw;
+
+                &>.card{
+                    width: 100%;
+                    padding-top: 50px;
+
+                    &>.card-title{
+                        margin-inline: 15px;
+                        margin-bottom: 50px;
+                        color: $lightblue;
+
+                        &>.card-txt-weight{
+                            color: $lightblue;
+                        }
+                    }
+                    &>.card-text{
+                        padding-bottom: 30px;
+                        
+                        .card-txt-weight{
+                            font-family: "Nunito-black";
+                        }
+                    }
+                }
+            }
+        }
+        section#guide{
+            p{
+                width: 80vw;
+            }
+        }
+    }
+}
+@media screen and (max-width:1025px) {
+.expertise-container{
+    
+    section#prestation{
+        
+        &>.card-container{
+            width: 90vw;
+            min-height: 420px;
+
+            &>.card{
+               padding-top: 50px;
+               justify-content: center; 
+               
+               &>.card-title{
+                margin-bottom: 50px;
+                }
+                &>.card-text{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+.expertise-container2{
+
+    section#faq>.grid-container{
+        display: flex;
+        flex-direction: column;
+        margin-inline: 5vw;
+
+        .card{
+            height: auto;
+            border-radius: 20px;
+            display: block;
+
+            &>.card-title{
+                padding-block: 20px;
+                margin-inline: auto;
+            }
+            &>.accordion-content>.card-text{
+                padding-bottom: 35px;
+            }
+        }
+        /* Cacher le contenu de l'accordéon par défaut */
+        .accordion-content {
+            // display: none;
+            overflow: hidden; /* Masquer le débordement pendant l'animation */
+            max-height: 0;
+            transition: max-height 0.3s linear; /* Ajoutez une transition pour l'effet en douceur */
+        }
+
+        /* Style des titres de l'accordéon */
+        .accordion-toggle {
+            cursor: pointer;
+        }
+
+        /* Style des titres actifs */
+        .accordion-toggle.active {
+            // color: #007BFF; /* Changez cette couleur selon votre préférence */
+        }
+
+        .accordion-content.active {
+            display: block;
+            max-height: 200px; /* Changez cette couleur selon votre préférence */
+        }
+
+    }
+}
 }
