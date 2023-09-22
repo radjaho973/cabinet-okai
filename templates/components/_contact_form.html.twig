@@ -1,0 +1,37 @@
+{{form_start(form)}}
+<div id="contact">
+    {{form_row(form.lastname)}}
+    {{form_row(form.name)}}
+    {{form_row(form.email)}}
+    {{form_row(form.phone)}}
+    {{form_row(form.message)}}
+<div>
+    {{form_label(form.agreeTerm)}}
+
+    <div class="checkmark">
+        {{form_widget(form.agreeTerm)}}
+    </div>
+</div>
+
+    {{form_row(form.submit)}}
+</div>
+{{form_end(form)}}
+
+<script>
+ let checkbox = document.querySelector(".checkmark")
+
+ let hiddenCheckbox = checkbox.firstElementChild
+ checkbox.addEventListener("click",toggleCheck)
+
+ function toggleCheck() {
+     console.log(checkbox)
+    if (checkbox.classList.contains("checked")){
+        checkbox.classList.remove("checked")
+        hiddenCheckbox.checked = false
+    }else{
+        checkbox.classList.add("checked")
+        hiddenCheckbox.checked = true
+        
+    }
+ }
+</script>

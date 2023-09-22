@@ -359,7 +359,7 @@
         align-items: center;
         flex-direction: column;
         }
-     
+
         .swiper-slide img {
             display: block;
             width: 70%;
@@ -381,67 +381,8 @@
             @extend %nunito-l20;
         }
     }
-
-    section#contact{
-        @extend %flex-center;
-        background: url('../../../../public/images/4.1.webp');
-        background-size: 100%;
-        background-position: center;
-        height: 792px;
-        background-repeat: no-repeat;
-        
-        .contact-container{
-            display: flex;
-            gap: 18vw;
-            margin-inline: 140px;
-        }
-        .text-container{
-            align-items: start;
-            @extend %flex-center-column;
-            gap: 50px;
-
-            &>h2{
-                @extend %fdb-b80;
-            }
-            &>h3{
-                @extend %nunito-bl50;
-            }
-            &>p{
-                @extend %nunito-r35;
-            }
-
-        }
-        .form-container{
-            border-radius: 21px;
-            width: 100%;
-            background-color: transparent;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(12px);
-            @extend %flex-center;
-
-            #contact{
-                align-items: end;
-                gap: 50px;
-                @extend %flex-center-column;
-
-                &>div{
-                    display: flex;
-                    justify-content: end;
-                    gap: 50px;
-
-                    &>input{
-                        border: none;
-                        background-color: $lightblue;
-                        border-radius: 12px;
-                    }
-                    &>input:focus{
-                        
-                    }
-                }
-            }
-        }
-    }
 }
+
 @media screen and (max-width:768px) {
 
     .acceuil-container{

@@ -3,13 +3,14 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\SubmitButton;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class ContactType extends AbstractType
 {
@@ -26,10 +27,25 @@ class ContactType extends AbstractType
             ->add("phone",TelType::class,[
                 "label" => "Téléphone"
             ])
+            ->add("message",TextareaType::class,[
+                "label" => false,
+                "attr" => ["rows" => 3, "cols" => 60,"placeholder" => "Détailler votre demande"]
+            ])
             ->add("agreeTerm",CheckboxType::class,[
                 "label" => "En cochant cette case, vous acceptez de recevoir nos offres promotionnelles. Consultez notre politique de confidentialité",
             ])
-            ->add("submit",SubmitType::class)
+            ->add("submit",SubmitType::class,[
+                'label' => 'ENVOYER',
+            ])
         ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver) :void
+    {
+        $resolver->setDefaults([
+            'sanitize_html' => true,
+            // use the "sanitizer" option to use a custom sanitizer (see below)
+            //'sanitizer' => 'app.post_sanitizer',
+        ]);
     }
 }

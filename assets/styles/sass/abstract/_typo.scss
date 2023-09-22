@@ -138,9 +138,18 @@ gras{
 }
 %nunito-bl25{
     font-family: "Nunito-black";
-    font-size: 25px;
     color: white;
-    line-height: 34px;
+    @media screen and (max-width:768px) {
+        // 18 - 20
+        line-height: 45px;
+        font-size: clamp(1.125rem, 1.0357rem + 0.4464vw, 1.25rem);
+        
+    }
+    @media screen and (min-width:768px) {
+        // 20 - 25
+        line-height: 45px;
+        font-size: clamp(1.25rem, 0.8929rem + 0.744vw, 1.5625rem);
+    }
 }
 %nunito-bl25--softblue{
     font-family: "Nunito-black";
