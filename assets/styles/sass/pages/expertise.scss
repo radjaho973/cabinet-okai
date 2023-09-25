@@ -38,89 +38,7 @@
         }
     }
 
-    section#about{
-        margin-top: 100px;
-        margin-bottom: 202px;
-        min-height: 100vh;
-        
-        &>h2{
-            // line-height: 75px;
-            margin-left: 13vw;
-            margin-bottom: 136px;
-            @extend %fdb-bl70;
-        }
-        &>.text-container{
-            
-            width: 75vw;
-            background-color: $transparent;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            margin-inline: auto;
-            padding-inline: 8vw ;
-            padding-block: 100px ;
-            border-radius: 30px;
 
-            &>p{
-                text-align: center;
-                @extend %nunito-r25;
-            }
-        }
-    }
-
-    section#prestation{
-        min-height: 100vh;
-        margin-bottom: 150px;
-
-        &>h2{
-            margin-bottom: 88px;
-            margin-left: 8vw;
-            @extend %fdb-bl70;
-        }
-        &>p{
-            text-align: center;
-            width: 85vw;
-            margin: auto;
-            @extend %nunito-r25;
-            margin-bottom: 70px;
-        }
-        &>.card-container{
-            width: 70vw;
-            height: 400px;
-            @extend %flex-center;
-            margin-inline: auto;
-            gap: 2%;
-
-            .card{
-                padding-top: 100px;
-                justify-content: start;
-                @extend %flex-center-column;
-                background-color: $transparent;
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                width: 30%;
-                height: 100%;
-                border-radius: 45px;
-                // gap: 5vw;
-
-                .card-title{
-                    margin-bottom: 100px;
-                    line-height: 24px;
-                    font-size: 20px;
-                    text-align: center;
-                    @extend %nunito-bl30;
-                    padding-inline: 5px;
-                    
-                }
-                .card-text{
-                    width: 80%;
-                    font-size: 16px;
-                    line-height: 26px;
-                    text-align: center;
-                    @extend %nunito-r25;
-                }
-            }
-        }
-    }
     section#guide{
         min-height: 100vh;
 
@@ -188,9 +106,9 @@
             }
     }
 }
-.expertise-container2{
+// .expertise-container2{
 
-}
+// }
 
 
 @media screen and (max-width:768px) {
@@ -213,42 +131,7 @@
                 margin-inline: auto;
             }
         }
-        section#about{
-            margin-bottom: 0;
-            &>h2{
-                line-height: 37px;
-            }
-        }
-        section#prestation{
-            &>.card-container{
-                flex-direction: column;
-                height: auto;
-                gap: 20px;
-                width: 90vw;
 
-                &>.card{
-                    width: 100%;
-                    padding-top: 50px;
-
-                    &>.card-title{
-                        margin-inline: 15px;
-                        margin-bottom: 50px;
-                        color: $lightblue;
-
-                        &>.card-txt-weight{
-                            color: $lightblue;
-                        }
-                    }
-                    &>.card-text{
-                        padding-bottom: 30px;
-                        
-                        .card-txt-weight{
-                            font-family: "Nunito-black";
-                        }
-                    }
-                }
-            }
-        }
         section#guide{
             p{
                 width: 80vw;
@@ -261,28 +144,4 @@
             margin-bottom: 80px;
         }
     }
-}
-@media screen and (max-width:1025px) {
-.expertise-container{
-    
-    section#prestation{
-        
-        &>.card-container{
-            width: 90vw;
-            min-height: 420px;
-
-            &>.card{
-               padding-top: 50px;
-               justify-content: center; 
-               
-               &>.card-title{
-                margin-bottom: 50px;
-                }
-                &>.card-text{
-                    width: 90%;
-                }
-            }
-        }
-    }
-}
 }

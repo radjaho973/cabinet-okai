@@ -7,11 +7,11 @@
 <div class="fixed-column">
     <div class="column-line"></div>
     <div class="rs">
-            <a href="https://www.facebook.com/cabinetokai/">
-                <img src="{{asset("/images/facebook-white.svg")}}" alt="">
-            </a>
             <a href="https://www.instagram.com/cabinet.okai/">
                 <img src="{{asset("/images/instagram-white.svg")}}" alt="">
+            </a>
+            <a href="https://www.facebook.com/cabinetokai/">
+                <img src="{{asset("/images/facebook-white.svg")}}" alt="">
             </a>
             <a href="#footer">
                 <img src="{{asset("images/arrow-down-white.svg")}}" alt="">
@@ -72,12 +72,15 @@
                  <span class="card-txt-weight">Conseils</span> en aménagement et valorisation.
                 </p>
             </div>
+            <div class="contact-card">
+                <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
+                <a href="#" class="btn-contact">CONTACTEZ-NOUS</a>
+            </div>
         </div>
     </section>
 
     <section id="guide">
-        <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
-        <a href="#" class="btn-contact">CONTACTEZ-NOUS</a>
+        
         <h2 class="second-title">DÉCOUVREZ NOS GUIDES <span class="line-break-md"></span> SUR L’URBANISME</h2>
         <p>
         <gras>Explorez notre collection de guides sur l’urbanisme</gras>, conçus pour éclairer
@@ -153,7 +156,7 @@
 </div>
 
 <div class="expertise-container2">
-        <section id="faq">
+        <section id="faq" {{stimulus_controller("accordion")}}>
         <h2>FAQ</h2>
         <p>Des questions sur l’urbanisme ? Notre FAQ détaille nos services pour vous.</p>
 
@@ -227,26 +230,6 @@
 
 
 <script>
-    // Récupérez tous les éléments de classe "accordion-toggle"
-const accordionToggles = document.querySelectorAll(".accordion-toggle");
-
-// Parcourez tous les titres de l'accordéon et ajoutez un gestionnaire d'événements clic
-accordionToggles.forEach((toggle) => {
-    toggle.addEventListener("click", function () {
-        // Récupérez le contenu de l'accordéon associé
-        const content = this.nextElementSibling;
-
-        // Basculer la classe "active" sur le titre pour le style
-        this.classList.toggle("active");
-
-        // Vérifiez si le contenu est visible ou caché
-        if (content.style.display === "block") {
-            content.classList.toggle("active"); // Cacher le contenu
-        } else {
-            content.classList.toggle("active");  // Afficher le contenu
-        }
-    });
-});
 
 //====================================
 //===SCRIPT CHANGEMENT DE TITRE=======

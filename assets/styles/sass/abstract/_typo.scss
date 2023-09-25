@@ -12,6 +12,11 @@ src:url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/l?primer=
 font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
 }
 @font-face {
+    font-family:"forma-djr-display-extra-bold";
+    src:url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+    }
+@font-face {
     font-family: "Nunito-light";
     src: url(../../fonts/Nunito-Light.ttf);
 }
@@ -51,16 +56,9 @@ gras{
 %nunito-bl40{
     font-family: "Nunito-black";
     color: white;
-    @media screen and (max-width:768px) {
-        // 19 - 30
-        font-size: clamp(1.1875rem, 0.6964rem + 2.4554vw, 1.875rem);
-        line-height: 27px;
-    }
-    @media screen and (min-width:768px) {
-        
-        font-size: 20px
-        // line-height: 54px;
-    }
+    font-size: 40px;
+    line-height: 130%;
+    font-size: clamp(1.875rem, 1.6892rem + 0.9009vw, 2.5rem);
 }
 %nunito-bl35{
     font-family: "Nunito-black";
@@ -92,20 +90,11 @@ gras{
 }
 %nunito-r30{
     font-family: "Nunito-regular";
-    
     color: white;
-    @media screen and (max-width:768px) {
-        // 16 - 20 
-        line-height: 30px;
-        font-size: clamp(1rem, 0.8214rem + 0.8929vw, 1.25rem);
-        
-    }
-    @media screen and (min-width:768px) {
-        // 20 - 25
-        line-height: 50px;
-        font-size: clamp(1.25rem, 0.8929rem + 0.744vw, 1.5625rem);
-    }
+    line-height: 140%;
+    font-size: clamp(1.25rem, 1.0642rem + 0.9009vw, 1.875rem);
 }
+
 
 %nunito-l30{
     font-family: "Nunito-light";
@@ -236,19 +225,27 @@ gras{
         font-size: clamp(2.8125rem, 0.6696rem + 4.4643vw, 4.6875rem);
     }
 }
+%fdb-bl70{
+    font-family: "forma-djr-display-black";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(2.5rem, 1.9426rem + 2.7027vw, 4.375rem);
+}
 %fdb-bl60{
     font-family: "forma-djr-display-black";
     color: white;
     text-transform: uppercase;
-    @media screen and (max-width:768px) {
-        // 20 - 25
-        line-height: 49px;
-        font-size: clamp(1.25rem, 1.0268rem + 1.1161vw, 1.5625rem);
-    }
-    @media screen and (min-width:768px) {
-        line-height: 72px;
-        font-size: clamp(1.5625rem, 0.4911rem + 2.2321vw, 2.5rem);
-    }
+    line-height: 120%;
+    font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
+    // @media screen and (max-width:768px) {
+    //     // 20 - 25
+    //     line-height: 49px;
+    //     font-size: clamp(1.25rem, 1.0268rem + 1.1161vw, 1.5625rem);
+    // }
+    // @media screen and (min-width:768px) {
+    //     line-height: 72px;
+    //     font-size: clamp(1.5625rem, 0.4911rem + 2.2321vw, 2.5rem);
+    // }
 }
 %fdb-bl60--softblue{
     font-family: "forma-djr-display-black";
@@ -257,22 +254,12 @@ gras{
     line-height: 60px;
     text-transform: uppercase;
 }
-%fdb-bl70{
-    font-family: "forma-djr-display-black";
+%fdb-extrab60{
     color: white;
-
-    @media screen and (max-width:768px) {
-        // 21 - 25
-        font-size: clamp(1.125rem, 0.8125rem + 1.5625vw, 1.5625rem);
-        line-height: 37px;
-    }
-    @media screen and (min-width:768px) {
-        // 25 - 60
-        font-size: clamp(1.5625rem, -0.9375rem + 5.2083vw, 3.75rem);
-        line-height: 49px;
-    }
+    line-height: 120%;
+    font-family: "forma-djr-display-extra-bold";
+    font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
 }
-
 %fdb-bl40{
     font-family: "forma-djr-display-black";
     font-size: clamp(1.25rem, 0.8784rem + 1.8018vw, 2.5rem);

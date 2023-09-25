@@ -3,13 +3,30 @@
 {% block title %}Documents d'urbanisme{% endblock %}
 
 {% block body %}
-<div class="urbanisme">
+<div class="urbanisme-container">
+    <div class="fixed-column">
+        <div class="column-line"></div>
+        <div class="rs">
+                <a href="https://www.instagram.com/cabinet.okai/">
+                    <img src="{{asset("/images/instagram-white.svg")}}" alt="">
+                </a>
+                <a href="https://www.facebook.com/cabinetokai/">
+                    <img src="{{asset("/images/facebook-white.svg")}}" alt="">
+                </a>
+                <a href="#footer">
+                    <img src="{{asset("images/arrow-down-white.svg")}}" alt="">
+                </a>
+        </div>
+    </div>
+
     <section id="hero">
         <h1>L’URBANISME SUR MESURE<br>
          NOUS ÉLABORONS,<br>
          VOUS CONCRÉTISEZ !</h1>
-        <p>Expertise et précision : nous réalisons vos documents d’urbanisme.</p>
+        <p>Expertise et précision : nous réalisons vos <span class="line-break-md"></span> documents d’urbanisme.</p>
         <a href="" class="btn-contact">PRENDRE RDV</a>
+        <div class="bg-overlay"></div>
+        <div class="bg-overlay-gradient"></div>
     </section>
 
     <section id="about">
@@ -61,12 +78,15 @@
                     Orientation réglementaire.
                 </p>
             </div>
+            <div class="contact-card">
+                <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
+                <a href="#" class="btn-contact">CONTACTEZ-NOUS</a>
+            </div>
         </div>
     </section>
 
     <section id="guide">
-        <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
-        <a href="#" class="btn-contact">CONTACTEZ-NOUS</a>
+
         <h2 class="second-title">DÉCOUVREZ NOS GUIDES <span class="line-break-md"></span> SUR L’URBANISME</h2>
         <p>
         <gras>Explorez notre collection de guides sur l’urbanisme</gras>, conçus pour éclairer
@@ -140,7 +160,7 @@
     </section>
 
 <div class="urbanisme-container2">
-        <section id="faq">
+        <section id="faq" {{stimulus_controller("accordion")}}>
         <h2>FAQ</h2>
         <p>Des questions sur l’urbanisme ? Notre FAQ détaille nos services pour vous.</p>
 
