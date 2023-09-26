@@ -70,12 +70,11 @@ $transparent : #cac6c629;
   text-align: center;
   color: $midblue;
   font-family: "Nunito-black";
-  font-size: 18px;
+  font-size: clamp(0.75rem, 0.6757rem + 0.3604vw, 1rem);
 
   @media screen and (max-width:768px) {
     width: 178px;
     height: 45px;
-    font-size: 13px;
     border-radius: 30px;
 
   }

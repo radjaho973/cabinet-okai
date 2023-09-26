@@ -14,16 +14,16 @@
         &>h1{
             margin-block: 100px 120px;
             @extend %fdb-bl80;
-            margin-inline: 89px 52px;
+            margin-inline: 17% 10%;
             text-align: center;
         }
         &>.info{
             background-color: transparent;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             justify-content: start;
             @extend %flex-center-column;
-            margin-inline: 105px 50px;
+            margin-inline: 20% 9% ;
             border-radius: 25px;
             height: 653px;
 
@@ -61,6 +61,7 @@
     }
 
     .right-container{
+        padding-bottom: 107px;
         width: 64%;
         // @extend %flex-center-column;
 
@@ -204,7 +205,7 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:940px) {
 .contact-container{
     
     flex-direction: column;

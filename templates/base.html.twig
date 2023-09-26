@@ -24,7 +24,7 @@
             <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
             <li class="temp-hidden"><a class="nav-link" href="">Guides</a></li>
             <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
-            <li class="btn-container"><button class="btn-contact-small" href="#">Contacter-nous</button></li>
+            <li class="btn-container"><a class="btn-contact-small" href="{{path('app_contact')}}">Contacter-nous</a></li>
             </ul>
             <div class="rs">
                     <a href="https://www.facebook.com/cabinetokai/">
@@ -34,6 +34,7 @@
                         <img src="{{asset("/images/instagram-white.svg")}}" alt="">
                     </a>
             </div>
+            <div class="bg-overlay"></div>
         </nav>
         <img id="menu_icon" class="menu-icon" src="{{asset("images/menu-burger.svg")}}" alt="">
     </header>
@@ -61,7 +62,7 @@
                     <li><a class="nav-link" href="{{path("app_about")}}">Qui sommes-nous</a></li>
                     <li><a class="nav-link" href="{{path("app_expertise")}}">Expertise</a></li>
                     <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
-                    <li><a class="temp-hidden nav-link" href="">Guides</a></li>
+                    <li class="temp-hidden"><a class=" nav-link" href="">Guides</a></li>
                     <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
             </ul>
 
@@ -94,8 +95,50 @@
     let list = document.getElementsByTagName("li")
     let nav = document.querySelector("nav")
    
-   window.addEventListener("load",(showMobileMenu))
-   window.addEventListener("resize",(showMobileMenu))
+   window.addEventListener("load",(Dispatcher))
+   window.addEventListener("resize",(Dispatcher))
+
+    function Dispatcher() {
+        showMobileMenu()
+        ChangeTitles()
+
+    }
+
+    //====================================
+    //===SCRIPT CHANGEMENT DE TITRE=======
+    //====================================
+    
+    let titles = document.querySelectorAll("#hero-title")
+
+    function ChangeTitles() {
+        titles.forEach(title => {
+            console.log(title)
+
+            if (window.innerWidth <= 768) {
+                // console.log("small")
+            title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
+            }else{
+            // console.log("big")
+            title.innerText ="ÉCLAIRER LES DÉCISIONS URBAINES DE DEMAIN AVEC NOTRE EXPERTISE D\'AUJOURD\'HUI"
+            }
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     function showMobileMenu() {
        

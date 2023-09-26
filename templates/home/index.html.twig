@@ -5,37 +5,44 @@
 {% block body %}
 <div class="acceuil-container">
     <section id="acceuil">
-        <h1 class="titre">EXPERTISE<span class="line-break"></span> <span class="lightblue titre">EN URBANISME</span><br>
-        AU SERVICE <span class="line-break"></span> <span class="lightblue titre">DE VOS PROJETS</span></h1>
+        <h1 class="titre">EXPERTISE 
+        <br> 
+        <span class="lightblue titre">EN URBANISME</span> 
+        <br>
+        <span class="titre">AU SERVICE</span> 
+        <br> 
+        <span class="lightblue titre">DE VOS PROJETS</span></h1>
 
         <p>Ensemble, façonnons des espaces urbains<br>
          qui résonnent avec l’âme de la Guadeloupe</p>
 
         <div class="btn-container">
-            <a class="btn-contact" href="#">PRENDRE RDV</a>
+            <a class="btn-contact" href="{{path("app_contact")}}">PRENDRE RDV</a>
             <a class="btn-info" href="#">EN SAVOIR +</a>
         </div>
     </section>
     
-    <section id="activity">
+    <section id="activity" {{stimulus_controller("titleAnim")}}>
         <h2>DOMAINE D’ACTIVITÉ</h2>
 
+        <p>Transformez la vision de votre projet en réalité concrète.</p>
+
         <div class="container">
-            <p>Transformez<br>
-             votre vision urbaine<br>
-            en réalités concrètes</p>
+            <p>Cliquez sur le service qui répond à votre besoin !</p>
 
             <div class="title-container">
-                <p>Étude & Expertise en urbanisme</p>
+                <a class="anim-title" href="{{path("app_expertise")}}">
+                    <p>Étude & Expertise en urbanisme</p>
+                </a>
             </div>
             <div class="title-container">
-                <p>Conception de document d’urbanisme</p>
+                <a class="anim-title" href="{{path("app_urbanisme")}}">
+                    <p>Conception de document d’urbanisme</p>
+                </a>
             </div>
 
         </div>
-      
-            <a class="btn-info"href="#">EN SAVOIR +<//a>
-       
+
     </section>
 
     <section id="advantages">
@@ -64,7 +71,7 @@
             </div>
         </div>
         
-        <a class="btn-contact" href="#">NOUS CONTACTER</a>
+        <a class="btn-contact" href="{{path("app_contact")}}">NOUS CONTACTER</a>
         
     </section>
 
@@ -80,7 +87,7 @@
                     <p class="sel-card-text">
                         Nous croyons que chaque particulier mérite une expertise en urbanisme de qualité. De la conception d’un espace de vie à la navigation dans les réglementations locales de la Guadeloupe, notre service vous accompagne dans la réalisation de vos rêves urbains, alliant harmonie et durabilité.
                     </p>
-                    <a class="btn-contact">NOUS CONTACTER</a>
+                    <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
                 </div>
                 <div class="sel-card sel-card-hidden" id="2">
                     <h3 class="sel-card-title">
@@ -89,7 +96,7 @@
                     <p class="sel-card-text">
                         Les autorisations préalables de travaux valident la conformité des aménagements mineurs aux règles d’urbanisme locales. Elles sont un passage clé pour garantir une réalisation sans encombre et harmonieuse de votre projet.
                     </p>
-                    <a class="btn-contact">NOUS CONTACTER</a>
+                    <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
                 </div>
                 <div class="sel-card sel-card-hidden" id="3">
                     <h3 class="sel-card-title">
@@ -98,7 +105,7 @@
                     <p class="sel-card-text">
                         Les autorisations préalables de travaux valident la conformité des aménagements mineurs aux règles d’urbanisme locales. Elles sont un passage clé pour garantir une réalisation sans encombre et harmonieuse de votre projet.
                     </p>
-                    <a class="btn-contact">NOUS CONTACTER</a>
+                    <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
                 </div>
                 <div class="sel-card sel-card-hidden" id="4">
                     <h3 class="sel-card-title">
@@ -107,7 +114,7 @@
                     <p class="sel-card-text">
                         Les autorisations préalables de travaux valident la conformité des aménagements mineurs aux règles d’urbanisme locales. Elles sont un passage clé pour garantir une réalisation sans encombre et harmonieuse de votre projet.
                     </p>
-                    <a class="btn-contact">NOUS CONTACTER</a>
+                    <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
                 </div>
                 <div class="sel-card sel-card-hidden" id="5">
                     <h3 class="sel-card-title">
@@ -116,7 +123,7 @@
                     <p class="sel-card-text">
                         Avant chaque grand projet se cache une étude approfondie. Nous sondons les terrains techniques et environnementaux pour que votre vision urbanistique se concrétise sereinement.
                     </p>
-                    <a class="btn-contact">NOUS CONTACTER</a>
+                    <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
                 </div>
                 <div class="sel-card sel-card-hidden" id="6">
                     <h3 class="sel-card-title">
@@ -125,7 +132,7 @@
                     <p class="sel-card-text">
                         Avant chaque grand projet se cache une étude approfondie. Nous sondons les terrains techniques et environnementaux pour que votre vision urbanistique se concrétise sereinement.
                     </p>
-                    <a class="btn-contact">NOUS CONTACTER</a>
+                    <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
                 </div>
             </div>
             <div class="selector">
@@ -185,7 +192,7 @@
             </div>
         </div>
 
-        <a class="btn-contact">NOUS CONTACTER</a>
+        <a href="{{path("app_contact")}}" class="btn-contact">NOUS CONTACTER</a>
     </section>
 
     <section id="partners">

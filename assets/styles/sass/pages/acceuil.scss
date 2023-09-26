@@ -5,76 +5,93 @@
     section#acceuil{
         background-color: $black;
         min-height: 100vh;
-        display: flex;
-        justify-content: center;
         align-items: start;
-        flex-direction: column;
+        @extend %flex-center-down;
         gap: 50px;
-        padding-top: 36vh;
+
         padding-left: 12vw;
-        padding-bottom: 14vh;
 
         .titre{
-            @extend %fdb-bl80;
+            @extend %fdb-bl70;
+            padding-bottom: 25px
         }
         &>p{
-            @extend %nunito-r40;
+            @extend %nunito-r30;
         }
         &>.btn-container{
             display: flex;
             gap: 77px;
+            margin-bottom: 51px;
         }
     }
 
 
     section#activity{
-        background: url('../../../../public/images/double-ligne-bg.png');
+        // background: url('../../../../public/images/double-ligne-bg.png');
         background-size: 101%;
-        background-position: center;
+        background-position-y: 100%;
         background-repeat: no-repeat;
-        min-height: 100vh;
-        padding-left: 11vw;
-        padding-right: 5vw;
-        margin-bottom: 232px;
-        margin-top:285px ;
+        // min-height: 100vh;
+        margin-bottom: 191px;
         
         &>h2{
             @extend %fdb-bl60;
-            
-            padding-bottom: 229px;
+            margin-top: 164px;
+            padding-bottom: 92px;
+            margin-left: 7vw
+        }
+        &>p{
+            @extend %nunito-r25;
+            padding-bottom: 249px;
+            margin-left: 7vw
         }
         &>.container{
             display: flex;
-            gap: 5vw;
+            gap: 10%;
             align-items: center;
+            margin-inline: 10vw 7vw ;
 
             &>p{
-                // transform: rotateY(30deg);
-                // transform: rotate3d(0.3,1,0,25deg);
-                transform: rotate3d(0, 80, 0, 45deg);
-                line-height: 37px;
-                @extend %nunito-r40;
+                width: 24%;
+                @extend %nunito-b25;
+                flex-shrink: 0;
             }
-
+            
             &>.title-container{
-                background-color: rgba(255, 255, 255, 0.13);
+                flex-shrink: 0;
+                background-color:$transparent;
                 backdrop-filter: blur(12px);
                 -webkit-backdrop-filter: blur(12px);
-                // box-shadow: 0 0px 15px 1.5px #31313175;
                 border-radius: 50px;
-                width: 25vw;
-                // height: 15vh;
+                width: 30%;
                 height: 170px;
                 position: relative;
                 padding-inline: 10px;
+                transition: all 0.2s linear;
+                transition: all 0.2s linear;
+
+                &-active{
+                    background-color: $lightblue;
+                }
                 
-                &>p{
-                    // font-size: 48px;
-                    @extend %fdb-bl70;
+                &>a{
+
+                    width: 110%;
+                    height: 100%;
                     position: absolute;
                     top: -50%;
                     left: -35px;
+                    transition: all 0.5s linear;
+
+                    &>p{
+                        text-transform: none;
+                        @extend %fdb-bl50;
+                    }
                 }
+                &>a:hover{
+                    transform: translate(40px,40px);
+                }
+
 
             }
         }

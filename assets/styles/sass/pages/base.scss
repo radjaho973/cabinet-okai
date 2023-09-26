@@ -20,8 +20,8 @@ header{
     @extend %flex-center;
     height: 90px;
     background:$transparent;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(19px);
+    -webkit-backdrop-filter: blur(19px);
     
     .logo-container{
         display: block;
@@ -36,17 +36,20 @@ header{
         position: absolute;
         top: 0;
         transition: right 0.2s ease-in-out;
-        height: 99vh;
+        height: 100vh;
         width: 100vw;
-        background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(202,220,249,1) 100%); 
+        background: $lightblue;        
         padding-inline: 14vw ;
         padding-top: 133px;
+        z-index: 1001;
 
         &>ul.list-container{
             display: flex;
             flex-direction: column;
             gap: 35px;
             align-items: self-start;
+            position: relative;
+            z-index: 1003;
             
             &>li{
                 list-style: none; 
@@ -60,6 +63,7 @@ header{
             justify-content: center;
             width: 100%;
             margin-top: 8vh;
+            z-index: 1003;
 
             .btn-contact{
                 margin-top: 189px;
@@ -76,6 +80,7 @@ header{
             position: absolute;
             bottom: 10px;
             left: 10px;
+            z-index: 1003;
             
             &>a{
                 width: 37%;
@@ -87,24 +92,36 @@ header{
                 }
             }
         }
-    }
-    nav.hidden{
-        right: -130vw;
-    }
-    nav.show{
-        right: 0;
-    }
-    .menu-icon{
-        cursor: pointer;
-        width: 31.23px;
-        height: 17.54px;
-        
-        &-close{
+        &>.bg-overlay{
             position: absolute;
-            top: 37px;
-            right: 41px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(17,17,17,1) 82%);
+            z-index: 1002;
+            top: 0;
+            right: 0;
         }
     }
+
+        nav.hidden{
+            right: -130vw;
+        }
+        nav.show{
+            right: 0;
+        }
+        .menu-icon{
+            cursor: pointer;
+            width: 31.23px;
+            height: 17.54px;
+            
+            &-close{
+                position: absolute;
+                top: 37px;
+                right: 41px;
+                z-index: 1003;
+            }
+        }
+
 }
 
 footer{
@@ -122,7 +139,7 @@ footer{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 75px;
+        margin-bottom: 32px;
         
         &>img{
             width: 75%;
@@ -131,7 +148,7 @@ footer{
     }
     &>.container{
         @extend %flex-center-column;
-        gap: 36px;
+        gap: 43px;
         padding-inline: 30px;
 
         &>.text{
@@ -154,7 +171,8 @@ footer{
             list-style: none;
             
             .nav-link{
-                @extend %nunito-r25--softblue;
+                font-family: "Nunito-light";
+                @extend %nunito-r18--softblue;
             }
 
             
@@ -172,8 +190,8 @@ footer{
             }
 
             &>.rs{
-                width: 150px;
-                height: 60px;
+                width: 158px;
+                height: 65px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -214,7 +232,9 @@ footer{
         font-size: 11px;
     }
 }
-
+//!==============================================
+//!===========FIN Mobile========================
+//!=============================================
 
 /* Medium devices (landscape tablets, 1265px and up) */
 @media screen and (min-width: 1265px) {
@@ -258,7 +278,10 @@ footer{
                 &>.rs{
                     display: none;
                 }
-        }
+                &>.bg-overlay{
+                    display: none;
+                }
+            }
     }
     // bouton menu mobile
     header > #menu_icon{
@@ -270,13 +293,16 @@ footer{
 }
 
 // /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 789px) {
+@media only screen and (min-width: 768px) {
     footer{
         
-
+        &>.small-line{
+            margin-right: 0;
+        }
         &>.logo-container{
             width: 210px;
             height: 118px;
+            margin-bottom: 87px;
             
             &>img{
                 max-width: 309px;
@@ -293,8 +319,8 @@ footer{
             &>.contact{
 
                 &>.rs{
-                    width: 183px;
-                    height: 80px;
+                    width:138.29px;
+                    height: 60.45px;
                     display: flex;
                     justify-content: center;
                     align-items: center;

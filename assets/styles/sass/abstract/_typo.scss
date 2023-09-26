@@ -115,6 +115,13 @@ gras{
     line-height: 34px;
 }
 
+%nunito-b25{
+    font-family: "Nunito-semibold";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(0.9375rem, 0.7589rem + 0.8929vw, 1.5625rem);
+
+}
 %nunito-l25{
     font-family: "Nunito-light";
     color: white;
@@ -151,7 +158,7 @@ gras{
     font-family: "Nunito-regular";
     font-size: clamp(0.9375rem, 0.8125rem + 0.625vw, 1.5625rem);
     color: #CADCF9;
-    line-height: 34px;
+    line-height: 200%;
 }
 %nunito-r20{
     font-family: "Nunito-regular";
@@ -176,6 +183,12 @@ gras{
     font-size: 20px;
     color: #CADCF9;
     line-height: 27px;
+}
+%nunito-r18--softblue{
+    font-family: "Nunito-regular";
+    font-size: clamp(1rem, 0.9628rem + 0.1802vw, 1.125rem);
+    color: #CADCF9;
+    line-height: 120%;
 }
 
 %fdb-b80{
@@ -232,6 +245,13 @@ gras{
     color: white;
     line-height: 120%;
     font-family: "forma-djr-display-extra-bold";
+    font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
+}
+%fdb-bl50{
+    font-family: "forma-djr-display-black";
+    color: white;
+    text-transform: uppercase;
+    line-height: 60px;
     font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
 }
 %fdb-bl40{

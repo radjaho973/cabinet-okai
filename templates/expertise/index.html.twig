@@ -21,7 +21,7 @@
     <section id="hero">
         <h1 id="hero-title">ÉCLAIRER LES DÉCISIONS URBAINES DE DEMAIN 
         AVEC NOTRE EXPERTISE D’AUJOURD’HUI</h1>
-        <a class="btn-contact" href="#">PRENDRE RDV</a>
+        <a class="btn-contact" href="{{path("app_contact")}}">PRENDRE RDV</a>
         <div class="bg-overlay"></div>
         <div class="bg-overlay-gradient"></div>
     </section>
@@ -74,7 +74,7 @@
             </div>
             <div class="contact-card">
                 <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
-                <a href="#" class="btn-contact">CONTACTEZ-NOUS</a>
+                <a href="{{path('app_contact')}}" class="btn-contact">CONTACTEZ-NOUS</a>
             </div>
         </div>
     </section>
@@ -229,26 +229,5 @@
 </div>
 
 
-<script>
 
-//====================================
-//===SCRIPT CHANGEMENT DE TITRE=======
-//====================================
-
-let title = document.querySelector("#hero-title")
-
-window.addEventListener("resize",ChangeTitle)
-window.addEventListener("load",ChangeTitle)
-
-function ChangeTitle() {
-    if (window.innerWidth <= 768) {
-        // console.log("small")
-        title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
-    }else{
-        // console.log("big")
-        title.innerText ="ÉCLAIRER LES DÉCISIONS URBAINES DE DEMAIN AVEC NOTRE EXPERTISE D\'AUJOURD\'HUI"
-    }
-}
-
-</script>
 {% endblock %}
