@@ -24,7 +24,7 @@ section#faq{
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 20px;
         grid-row-gap: 30px;
-        margin-inline: 3vw;
+        margin-inline: 5.6vw;
 
         &>.card{
             @extend %flex-center-column;
@@ -32,15 +32,13 @@ section#faq{
             height: 416px;
             border-radius: 20px;
             gap: 50px;
-            padding-inline: 15px;
+            padding-inline: 25px;
 
             &>h6{
-                font-family: "Nunito-black";
-                @extend %nunito-r25;
+                @extend %nunito-bl20;
             }
             &>.accordion-content>p{
-                @extend %nunito-r25;
-                line-height: 30px;
+                @extend %nunito-r20;
             }
         }
         &>.card:last-of-type{

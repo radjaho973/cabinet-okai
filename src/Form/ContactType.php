@@ -30,12 +30,17 @@ class ContactType extends AbstractType
             ->add("message",TextareaType::class,[
                 "label" => false,
                 "attr" => ["rows" => 3, "cols" => 60,"placeholder" => "Détailler votre demande"]
-            ])
-            ->add("agreeTerm",CheckboxType::class,[
-                "label" => "En cochant cette case, vous acceptez de recevoir nos offres promotionnelles. Consultez notre politique de confidentialité",
-            ])
-            ->add("submit",SubmitType::class,[
-                'label' => 'ENVOYER',
+                ])
+                ->add("agreeTerm",CheckboxType::class,[
+                    "label" => "En cochant cette case, vous acceptez de recevoir
+                    nos offres promotionnelles.
+                    <a href=\"#\" >Consultez notre politique de confidentialité</a>",
+                    "label_html" => true,
+                    ])
+                    ->add("submit",SubmitType::class,[
+                        'label' => 'Envoyer',
+                        "attr" => ["class" => "btn-contact"]
+                
             ])
         ;
     }

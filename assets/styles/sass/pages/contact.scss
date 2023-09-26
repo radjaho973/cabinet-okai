@@ -1,0 +1,314 @@
+@use '../abstract/' as *;
+
+.contact-container{
+
+    min-height: 100vh;
+    display: flex;
+
+    .info-container{
+        width: 36%;
+        background: url("../../../../public/images/4.1.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &>h1{
+            margin-block: 100px 120px;
+            @extend %fdb-bl80;
+            margin-inline: 89px 52px;
+            text-align: center;
+        }
+        &>.info{
+            background-color: transparent;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            justify-content: start;
+            @extend %flex-center-column;
+            margin-inline: 105px 50px;
+            border-radius: 25px;
+            height: 653px;
+
+            &>.text-display-sm{
+                display: none;
+                
+                &>p{
+                    @extend %nunito-r25;
+                }
+            }
+
+            &>h2{
+                @extend %fdb-b30;
+                margin-block: 56px 108px;
+            }
+            &>.text{
+                @extend %flex-center-column;
+                gap: 23px;
+
+                &>p, a{
+                    width: 90%;
+                    text-align: start;
+                    @extend %nunito-r25;
+                    
+                    &>a.mail{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+    }
+    .txt-blue-weight{
+        @extend %nunito-bl25--softblue;
+    }
+
+    .right-container{
+        width: 64%;
+        // @extend %flex-center-column;
+
+        &>.text-container{
+            margin-block: 197px 56px;
+            margin-left: 64px;
+
+            &>p{
+                @extend %nunito-r25;
+
+                
+            }
+        }
+        .form-container{
+            margin-inline: 25% 16%;
+            border-radius: 21px;
+            width: 58%;
+            background-color: $lightblue;
+            @extend %flex-center;
+    
+            &>form{
+                @extend %flex-center;
+    
+                &>.form-text{
+                    display: none;
+                }
+    
+                #contact{
+                    padding-top: 39px;
+                    width: 80%;
+                    align-items: end;
+                    gap: 30px;
+                    @extend %flex-center-column;
+    
+                    &>div{
+                        display: flex;
+                        justify-content: end;
+                        gap: 30px;
+    
+                        &>label{
+                            color: #2D5299;
+                            @extend %nunito-l25;
+                        }
+                        
+                        &>input{
+                            color: black;
+                            border: none;
+                            width: 70%;
+                            background-color: white;
+                            border-radius: 12px;
+                            height: 35px;
+                            @extend %nunito-l25;
+                            padding-left: 5px;
+                        }
+                        &>textarea{
+                            border: none;
+                            width: 100%;
+                            height: 60px;
+                            resize: none;
+                            background-color: white;
+                            border-radius: 12px;
+                            padding-left: 5px;
+                            color: #2D5299;
+                            font-size: 17px;
+                        }
+                        &>textarea:focus{
+                            outline: 2px solid #2D5299;
+                        }
+                        &>input:focus{
+                            color: white;
+                            background-color: #2D5299;
+                            outline: none;
+                        }
+                    }
+                    //Accept conditions Checkbox
+                    &>div:nth-child(6){
+                        flex-direction: row-reverse;
+                        position: relative;
+                        align-items: center;
+    
+                        &>label{
+                            font-size: 17px;
+    
+                            &>a{
+                                color: #2D5299;
+                                text-decoration: underline;
+                            }
+                        }
+    
+                        &>.checkmark{
+                            flex-shrink: 0;
+                            width: 34px;
+                            height: 34px;
+                            border-radius: 10px;
+                            outline: 3px solid #2D5299;
+                            position: relative;
+    
+                            
+                            &>input[type="checkbox"]{
+                                display: none;
+                            }
+                        }
+                        .checked{
+                            background-color: white;
+                        }
+    
+                        .checked::before{
+                            content: "";
+                            position: absolute;
+                            border-color: #86B4FE;
+                            border-style: solid;
+                            border-width: 0 0.3em 0.25em 0;
+                            height: 1em;
+                            top: 5px;
+                            left: 11px;
+                            // margin-top: -1em;
+                            transform: rotate(45deg);
+                            width: 0.5em;
+                        }
+                        
+                    }
+                    &>div:nth-child(7){
+                        // margin-right: 50%;
+                        // transform: translateX(50%);
+    
+                        &>button{
+                            // border: 1px solid #707070;
+                            // background-color: white;
+                            // border-radius: 15px;
+                            // height: 73px;
+                            // width: 245px;
+                            // @extend %flex-center;
+                            // color: black;
+                            // @extend %nunito-r30;
+                            transform: translateY(25px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+.contact-container{
+    
+    flex-direction: column;
+
+    &>.info-container{
+        width: 100%;
+        background: none;
+
+        &>h1{
+            margin-inline: 0;
+            margin-block: 221px 51px;
+        }
+
+        &>.info{
+            background: none;
+            height: auto;
+            margin-inline: auto;
+
+            &>.text-display-sm{
+                display: block;
+                
+            }
+            &>h2{
+                margin-bottom: 52px;
+            }
+            &>.text{
+                width: 50%;
+            }
+        }
+    }
+
+.right-container{
+    margin-top: 36px;
+    width: 100%;
+
+    &>.text-container{
+        display: none;
+    }
+
+    &>.form-container{
+        width: 80%;
+        margin-inline: auto;
+        margin-bottom: 25px;
+
+
+        &>form{
+            display: flex;
+            flex-direction: column;
+            
+            &>.form-text{
+                display: block;
+                color: #2D5299;
+                font-size: 19px;
+                margin-bottom: 50px;
+                width: 70%;
+                text-align: center;
+                padding-top: 55px;
+            }
+
+            div#contact{
+                padding-top: 0;
+                div{
+                    width: 100%;
+                    gap: 10px;
+
+                    &>input{
+                        width: 70%;
+                    }
+
+                    &>button{
+                        width: 160px;
+                        height: 39px;
+                        cursor: pointer;
+                        border: none;
+                        background-color: white;
+                        border-radius: 20px;
+                        text-align: center;
+                        color: $midblue;
+                        font-family: "Nunito-black";
+                        font-size: 18px;
+                        transform: translateY(15px);
+                    }
+                }
+            }
+        }
+    }
+}
+}
+}
+@media screen and (max-width:385px) {
+    
+    .right-container>.form-container > form #contact{
+        width: 90%;
+        align-items: center;
+        
+        &> div{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+            &>button{
+                transform: none;
+            }
+        }
+    }
+}
