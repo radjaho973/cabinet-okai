@@ -46,28 +46,27 @@
     </section>
 
     <section id="advantages">
-        <h2>CONCEPTION & CRÉATION :<br> LES AVANTAGES D’UN EXPERT À VOS CÔTÉS</h2>
+        <h2>CONCEPTION & CRÉATION : LES AVANTAGES D’UN EXPERT À VOS CÔTÉS</h2>
 
         <p>Avec le Cabinet Okaï, vivez l’expertise guadeloupéenne, 
-        l’engagement et une vision <br>
-        audacieuse. <br>
+        l’engagement et une vision  audacieuse. <br>
          <a class="discover-link" href="#">Découvrez-nous.</a></p>
 
         <div class="card-container">
             <div class="card">
                 <h3 class="card-title">Expertise locale</h3>
-                <p class="card-text"><gras>Compréhension</gras> profonde du <gras>contexte guadeloupéen</gras>.
-                 <gras>Collaboration</gras> étroite avec les <gras>acteurs locaux.</gras></p>
+                <p class="card-text"><span class="txt-weight">Compréhension</span> profonde du <span class="txt-weight">contexte guadeloupéen</span>.
+                 <span class="txt-weight">Collaboration</span> étroite avec les <span class="txt-weight">acteurs locaux.</span></p>
             </div>
             <div class="card">
                 <h3 class="card-title">Vision Écologique</h3>
-                <p class="card-text">Engagement pour des <gras>solutions durables.</gras>
-                 Promotion de l’<gras>éco-construction.</gras></p>
+                <p class="card-text">Engagement pour des <span class="txt-weight">solutions durables.</span>
+                 Promotion de l’<span class="txt-weight">éco-construction.</span></p>
             </div>
             <div class="card">
                 <h3 class="card-title">Accompagnement Personnalisé</h3>
-                <p class="card-text"><gras>Écoute active</gras> de vos besoins et ambitions.
-                 <gras>Suivi régulier</gras> tout au long du processus.</p>
+                <p class="card-text"><span class="txt-weight">Écoute active</span> de vos besoins et ambitions.
+                 <span class="txt-weight">Suivi régulier</span> tout au long du processus.</p>
             </div>
         </div>
         
@@ -82,7 +81,7 @@
             <div class="selector-display">
                 <div class="sel-card " id="1">
                     <h3 class="sel-card-title">
-                        Urbanisme pour particuliers
+                        Permis de construire
                     </h3>
                     <p class="sel-card-text">
                         Nous croyons que chaque particulier mérite une expertise en urbanisme de qualité. De la conception d’un espace de vie à la navigation dans les réglementations locales de la Guadeloupe, notre service vous accompagne dans la réalisation de vos rêves urbains, alliant harmonie et durabilité.
@@ -136,7 +135,7 @@
                 </div>
             </div>
             <div class="selector">
-                    <a href="#" id="1">Urbanisme pour particuliers</a>
+                    <a href="#" id="1">Permis de construire</a>
                     <a href="#" id="2">Autorisations préalables de travaux</a>
                     <a href="#" id="3">Dossiers SMGEAG</a>
                     <a href="#" id="4">Suivi des demandes administratives</a>
@@ -144,13 +143,14 @@
                     <a href="#" id="6">Dessin architectural</a>
             </div>
         </div>
-            <a class="btn-info"href="#">EN SAVOIR +</a>
+
+        <a href="#" class="btn-info">EN SAVOIR +</a>
     </section>
 
     <section id="cto">
         <h2>FAIRE APPEL <span class="line-break"></span> À NOS SERVICES</h2>
 
-        <p>Vous souhaitez faire appel à notre expertise dans le cadre d’un de vos futurs projets urbain ou immobilier ?</p>
+        <p>Vous souhaitez faire appel à notre expertise dans le cadre d’un de vos futurs projets ?</p>
 
         <div class="card-container">
             <div class="card">
@@ -198,12 +198,13 @@
     <section id="partners">
         <h2>ILS NOUS FONT CONFIANCE</h2>
         <div class="image-container">
+            <img src="{{asset("/images/marie-ton-projet.png")}}" alt="">
             <img src="{{asset("/images/epf.png")}}" alt="">
-            <img src="{{asset("/images/epf.png")}}" alt="">
+            <img src="{{asset("/images/HydroDomLogo.png")}}" alt="">
         </div>
     </section>
 
-    <section id="realisations">
+    {# <section id="realisations">
         <h2>NOS RÉALISATIONS</h2>
         <div {{stimulus_controller("swiper")}} class="swiper mySwiper swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
             <div class="swiper-wrapper" id="swiper-wrapper-cf6646dfbec0e433" aria-live="polite">
@@ -265,7 +266,7 @@
             
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
         </div>
-    </section>
+    </section> #}
 {% include "./components/_contact.html.twig" %}
 </div>
 {% endblock %}

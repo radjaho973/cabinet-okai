@@ -191,6 +191,9 @@ gras{
     line-height: 120%;
 }
 
+
+
+
 %fdb-b80{
     font-family: "forma-djr-display-bold";
     color: white;
@@ -251,8 +254,8 @@ gras{
     font-family: "forma-djr-display-black";
     color: white;
     text-transform: uppercase;
-    line-height: 60px;
-    font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
+    line-height: 120%;
+    font-size: clamp(1.9375rem, 1.5982rem + 1.6964vw, 3.125rem);
 }
 %fdb-bl40{
     font-family: "forma-djr-display-black";
