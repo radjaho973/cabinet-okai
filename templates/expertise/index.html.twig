@@ -3,24 +3,18 @@
 {% block title %}Expertise{% endblock %}
 
 {% block body %}
+
+{% include "./components/_sticky_column.html.twig" %}
+
+
+
 <div class="expertise-container">
-<div class="fixed-column">
-    <div class="column-line"></div>
-    <div class="rs">
-            <a href="https://www.instagram.com/cabinet.okai/">
-                <img src="{{asset("/images/instagram-white.svg")}}" alt="">
-            </a>
-            <a href="https://www.facebook.com/cabinetokai/">
-                <img src="{{asset("/images/facebook-white.svg")}}" alt="">
-            </a>
-            <a href="#footer">
-                <img src="{{asset("images/arrow-down-white.svg")}}" alt="">
-            </a>
-    </div>
-</div>
     <section id="hero">
-        <h1 id="hero-title">ÉCLAIRER LES DÉCISIONS URBAINES DE DEMAIN 
-        AVEC NOTRE EXPERTISE D’AUJOURD’HUI</h1>
+        <h1 id="hero-title">
+        ÉCLAIRER LES DÉCISIONS <br>
+        DE DEMAIN <br>
+        AVEC NOTRE EXPERTISE <br>
+         D’AUJOURD’HUI</h1>
         <a class="btn-contact" href="{{path("app_contact")}}">PRENDRE RDV</a>
         <div class="bg-overlay"></div>
         <div class="bg-overlay-gradient"></div>
@@ -74,7 +68,7 @@
             </div>
             <div class="contact-card">
                 <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
-                <a href="{{path('app_contact')}}" class="btn-contact">CONTACTEZ-NOUS</a>
+                <a href="#hero" class="btn-contact">CONTACTEZ-NOUS</a>
             </div>
         </div>
     </section>

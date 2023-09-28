@@ -10,11 +10,11 @@
         padding-left: 11vw;
 
         .titre{
-            @extend %fdb-b80 ;
+            @extend %fdb-bl70 ;
         }
         margin-right: 20px;
         &>p{
-            @extend %nunito-r40;
+            @extend %nunito-r30;
         }
         &>.btn-contact{
             margin-bottom: 50px;
@@ -185,6 +185,7 @@
                 background: linear-gradient(180deg, rgba(255,255,255,0) 91%, rgba(17,17,17,1) 100%);
                 height: 100%;
                 width: 100%;
+                pointer-events: none;
             }
         }
     }

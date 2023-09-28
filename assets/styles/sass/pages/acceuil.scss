@@ -4,6 +4,7 @@
 
     section#acceuil{
         background-color: $black;
+        padding-top: 90px;
         min-height: 100vh;
         align-items: start;
         @extend %flex-center-down;
@@ -38,18 +39,19 @@
             @extend %fdb-bl60;
             margin-top: 164px;
             padding-bottom: 92px;
-            margin-left: 7vw
+            margin-left: 10vw
         }
         &>p{
             @extend %nunito-r25;
             padding-bottom: 249px;
-            margin-left: 7vw
+            margin-left: 10vw
         }
         &>.container{
             display: flex;
             gap: 10%;
             align-items: center;
             margin-inline: 10vw 7vw ;
+            max-width: 1346px;
 
             &>p{
                 width: 24%;
@@ -128,14 +130,16 @@
         }
         &>.card-container{
             @extend %flex-center;
-            margin-inline: 10vw;
+            margin-inline: auto;
             margin-bottom: 75px;
             gap: 47px;
+            max-width: 1346px;
 
             &>.card{
                 background-color:$transparent;
                 border-radius: 35px;
-                width:30%;
+                width: 26vw;
+                height: 362px;
                 gap: 21px;
                 @extend %flex-center-column;
                 height: 245px;
@@ -277,8 +281,9 @@
             max-width: 1319px;
             margin-inline: auto;
             margin-bottom: 102px;
-
+            
             &>.card{
+                transition: all .2s linear;
                 background-color: $transparent;
                 border-radius: 55px;
                 width: 26vw;
@@ -286,6 +291,7 @@
                 @extend %flex-center-column;
                 gap: 37px;
                 // padding-inline: 15px;
+                box-shadow: 0px 0px 10px 0px rgba(214, 208, 224, 0.51);
                 
                 .card-icon{
                     width: 100%;
@@ -299,6 +305,7 @@
                 }
                 
                 &>.card-title{
+                    width: 90%;
                     @extend %nunito-bl30;
                     text-align: center;
                     
@@ -315,6 +322,10 @@
                         }
                     }
                 }
+            }
+            &>.card:hover{
+                box-shadow: 0px 0px 10px 0px $lightblue;
+                // box-shadow: -43px 29px 65px -23px rgba(214,208,224,0.51);
             }
         }
         .btn-contact{
@@ -347,6 +358,10 @@
                 // width: 344px;
                 width: 20%;
                 // height: 183px;
+            }
+            &>.image-container-title{
+                display: none;
+                @extend %fdb-bl60;
             }
         }
     }
@@ -593,12 +608,40 @@
 
                 &>.card{
                     width: 80vw;
-                    height: 80vw;
-                    gap: 10vw;
+                    // height: 80vw;
+                    // gap: 10vw;
+                    padding: 35px;
+                    height: auto;
                 
                     &>.card-icon{
-                        
+                        width: 60%;
                     }
+                }
+            }
+        }
+
+        section#partners{
+
+            &>h2{
+                display: none;
+            }
+
+            .image-container{
+                border-radius: 30px;
+                margin-inline: auto;
+                width: 80%;
+                flex-direction: column;
+                height: auto;
+                gap: 60px;
+                padding-block: 50px;
+
+                &>.image-container-title{
+                    display: inline;
+                    text-align: center;
+                    
+                }
+                &>img{
+                    width: 37%;
                 }
             }
         }
@@ -615,6 +658,8 @@
             }
             &>.card-container{
                 flex-direction: column;
+                margin-inline: 10vw;
+
                 
                 &>.card{
                     width: 87vw;
@@ -667,6 +712,16 @@
             }
         }
 
+        section#cto{
+            &>.card-container{
+                gap: 35px;
+
+                &>.card{
+                    width: 28vw;
+                }
+            }
+        }
+
     }
 }
 @media screen and (max-width:420px) {
@@ -707,4 +762,10 @@
         }
     }
                 
+}
+
+@media screen and (min-width:1780px) {
+    .acceuil-container> section#activity > .container{
+        margin-inline: auto;
+    }
 }

@@ -41,7 +41,7 @@
 
     <body {{ stimulus_controller('swup') }}>
     
-    <div id="swup" class="transition-fade">
+    <div id="swup" class="transition-main">
         {% block body %}{% endblock %}
     </div>
     <footer id="footer">
@@ -103,43 +103,6 @@
         ChangeTitles()
 
     }
-
-    //====================================
-    //===SCRIPT CHANGEMENT DE TITRE=======
-    //====================================
-    
-    let titles = document.querySelectorAll("#hero-title")
-
-    function ChangeTitles() {
-        titles.forEach(title => {
-            console.log(title)
-
-            if (window.innerWidth <= 768) {
-                // console.log("small")
-            title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
-            }else{
-            // console.log("big")
-            title.innerText ="ÉCLAIRER LES DÉCISIONS URBAINES DE DEMAIN AVEC NOTRE EXPERTISE D\'AUJOURD\'HUI"
-            }
-        })
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function showMobileMenu() {
        
         if (window.innerWidth <= 1265) {
@@ -158,6 +121,57 @@
     function toggleNav() {
         nav.classList.toggle("show")
     }
+
+    //====================================
+    //===SCRIPT CHANGEMENT DE TITRE=======
+    //====================================
+    
+    let titles = document.querySelectorAll("#hero-title")
+
+    function ChangeTitles() {
+        titles.forEach(title => {
+            
+            let pathname =window.location.pathname
+
+            if (window.innerWidth <= 768) {
+
+                switch (pathname) {
+                    case "/expertise":
+                        title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
+                        break;
+                    case "/urbanisme":
+                        title.innerHTML ="L’URBANISME SUR MESURE<br>NOUS CRÉONS,<br>VOUS RÉALISEZ !"
+                        break;
+                
+                    default:
+                        break;
+                }
+            }else{
+
+                switch (pathname) {
+                    case "/expertise":
+                        title.innerHTML ="ÉCLAIRER LES DÉCISIONS <br>DE DEMAIN <br>AVEC NOTRE EXPERTISE <br>D’AUJOURD’HUI"
+                        break;
+                    case "/urbanisme":
+                        title.innerHTML ="L’URBANISME SUR MESURE<br>NOUS ÉLABORONS,<br>VOUS CONCRÉTISEZ !"
+                        break;
+                
+                    default:
+                        break;
+                }
+                
+            }
+            // if (window.innerWidth <= 768) {
+            //     title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
+            // }else{
+            //     title.innerHTML ="ÉCLAIRER LES DÉCISIONS <br>DE DEMAIN <br>AVEC NOTRE EXPERTISE <br>D’AUJOURD’HUI"
+            // }
+        })
+    }
+
+
+
+
 
 </script>
 

@@ -3,6 +3,8 @@
 {% block title %}Acceuil{% endblock %}
 
 {% block body %}
+{% include "./components/_sticky_column.html.twig" %}
+
 <div class="acceuil-container">
     <section id="acceuil">
         <h1 class="titre">EXPERTISE 
@@ -161,7 +163,7 @@
                     Contactez - nous
                 </h3>
                 <p class="card-text">
-                    Contactez notre cabinet par téléphone au <a href="tel:0690 97 32 17">0690 97 32 17</a> 
+                    Contactez notre cabinet par téléphone au <a href="tel:0690973217">0690 97 32 17</a> 
                     ou via <a class="link" href="#contact">notre formulaire de contact</a>
                     <br>
                 </p>
@@ -198,6 +200,7 @@
     <section id="partners">
         <h2>ILS NOUS FONT CONFIANCE</h2>
         <div class="image-container">
+        <h2 class="image-container-title">ILS NOUS FONT CONFIANCE</h2>
             <img src="{{asset("/images/marie-ton-projet.png")}}" alt="">
             <img src="{{asset("/images/epf.png")}}" alt="">
             <img src="{{asset("/images/HydroDomLogo.png")}}" alt="">

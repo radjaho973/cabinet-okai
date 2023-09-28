@@ -271,14 +271,16 @@ gras{
 %fdb-b30{
     font-family: "forma-djr-display-bold";
     // 25 - 30
-    font-size: clamp(1.5625rem, 1.4732rem + 0.4464vw, 1.875rem);    color: white;
+    font-size: clamp(1.5625rem, 1.4732rem + 0.4464vw, 1.875rem);
+    color: white;
     line-height: 120%;
     letter-spacing: 1.52px;
 }
 %fdb-b25{
     font-family: "forma-djr-display-bold";
-    font-size: clamp(1rem, 0.8393rem + 0.8036vw, 1.5625rem);
+    // font-size: clamp(1rem, 0.8393rem + 0.8036vw, 1.5625rem);
+    font-size: 25px;
     color: white;
-    line-height: 30px;
-    letter-spacing: 1.52px;
+    line-height: 120%;
+    letter-spacing: 1.52px; 
 }

@@ -9,16 +9,22 @@
         background: url("../../../../public/images/4.1.webp");
         background-position: center;
         background-repeat: no-repeat;
+        background-size: cover;
         
         &>h1{
-            @extend %fdb-b80;
+            @extend %fdb-bl70;
             text-align: end;
-            z-index: 1;
+            z-index: 3;
             margin-right: 50px;
+            
+            &>.lightblue{
+                z-index: 3;
+                @extend %fdb-bl70;
+            }
         }
         &>.btn-contact{
             margin-block: 100px;
-            z-index: 1;
+            z-index: 3;
             margin-right: 50px;
         }
         .bg-overlay-gradient{
@@ -27,6 +33,7 @@
                 height: 100%;
                 width: 100%;
                 z-index: 2;
+                pointer-events: none;
             }
             .bg-overlay{
                 position: absolute;
@@ -34,6 +41,7 @@
                 height: 100%;
                 width: 100%;
                 z-index: 0;
+                pointer-events: none;
         }
     }
 
@@ -105,24 +113,18 @@
             }
     }
 }
-// .expertise-container2{
 
-// }
 
 
 @media screen and (max-width:768px) {
     .expertise-container{
         section#hero{
             &>h1{
-               font-family: "forma-djr-display-black";
-               font-size: clamp(1.5625rem, 0.8562rem + 3.4247vw, 2.5rem);
-               line-height: 30px;
+               
                margin-inline: auto;
                text-align: center;
                
                &>.lightblue{
-                font-family: "forma-djr-display-black";
-                font-size: clamp(1.5625rem, 0.8562rem + 3.4247vw, 2.5rem);
                 color: $lightblue;
                }
             }

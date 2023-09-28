@@ -205,8 +205,21 @@
     }
 }
 
+@media screen and (max-width:1154px) {
+    .contact-page-container{
+        &>.info-container>.info{
+            margin-inline: auto;
+            width: 90%;
+        }
+        &>.right-container>.form-container{
+            margin-inline: auto;
+            width: 80%;
+        }
+    }
+}
+
 @media screen and (max-width:940px) {
-.contact-container{
+.contact-page-container{
     
     flex-direction: column;
 
