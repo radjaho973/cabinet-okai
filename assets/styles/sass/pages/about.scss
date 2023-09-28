@@ -120,10 +120,7 @@
         section#hero{
             
             .titre{
-                font-family: "forma-djr-display-black";
-                font-size: clamp(1.25rem, 0.8784rem + 1.8018vw, 2.5rem);
-                color: white;
-                line-height: 29px;
+                
             }
             .lightblue{
                 color: $lightblue;
@@ -133,6 +130,8 @@
 
         section#values{
             &>h2{
+                margin-inline: auto;
+                text-align: center;
                 margin-bottom: 46px;
             }
             &>.card-container{

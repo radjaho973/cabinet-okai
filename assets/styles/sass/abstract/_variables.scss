@@ -71,6 +71,8 @@ $transparent : #cac6c629;
   color: $midblue;
   font-family: "Nunito-black";
   font-size: clamp(0.75rem, 0.6757rem + 0.3604vw, 1rem);
+  transition: all 0.2s linear;
+
 
   @media screen and (max-width:768px) {
     width: 178px;
@@ -100,6 +102,7 @@ $transparent : #cac6c629;
     color: white;
     font-family: "Nunito-black";
     font-size: 18px;
+    transition: all 0.2s linear;
     
     @media screen and (max-width:768px) {
         width: 178px;
@@ -110,4 +113,12 @@ $transparent : #cac6c629;
 }
 .btn-info{
     @extend %btn-info;
+}
+.btn-contact:hover{
+    background-color: $midblue;
+    color: white;
+}
+.btn-info:hover{
+    background-color: rgba(255, 255, 255, 0.796);
+    color: rgb(41, 39, 39);
 }
