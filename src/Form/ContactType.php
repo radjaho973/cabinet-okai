@@ -29,6 +29,7 @@ class ContactType extends AbstractType
             ])
             ->add("message",TextareaType::class,[
                 "label" => false,
+                "required" => false,
                 "attr" => ["rows" => 3, "cols" => 60,"placeholder" => "Détailler votre demande"]
                 ])
                 ->add("agreeTerm",CheckboxType::class,[

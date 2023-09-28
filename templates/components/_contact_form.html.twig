@@ -11,7 +11,7 @@
 <div>
     {{form_label(form.agreeTerm)}}
 
-    <div class="checkmark">
+    <div class="checkmark" {{ stimulus_controller("checkbox")}}>
         {{form_widget(form.agreeTerm)}}
     </div>
 </div>
@@ -20,21 +20,3 @@
 </div>
 {{form_end(form)}}
 
-<script>
- let checkbox = document.querySelector(".checkmark")
-
- let hiddenCheckbox = checkbox.firstElementChild
- checkbox.addEventListener("click",toggleCheck)
-
-function toggleCheck() {
-     console.log(checkbox)
-    if (checkbox.classList.contains("checked")){
-        checkbox.classList.remove("checked")
-        hiddenCheckbox.checked = false
-    }else{
-        checkbox.classList.add("checked")
-        hiddenCheckbox.checked = true
-        
-    }
- }
-</script>
