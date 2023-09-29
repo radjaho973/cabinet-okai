@@ -546,10 +546,12 @@
                     width: 81vw;
                     min-height: 81vw;
                     padding: 8px;
+                    margin-bottom: 60px;
+                    padding-block: 15px;
                     
                     &>.sel-card{
                         transition: all 0.5s ease-in-out;
-                        gap: 1vw;
+                        gap: 4vw;
                         width: 90%;
                         // position:initial;
                         margin-inline: 0px;
@@ -582,7 +584,7 @@
                     // overflow-y: scroll;
 
                     &>a{
-                        text-align: center;
+                        text-align: start;
                     }
                 }
             }
@@ -593,6 +595,7 @@
         }
 
         section#cto{
+            margin-top: 0;
             &>h2{
                 margin-bottom: 53px;
             }
@@ -600,11 +603,11 @@
             &>p{
                 margin-bottom: 44px;
                 text-align: start;
-                line-height: 49px;
                 width: 80vw;
             }
             &>.card-container{
                 flex-direction: column;
+                margin-bottom: 70px;
 
                 &>.card{
                     width: 80vw !important;
@@ -621,6 +624,8 @@
         }
 
         section#partners{
+            margin-top: 70px;
+
 
             &>h2{
                 display: none;
@@ -641,7 +646,7 @@
                     
                 }
                 &>img{
-                    width: 37%;
+                    width: 46%;
                 }
             }
         }

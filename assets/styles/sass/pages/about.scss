@@ -172,6 +172,7 @@
                 height: 50%;
                 backdrop-filter: none;
                 padding: 0;
+                z-index: 1;
 
                 &>h2{
                     font-size: 40px;
@@ -185,6 +186,7 @@
                 height: 100%;
                 width: 100%;
                 pointer-events: none;
+                z-index: 0;
             }
         }
     }

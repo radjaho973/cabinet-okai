@@ -3,7 +3,7 @@
 section#contact{
     @extend %flex-center;
     background: url('../../../../public/images/4.1.webp');
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     min-height: 792px;
     background-repeat: no-repeat;
@@ -172,7 +172,11 @@ section#contact{
 @media screen and (max-width:768px) {
 section#contact{
 
-    background: none;
+    background: #111111;
+
+    &>.bg-overlay{
+        background: none;
+    }
 
     .contact-container{
         flex-direction: column;
