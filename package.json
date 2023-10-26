@@ -28,6 +28,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "acorn": "^8.10.0",
+        "paper": "^0.12.17",
         "swiper": "^10.2.0"
     }
 }
