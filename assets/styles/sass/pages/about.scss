@@ -73,12 +73,12 @@
     }
 
     section#studio-okai{
-        background: url("../../../../public/images/4.1.webp");
+        background: url("../../../../public/images/bg-maison.webp");
         height: 100vh;
         @extend %flex-center;
         background-repeat: no-repeat;
         background-position: center;
-        
+        background-size: cover;
         &>.img-container{
             width: 50%;
             height: 100%;
@@ -110,6 +110,12 @@
                 width: 200px;
                 height: 46px;
                 @extend %btn-contact;
+                transition: all 0.2s linear;
+
+                &:hover{
+                    background: white;
+                    color: black;
+                }
             }
         }
     }

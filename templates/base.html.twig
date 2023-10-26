@@ -16,15 +16,18 @@
         <a class="logo-container" href="{{ path("app_home")}}">
             <img class="logo" src="{{asset("images/logo.png")}}" alt="">
         </a>
-        <nav class="hidden">
-            <img id="menu_icon_close" class="menu-icon menu-icon-close" src="{{asset("images/menu-croix.svg")}}" alt="">
+        <nav class="">
+            <img id="menu_icon_close" 
+            class="menu-icon menu-icon-close" 
+            src="{{asset("images/menu-croix.svg")}}" alt="">
             <ul class="list-container">
-            <li><a class="nav-link" href="{{path("app_about")}}">Qui sommes-nous</a></li>
-            <li><a class="nav-link" href="{{path("app_expertise")}}">Expertise</a></li>
-            <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
-            <li class="temp-hidden"><a class="nav-link" href="">Guides</a></li>
-            <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
-            <li class="btn-container"><a class="btn-contact-small" href="{{path('app_contact')}}">Contacter-nous</a></li>
+                <li><a class="nav-link" href="{{path("app_about")}}">Qui sommes-nous</a></li>
+                <li><a class="nav-link" href="{{path("app_expertise")}}">Expertise</a></li>
+                <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
+                {# <li class="temp-hidden"><a class="nav-link" href="">Guides</a></li> #}
+                <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
+                
+                <li class="btn-container"><a class="btn-contact-small" href="{{path('app_contact')}}">Contacter-nous</a></li>
             </ul>
             <div class="rs">
                     <a href="https://www.facebook.com/cabinetokai/">
@@ -44,6 +47,7 @@
     <div id="swup" class="transition-main">
         {% block body %}{% endblock %}
     </div>
+
     <footer id="footer">
         <div class="logo-container">
             <img src="{{asset("images/logo-footer.svg")}}" alt="">
@@ -90,23 +94,21 @@
     </footer>
 </body>
 <script>
+    //====================================
+    //===SCRIPT MENU RESPONSIVE===========
+    //====================================
     let menuIcon = document.querySelector("#menu_icon")
     let menuIconClose = document.querySelector("#menu_icon_close")
     let list = document.getElementsByTagName("li")
     let nav = document.querySelector("nav")
    
-   window.addEventListener("load",(Dispatcher))
-   window.addEventListener("resize",(Dispatcher))
+   window.addEventListener("load",showMobileMenu)
+   window.addEventListener("resize",showMobileMenu)
 
-    function Dispatcher() {
-        showMobileMenu()
-        ChangeTitles()
-
-    }
     function showMobileMenu() {
        
         if (window.innerWidth <= 1265) {
-            
+            nav.classList.add("hidden")
             menuIcon.addEventListener("click",toggleNav)
             
             //fais disparaitre le menu après avoir cliqué sur le lien
@@ -116,6 +118,8 @@
 
             menuIconClose.addEventListener("click",toggleNav)
             
+        }else{
+            nav.classList.remove("hidden")
         }
     }
     function toggleNav() {
