@@ -37,7 +37,7 @@ gras{
     @extend %nunito-bl30;
 }
 
-//? =========FONTS PLACEHOLDERS========= //
+//? =========FONTS ========= //
 
 
 
@@ -190,6 +190,12 @@ gras{
     color: #CADCF9;
     line-height: 120%;
 }
+%nunito-r15{
+    font-family: "Nunito-regular";
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 120%;
+}
 
 
 
@@ -267,6 +273,12 @@ gras{
     @media screen and (min-width:768px) {
         line-height: 84px;
     }
+}
+%fdb-bl35{
+    font-family: "forma-djr-display-black";
+    // 25 - 30
+    font-size: clamp(1rem, 0.647rem + 1.7117vw, 2.1875rem);    color: white;
+    line-height: 120%;
 }
 %fdb-b30{
     font-family: "forma-djr-display-bold";

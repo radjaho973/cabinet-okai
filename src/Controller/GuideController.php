@@ -54,7 +54,6 @@ class GuideController extends AbstractController
             $slug = $slugger->slug($form->get("titre")->getData());
             $guide->setSlug($slug);
 
-            // dd($slug);
             $entityManager->persist($guide);
             $entityManager->flush();
 

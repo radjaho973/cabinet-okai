@@ -1,19 +1,16 @@
 <script type="module">
 
-console.log(paper)
-    
+// new paper()
 
-window.addEventListener("load",() =>{
-    
 paper.install(window)
+window.onload = function() {
     // Get a reference to the canvas object
     let canvas = document.getElementById('canvas');
     // Create an empty project and a view for the canvas:
     paper.setup(canvas);
     // Permet de classifier chaque project/canvas
     // paper individuellement
-    
-
+        console.log(paper.setup)
 // Fonction pour importer l'élément SVG
 function importCitySVG() {
     return new Promise((resolve, reject) => {
@@ -44,10 +41,13 @@ importCitySVG()
 
         // Faites d'autres opérations avec city si nécessaire
         
-        // Enregistre la hauteur de base de chaque point        
         city.children.forEach(itemChild =>{
             itemChild.segments.forEach(segment =>{
-                segment.point.baseHeight = segment.point.y
+                let point = segment.point
+                
+                // Enregistre la hauteur de base de chaque point        
+                point.baseHeight = point.y
+
             })
         })
 
@@ -98,17 +98,17 @@ importCitySVG()
             
                 //axe vertical de la souris
                 let mouseYPos = event.point.y
-                point.y += (mouseYPos - point.y) / 16
+                point.y += (mouseYPos - point.y) / 13
                 
                 //Le point est considéré comme proche de la souris
-                curveLocation.segment.point.isMouseCloseEnough = true
-                // console.log("souris proche");
+                point.isMouseCloseEnough = true
+                
                 setTimeout(() => {
-                    curveLocation.segment.point.isMouseCloseEnough = false
-                }, 800);
+                    point.isMouseCloseEnough = false
+                }, 100);
             }else{
-                curveLocation.segment.point.isMouseCloseEnough = false
-                // point.y = point.baseHeight
+                
+                point.isMouseCloseEnough = false
             }
         });
     }
@@ -127,20 +127,21 @@ importCitySVG()
                 let segment = itemChildren.segments[i];
                 // A cylic value between -1 and 1
                 // console.log(event.time)
-                let sinus = Math.sin(event.time * 3 + i);
-                if (segment.point.isMouseCloseEnough) {
-                }else{
+                let sinus = Math.sin(event.time * 1.2 + i);
+                let point = segment.point
+                if (!point.isMouseCloseEnough) {
+                    let relativeHeight = sinus * maxYdistance + point.baseHeight;
+                    
                     // Change the y position of the segment point
                     // la hauteur est défini par la valeur sinus qui oscile entre négatif et positif
                     //maxY = hauteur max à laquel les point peuvent bouger et leur position de base (baseHeight)
-                    segment.point.y = sinus * maxYdistance + segment.point.baseHeight;
+                   
+                    point.y += (relativeHeight - point.y) / 15    
                 }
             }
         })
     }
-
     // Draw the view now:
     paper.view.draw();
-
-})
+}
 </script>

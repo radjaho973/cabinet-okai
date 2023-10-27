@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{guide.titre}} {% endblock %}
+
+{% block body %}
+
+<div class="post-container">
+    <div class="summary">
+        <div class="bg-overlay"></div>
+        <div class="summary-text">
+            <h1>L’Art du Permis de Construire :<br>
+             Conseils et Méthodes Éprouvés</h1>
+
+            <div class="info">
+                <p>Allan Boucard - Expert</p>
+                <p>2 min</p>
+            </div>
+
+            <p class="description">
+                Débuter un projet de construction est un acte peu anodin, qui demande de la réflexion à chaque étape de votre projet. Nous avons fait ce guide pour vous permettre de comprendre facilement les différentes étapes liées à l’obtention de votre permis de construire. Nous pouvons vous accompagnez dans l’ensemble de vos démarches pour obtenir votre permis de construire avec un vrai accompagnement personnalisé.
+            </p>
+
+            <div class="list">
+                <li><a class="active" href="#">Qu’est-ce qu’un permis de construire ?</a></li>
+                <li><a href="#">Qu’est-ce qu’un permis de construire ?</a></li>
+                <li><a href="#">Qu’est-ce qu’un permis de construire ?</a></li>
+                <li><a href="#">Qu’est-ce qu’un permis de construire ?</a></li>
+                <li><a href="#">Qu’est-ce qu’un permis de construire ?</a></li>
+                <li><a href="#">Qu’est-ce qu’un permis de construire ?</a></li>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="post-content">
+        <h2 class="subpart-title">Qu'est ce qu'un permis de construire?</h2>
+        <div class="underline"></div>
+
+        <div class="subpart-content">
+            <p>
+            Le permis de construire est une autorisation de construire délivrée par l’administration tout comme la déclaration préalable de travaux. Il permet aux autorités de vérifier la conformité de votre projet vis à vis des règles d’urbanisme en vigueur dans la commune d’implantation. 
+            <br>
+            Pour obtenir votre permis de construire, vous devez constituer un dossier complet et le déposer à la mairie où se situe votre projet pour que votre dossier soit instruit et validé. 
+            <br>
+            C’est un dossier complexe à monter qui demande des connaissances en urbanisme, mais aussi en dessin architecturale pour répondre aux critères imposés par l’administration. Le dossier de permis de construire ne se compose pas uniquement d’un formulaire CERFA à remplir. 
+            <br>
+            L’administration doit également valider un ensemble d’élément pour apprécier la qualité architecturale de votre projet et son implantation dans le paysage environnant. Vous devez donc réaliser les pièces obligatoires PCMI ainsi qu’une étude thermique aux normes RT12, et le cas échéant une étude de sol pour les constructions situés dans une zone à risque (conformément au PPRN en vigueur). 
+            <br>
+            La réalisation des pièces PCMI est généralement réalisée par un professionnel, l’étude thermique et du sol doit être effectué par un bureau d’étude agréé par l’Etat.
+            </p>
+        </div>
+        <a href="#" class="btn-nextpost">
+            <p>Suivant</p>
+            <p>Le permis de construire est-il obligatoire ?</p>
+            <img src="{{asset("/images/arrow-down-white.svg")}}" alt="">
+        </a>
+    </div>
+</div>
+
+{% endblock %}

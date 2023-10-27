@@ -1,0 +1,93 @@
+@use '../abstract/' as *;
+
+.post-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: start;
+
+    .summary{
+        position: relative;
+        background: url("/public/build/images/bg-maison.223c9902.webp");
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-repeat: repeat;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+        z-index: 0;
+        
+        .bg-overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.274);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        &-text{
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+            backdrop-filter: blur(8px);
+            @extend %flex-center-column;
+            justify-content: space-evenly;
+            padding-top: 60px;
+            
+            h1{
+                @extend %fdb-bl35;
+                // margin-bottom: 50px
+            }
+            
+            .info{
+                text-align: center;
+
+                
+                &>p{
+                    @extend %nunito-r15;
+                }
+            }
+            .description{
+                text-align: center;
+                width: 80%;
+                @extend %nunito-r20;
+                // margin-bottom: 150px;
+            }
+            .list{
+                width: 80%;
+                
+                &>li{
+                    list-style: none;
+                    margin-bottom: 8px;
+                    &>a.active{
+                        font-family: "Nunito-semibold";
+                        font-weight: bold
+                    }
+                    &>a{
+                        @extend %nunito-r20;
+                    }
+
+                }
+            }
+        }
+    }
+
+    .post-content{
+        @extend %flex-center-column;
+        padding-top: 60px;
+        justify-content: space-evenly;
+
+        .subpart-title{
+            @extend %nunito-bl30;
+        }
+
+
+        .subpart-content{
+            height: 450px;
+            overflow-y: scroll;
+        }
+    }
+}
