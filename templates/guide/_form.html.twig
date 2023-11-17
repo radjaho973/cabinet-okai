@@ -1,0 +1,32 @@
+<div class="guide-form-container" >
+    <div class="guide-form" {{stimulus_controller('guideForm')}}>
+        {{ form_start(form) }}
+        <div class="guide-info">
+            {{ form_row(form.titre) }}
+            {{ form_row(form.auteur) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.readingTime) }}
+            <div class="publication">
+            {{ form_label(form.ispublished) }}
+            <div class="checkmark" {{stimulus_controller('checkbox')}}>
+            {{ form_widget(form.ispublished) }}
+            </div>
+            </div>
+            <div class="form-file">
+            <label class="custom-file-upload" for="guide_image">
+            Image de garde
+            <img src="{{asset('/build/bootstrap/icons/image.svg')}}">
+            </label>
+            {{ form_widget(form.image) }}
+            </div>
+        </div>
+        <div class="tinymce-container">
+            {{ form_widget(form.content) }}
+        </div>
+        <input type="hidden" id="guideId" value="{{guide.id}}">
+        <button class="btn-contact">{{ button_label|default('Enregistrer') }}</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+

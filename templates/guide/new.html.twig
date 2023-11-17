@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Guide{% endblock %}
+
+{% block body %}
+
+    {{ include('guide/_form.html.twig') }}
+    
+    
+    <a class="btn-info" href="{{ path('app_guide_index') }}">Retour</a>
+{% endblock %}

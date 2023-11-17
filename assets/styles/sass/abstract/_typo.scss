@@ -1,0 +1,311 @@
+@import url("https://p.typekit.net/p.css?s=1&k=hps1gxf&ht=tk&f=30349.30350.30355.47613.47614&a=25653109&app=typekit&e=css");
+
+@font-face {
+font-family:"forma-djr-display-bold";
+src:url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"forma-djr-display-black";
+src:url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
+}
+@font-face {
+    font-family:"forma-djr-display-extra-bold";
+    src:url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+    }
+@font-face {
+    font-family: "Nunito-light";
+    src: url(../../../../public/fonts/Nunito-Light.ttf);
+}
+@font-face {
+    font-family: "Nunito-black";
+    src: url(../../../../public/fonts/Nunito-Black.ttf);
+}
+@font-face {
+    font-family: "Nunito-regular";
+    src: url(../../../../public/fonts/Nunito-Regular.ttf);
+}
+@font-face {
+    font-family: "Nunito-semibold";
+    src: url(../../../../public/fonts/Nunito-SemiBold.ttf);
+}
+
+gras{
+    @extend %nunito-bl30;
+}
+
+//? =========FONTS ========= //
+
+
+
+// %nunito-r40{
+//     font-family: "Nunito-regular";
+//     font-size: 40px;
+//     color: white;
+//     line-height: 54px;
+// }
+%nunito-bl50{
+    font-family: "Nunito-black";
+    font-size: 50px;
+    color: white;
+    line-height: 47px;
+}
+%nunito-bl40{
+    font-family: "Nunito-black";
+    color: white;
+    font-size: 40px;
+    line-height: 130%;
+    font-size: clamp(1.875rem, 1.6892rem + 0.9009vw, 2.5rem);
+}
+%nunito-bl35{
+    font-family: "Nunito-black";
+    font-size: 35px;
+    color: white;
+    line-height: 50px;
+}
+%nunito-r35{
+    font-family: "Nunito-regular";
+    font-size: 35px;
+    color: white;
+    line-height: 50px;
+}
+%nunito-r40{
+    font-family: "Nunito-regular";
+    // font-size: clamp(1rem, 0.6887rem + 1.5094vw, 2.5rem);
+    color: white;
+    line-height: 60px;
+    @media screen and (max-width:768px) {
+        // 15 - 20
+        font-size: clamp(0.9375rem, 0.7143rem + 1.1161vw, 1.25rem);
+        line-height: 27px;
+    }
+    @media screen and (min-width:768px) {
+        // 20 - 40
+        font-size: clamp(1.25rem, -0.1786rem + 2.9762vw, 2.5rem);
+        line-height: 54px;
+    }
+}
+%nunito-r30{
+    font-family: "Nunito-regular";
+    color: white;
+    line-height: 140%;
+    font-size: clamp(1.25rem, 1.0642rem + 0.9009vw, 1.875rem);
+}
+
+%nunito-l30{
+    font-family: "Nunito-light";
+    font-size: 30px;
+    color: white;
+    line-height: 41px;
+}
+%nunito-bl30{
+    font-family: "Nunito-black";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(1.25rem, 1.0714rem + 0.8929vw, 1.875rem);
+}
+
+%nunito-bl25--blue{
+    font-family: "Nunito-black";
+    font-size: 25px;
+    color: #2B5094;
+    line-height: 34px;
+}
+
+%nunito-semib25{
+    font-family: "Nunito-semibold";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(0.9375rem, 0.7589rem + 0.8929vw, 1.5625rem);
+
+}
+// Reading time sur les carte
+%nunito-semib20{
+    font-family: "Nunito-semibold";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(0.5rem, 0.277rem + 1.0811vw, 1.25rem);
+}
+%nunito-l25{
+    font-family: "Nunito-light";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(0.9375rem, 0.7589rem + 0.8929vw, 1.5625rem);
+
+}
+%nunito-bl25--softblue{
+    font-family: "Nunito-black";
+    font-size: clamp(0.9375rem, 0.7589rem + 0.8929vw, 1.5625rem);    color:#CADCF9;
+    line-height: 120%;
+}
+%nunito-bl20--softblue{
+    font-family: "Nunito-black";
+    font-size: 20px;
+    color:#CADCF9;
+    line-height: 42px;
+}
+%nunito-r25{
+    font-family: "Nunito-regular";
+    // font-size: clamp(1rem, 0.6887rem + 1.5094vw, 2.5rem);
+    color: white;
+    line-height: 150%;
+    @media screen and (max-width:768px) {
+        // 15 - 20
+        font-size: clamp(0.9375rem, 0.7143rem + 1.1161vw, 1.25rem);
+    }
+    @media screen and (min-width:768px) {
+        // 20 - 25
+        font-size: clamp(1.25rem, 0.8929rem + 0.744vw, 1.5625rem);
+    }
+}
+%nunito-r25--softblue{
+    font-family: "Nunito-regular";
+    font-size: clamp(0.9375rem, 0.8125rem + 0.625vw, 1.5625rem);
+    color: #CADCF9;
+    line-height: 200%;
+}
+%nunito-r20{
+    font-family: "Nunito-regular";
+    font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+    color: white;
+    line-height: 130%;
+}
+%nunito-l20{
+    font-family: "Nunito-light";
+    font-size: 20px;
+    color: white;
+    line-height: 21px;
+}
+%nunito-bl20{
+    font-family: "Nunito-black";
+    font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+    color: white;
+    line-height: 130%;
+}
+%nunito-r20--softblue{
+    font-family: "Nunito-regular";
+    font-size: 20px;
+    color: #CADCF9;
+    line-height: 27px;
+}
+%nunito-r18--softblue{
+    font-family: "Nunito-regular";
+    font-size: clamp(1rem, 0.9628rem + 0.1802vw, 1.125rem);
+    color: #CADCF9;
+    line-height: 120%;
+}
+%nunito-r15{
+    font-family: "Nunito-regular";
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 120%;
+}
+
+
+
+
+%fdb-b80{
+    font-family: "forma-djr-display-bold";
+    color: white;
+    text-transform: uppercase;
+
+    @media screen and (max-width:768px) {
+        // 20 - 45
+        font-size: clamp(1.5625rem, 0.6696rem + 4.4643vw, 2.8125rem);
+        line-height: 48px;
+    }
+    @media screen and (min-width:768px) {
+        // 45 - 75
+        line-height: 96px;
+        font-size: clamp(2.8125rem, 0.6696rem + 4.4643vw, 4.6875rem);
+    }
+}
+%fdb-bl80{
+    font-family: "forma-djr-display-black";
+    color: white;
+    text-transform: uppercase;
+    line-height: 160%;
+    font-size: clamp(2.1875rem, 1.5625rem + 3.125vw, 4.375rem);
+}
+%fdb-extrab80{
+    font-family:"forma-djr-display-extra-bold";
+    color: white;
+    text-transform: uppercase;
+    line-height: 160%;
+    font-size: clamp(2.1875rem, 1.5625rem + 3.125vw, 4.375rem);
+}
+%fdb-extrab70{
+    font-family:"forma-djr-display-extra-bold";
+    color: white;
+    text-transform: uppercase;
+    line-height: 160%;
+    font-size: clamp(1.5625rem, 0.7264rem + 4.0541vw, 4.375rem);}
+%fdb-bl70{
+    font-family: "forma-djr-display-black";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(2.5rem, 1.9426rem + 2.7027vw, 4.375rem);
+}
+%fdb-bl60{
+    font-family: "forma-djr-display-black";
+    color: white;
+    text-transform: uppercase;
+    line-height: 120%;
+    font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
+}
+%fdb-bl60--softblue{
+    font-family: "forma-djr-display-black";
+    font-size: 60px;
+    color: #CADCF9;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+%fdb-extrab60{
+    color: white;
+    line-height: 120%;
+    font-family: "forma-djr-display-extra-bold";
+    font-size: clamp(1.5625rem, 0.9122rem + 3.1532vw, 3.75rem);
+}
+%fdb-bl50{
+    font-family: "forma-djr-display-black";
+    color: white;
+    text-transform: uppercase;
+    line-height: 120%;
+    font-size: clamp(1.9375rem, 1.5982rem + 1.6964vw, 3.125rem);
+}
+%fdb-bl40{
+    font-family: "forma-djr-display-black";
+    font-size: clamp(1.25rem, 0.8784rem + 1.8018vw, 2.5rem);
+    color: white;
+    @media screen and (max-width:768px) {
+        line-height: 29px;
+    }
+    @media screen and (min-width:768px) {
+        line-height: 84px;
+    }
+}
+%fdb-bl35{
+    font-family: "forma-djr-display-black";
+    // 25 - 30
+    font-size: clamp(1rem, 0.647rem + 1.7117vw, 2.1875rem);    color: white;
+    line-height: 120%;
+}
+%fdb-b30{
+    font-family: "forma-djr-display-bold";
+    // 25 - 30
+    font-size: clamp(1.5625rem, 1.4732rem + 0.4464vw, 1.875rem);
+    color: white;
+    line-height: 120%;
+    letter-spacing: 1.52px;
+}
+%fdb-b25{
+    font-family: "forma-djr-display-bold";
+    // font-size: clamp(1rem, 0.8393rem + 0.8036vw, 1.5625rem);
+    font-size: 25px;
+    color: white;
+    line-height: 120%;
+    letter-spacing: 1.52px; 
+}

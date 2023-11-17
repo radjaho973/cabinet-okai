@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Expertise{% endblock %}
+
+{% block body %}
+
+{% include "./components/_sticky_column.html.twig" %}
+
+
+
+<div class="expertise-container">
+    <section id="hero">
+        <h1 id="hero-title">
+        ÉCLAIRER LES DÉCISIONS <br>
+        DE DEMAIN <br>
+        AVEC NOTRE EXPERTISE <br>
+         D’AUJOURD’HUI</h1>
+        <a class="btn-contact" href="{{path("app_contact")}}">PRENDRE RDV</a>
+        <div class="bg-overlay"></div>
+        <div class="bg-overlay-gradient"></div>
+    </section>
+
+    <section id="about">
+        <h2>NOTRE CABINET AU <br>
+         SERVICE DE VOS <span class="line-break"></span> PROJETS !</h2>
+        <div class="text-container">
+            <p>
+            L’urbanisme requiert une compréhension nuancée et une analyse approfondie
+             pour façonner des territoires harmonieux et durables. Au Cabinet Okai,
+              nous mettons notre expertise à la disposition des collectivités,
+               institutions, professionnels et particuliers, offrant des analyses
+                rigoureuses et des perspectives innovantes pour la Guadeloupe.
+            </p>
+        </div>
+    </section>
+
+    <section id="prestation">
+        <h2>NOS PRESTATIONS</h2>
+        <p>Quelle que soit votre envergure - collectivité, institution, professionnel
+         ou particulier - notre service d’expertise et d’étude en urbanisme est conçu
+          pour éclairer et guider votre projet. Avec nous, donnez vie à la ville de
+           demain. </p>
+        
+        <div class="card-container">
+            <div class="card">
+                <h3 class="card-title">Collectivités et Institutions</h3>
+                <p class="card-text">
+                <span class="card-txt-weight">Diagnostics</span> territoriaux.<br>
+                <span class="card-txt-weight">Évaluations</span> environnementales.<br>
+                <span class="card-txt-weight">Conseils</span> stratégiques pour le développement.
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Professionnels</h3>
+                <p class="card-text">
+                <span class="card-txt-weight">Études</span> de faisabilité pour les projets immobiliers.<br>
+                <span class="card-txt-weight">Analyses</span> d’impact urbain. <br>
+                <span class="card-txt-weight">Stratégies</span> d’optimisation foncière.
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Particuliers</h3>
+                <p class="card-text">
+                 <span class="card-txt-weight">Analyses</span> de potentiel foncier.<br>
+                 <span class="card-txt-weight">Expertises</span> réglementaires.<br>
+                 <span class="card-txt-weight">Conseils</span> en aménagement et valorisation.
+                </p>
+            </div>
+            <div class="contact-card">
+                <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
+                <a href="#hero" class="btn-contact">CONTACTEZ-NOUS</a>
+            </div>
+        </div>
+    </section>
+
+    {% include "./components/_guide_slider.html.twig" %}
+
+</div>
+
+<div class="expertise-container2">
+        <section id="faq" {{stimulus_controller("accordion")}}>
+        <h2>FAQ</h2>
+        <p>Des questions sur l’urbanisme ? Notre FAQ détaille nos services pour vous.</p>
+
+        <div class="grid-container">
+            <div class="card">
+                <h6 class="card-title accordion-toggle">1. Qu’entend-on par « étude et expertise en urbanisme » ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Il s’agit de l’évaluation, de l’analyse et du conseil sur les projets et les plans urbains pour garantir leur viabilité, leur conformité et leur pertinence par rapport à des critères spécifiques.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">2. Pourquoi mon projet nécessiterait-il une expertise en urbanisme ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Une expertise en urbanisme assure que votre projet est bien adapté à son environnement, respecte les régulations en vigueur et répond aux besoins et aux aspirations des communautés concernées.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">3. Comment votre expertise locale influence-t-elle vos évaluations ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Notre connaissance profonde de la Guadeloupe nous permet de comprendre et d’anticiper les défis et opportunités spécifiques à la région, garantissant des recommandations adaptées et pertinentes.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">4. Combien de temps dure généralement une étude d’urbanisme ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">La durée dépend de la complexité du projet. Après une première consultation, nous pourrons vous fournir une estimation plus précise.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">5. Quels types de projets avez-vous déjà évalués ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Nous avons une expérience variée allant des projets résidentiels et commerciaux aux plans d’aménagement d’ensemble pour des collectivités ou des institutions.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">6. Comment intégrez-vous la durabilité et la transition écologique dans vos analyses ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text"> Nous centrons nos évaluations sur la durabilité, scrutant les impacts environnementaux et privilégiant des solutions éco-responsables en adéquation avec la transition écologique.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">7. Que recevrai-je à la fin de l’expertise ?
+                </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Vous recevrez un rapport détaillé avec nos observations, recommandations et toute autre documentation pertinente pour vous guider dans la mise en œuvre de votre projet.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">8. Combien coûte une étude et expertise en urbanisme ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Les tarifs varient en fonction de la taille et de la complexité du projet. Contactez-nous pour obtenir un devis personnalisé.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">9. Comment garantissez-vous l’objectivité de vos expertises ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Nous nous engageons à suivre les meilleures pratiques du métier et à fournir une évaluation honnête, basée sur des données factuelles, sans parti pris.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">10. Comment puis-je démarrer un projet d’étude avec le Cabinet Okai ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Il vous suffit de nous contacter via notre formulaire en ligne, par téléphone ou par e-mail. Nous serons ravis de discuter de vos besoins.</p>
+                    </div>
+            </div>
+            
+        </div>
+    </section>
+    {% include "./components/_contact.html.twig" %}
+</div>
+
+
+
+{% endblock %}

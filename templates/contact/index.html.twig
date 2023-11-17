@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class="contact-page-container">
+    <div class="info-container">
+        <h1>CONTACT</h1>
+        <div class="info">
+            <div class="text-display-sm">
+                <p>
+                Désireux d’échanger sur vos projets en<br>
+                urbanisme ou d’en savoir plus ? <br><br>
+                <span class="txt-blue-weight">
+                Contactez-nous ici</span> et l’équipe Cabinet<br>
+                Okai répondra avec plaisir.
+                </p>
+            </div>
+            <h2>COORDONNÉES</h2>
+            <div class="text">
+                <p>
+                    Du lundi au vendredi de 09h à 18h et le samedi de 09h à 13h
+                </p>
+                <p>
+                    XX Adresse à Jarry, 97122 Baie-Mahault
+                </p>
+                <p>
+                  <a href="tel:0690349632">0690 34 96 32</a>
+                  <br>
+                  <a class="mail" href="mailto:contact@cabinet-okai.com">contact@cabinet-okai.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="right-container">
+        <div class="text-container">
+            <p>
+            Désireux d’échanger sur vos projets en<br>
+             urbanisme ou d’en savoir plus ? <br><br>
+            <span class="txt-blue-weight">
+            Contactez-nous ici</span> et l’équipe Cabinet<br>
+             Okai répondra avec plaisir.</p>
+        </div>
+        <div class="form-container">
+            {% include "./components/_contact_form.html.twig" %}
+        </div>
+    </div>
+</div>
+{% endblock %}

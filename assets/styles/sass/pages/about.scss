@@ -1,0 +1,218 @@
+@use '../abstract/' as *;
+
+.about-container{
+
+    section#hero{
+        min-height: 100vh;
+        align-items: start;
+        @extend %flex-center-down;
+        gap: 50px;
+        padding-left: 11vw;
+
+        .titre{
+            @extend %fdb-bl70 ;
+        }
+        margin-right: 20px;
+        &>p{
+            @extend %nunito-r30;
+        }
+        &>.btn-contact{
+            margin-bottom: 50px;
+        }
+    }
+    
+    section#values{
+        min-height: 100vh;
+        margin-bottom: 100px;
+
+        &>h2{
+            @extend %fdb-bl70;
+            margin-bottom: 145px;
+            margin-left: 13vw;
+        }
+        &>.card-container{
+            justify-content: space-evenly;
+            @extend %flex-center;
+            height: 570px;
+
+            &>.card{
+                height: 100%;
+                width: 390px;
+                border-radius: 55px;
+                @extend %flex-center-column;
+                background-color: $transparent;
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                padding-inline: 15px;
+                gap: 50px;
+                
+                &>.icon{
+                    height: 60px;
+
+                    &>img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &>.card-title{
+                    color: $lightblue;
+                    font-size: 25px;
+                    line-height: 30px;
+                    margin-bottom: 20px;
+                    @extend %fdb-bl40;
+                    text-align: center;
+                }
+                &>.card-text{
+                    color: white;
+                    text-align: center;
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    section#studio-okai{
+        background: url("../../../../public/images/bg-maison.webp");
+        height: 100vh;
+        @extend %flex-center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+
+        &>.img-container{
+            width: 50%;
+            height: 100%;
+            @extend %flex-center;
+            z-index: 1;
+
+            &>img{
+                width: 93%;
+            }
+        }
+        &>.cover{
+            width: 50%;
+            height: 100%;
+            background-color: transparent;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(12px);
+            @extend %flex-center-column;
+            padding-inline: 100px;
+            z-index: 1;
+
+            &>h2{
+                line-height: 74px;
+                text-align: center;
+                @extend %fdb-bl70;
+                margin-bottom: 76px;
+            }
+            &>a{
+                border: 2px solid white;
+                color: white;
+                background-color: transparent;
+                width: 200px;
+                height: 46px;
+                @extend %btn-contact;
+                transition: all 0.2s linear;
+
+                &:hover{
+                    background: white;
+                    color: black;
+                }
+            }
+        }
+        &>.bg-overlay{
+            position: absolute;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 90%, rgba(17,17,17,1) 100%);
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .about-container{
+        section#hero{
+            
+            .titre{
+                
+            }
+            .lightblue{
+                color: $lightblue;
+            }
+        }
+
+
+        section#values{
+            &>h2{
+                margin-inline: auto;
+                text-align: center;
+                margin-bottom: 46px;
+            }
+            &>.card-container{
+                flex-direction: column;
+                height: auto;
+                margin-bottom: 108px;
+                gap: 50px;
+
+                &>.card{
+                    padding-block: 25px;
+                    width: 85vw !important;
+                    border-radius: 40px;
+                    gap: 26px;
+
+                    &>.icon{
+                        height: 40px;
+                    }
+                    &>.card-title{
+                        font-size: 17px;
+                    }
+                    &>.card-text{
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+
+        section#studio-okai{
+            height: 90vh;
+            flex-direction: column;
+
+            &>.img-container{
+                width: 100%;
+                height: 50%;
+                align-items: end;
+            }
+            &>.cover{
+                width: 100%;
+                height: 50%;
+                backdrop-filter: none;
+                padding: 0;
+                z-index: 1;
+
+                &>h2{
+                    font-size: 40px;
+                    line-height: 48px;
+                    padding-inline: 5px;
+                    max-width: 600px;
+                }
+            }
+            &>.bg-overlay{
+                position: absolute;
+                background: linear-gradient(180deg, rgba(255,255,255,0) 50%, rgba(17,17,17,1) 100%);
+                height: 100%;
+                width: 100%;
+                pointer-events: none;
+                z-index: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width:1100px) {
+    .about-container>section#values>.card-container>.card{
+        width: 359px;
+    }
+}

@@ -1,0 +1,146 @@
+<script type="module">
+
+
+paper.install(window)
+// window.onload = function() {
+    // Get a reference to the canvas object
+    let canvas = document.getElementById('canvas');
+    // Create an empty project and a view for the canvas:
+    paper.setup(canvas);
+    // Permet de classifier chaque project/canvas
+    // paper individuellement
+// Fonction pour importer l'élément SVG
+function importCitySVG() {
+    return new Promise((resolve, reject) => {
+        paper.project.importSVG("./paperSVG/Plan_de_travail_2.svg", function (item) {
+            if (item) {
+                console.log("paper chargé");
+                // Opérations sur l'élément SVG
+                item.strokeColor = "white";
+                item.strokeWidth = 0.9;
+                // item.fullySelected = true
+                item.position = new Point(canvas.clientWidth / 2, canvas.clientHeight / 2);
+                item.scale(1);
+                item.removeChildren(0, 1)
+                
+                resolve(item);
+            } else {
+                console.log("paper non chargé");
+                reject("Erreur lors de l'importation de l'élément SVG.");
+            }
+        });
+    });
+}
+
+let city;
+importCitySVG()
+    .then((importedCity) => {
+        
+        city = importedCity;
+
+        // Faites d'autres opérations avec city si nécessaire
+        
+        city.children.forEach(itemChild =>{
+            itemChild.segments.forEach(segment =>{
+                let point = segment.point
+                
+                // Enregistre la hauteur de base de chaque point        
+                point.baseHeight = point.y
+
+            })
+        })
+
+        
+        let tool = new Tool
+        tool.onMouseMove = function(event) {        
+            mouseEffect(event,city)
+        }
+        console.log(tool.onMouseMove);
+        view.onFrame = function (event) {
+            AnimationOnFrame(event,city)
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+    
+    //?============================================
+    //?               Listener 
+    //?============================================
+
+    //Applique un listener au movement de la souris
+    function mouseEffect(event,item) {
+        
+        //montre le radius d'activation 
+
+        // let circle = new Path.Circle({
+        //     center : event.point,
+        //     radius : canvas.clientHeight / 24,
+        //     strokeColor : "white",
+        // })
+        // setTimeout(() => {
+        //     circle.remove()
+        // }, 10);
+
+        item.children.forEach(path => {
+            
+            let mousePosPoint = new Point(event.point)
+            let curveLocation = path.getNearestLocation(event.point);
+            let segment = curveLocation.segment;
+            let point = segment.point;
+        
+
+            
+            //si la distance entre la souris et un point est inférieur à
+            // 1/24ème du canva alors le point suit la souris
+            if (curveLocation.distance <= canvas.clientHeight / 24) {
+            
+                //axe vertical de la souris
+                let mouseYPos = event.point.y
+                point.y += (mouseYPos - point.y) / 13
+                
+                //Le point est considéré comme proche de la souris
+                point.isMouseCloseEnough = true
+                
+                setTimeout(() => {
+                    point.isMouseCloseEnough = false
+                }, 100);
+            }else{
+                
+                point.isMouseCloseEnough = false
+            }
+        });
+    }
+
+    //?============================================
+    //?               Animation 
+    //?============================================
+    
+    function AnimationOnFrame(event,item) {
+        
+        let maxYdistance = 5
+        item.children.forEach(itemChildren =>{
+
+            for (let i = 0; i < itemChildren.segments.length; i++) {
+                
+                let segment = itemChildren.segments[i];
+                // A cylic value between -1 and 1
+                // console.log(event.time)
+                let sinus = Math.sin(event.time * 1.2 + i);
+                let point = segment.point
+                if (!point.isMouseCloseEnough) {
+                    let relativeHeight = sinus * maxYdistance + point.baseHeight;
+                    
+                    // Change the y position of the segment point
+                    // la hauteur est défini par la valeur sinus qui oscile entre négatif et positif
+                    //maxY = hauteur max à laquel les point peuvent bouger et leur position de base (baseHeight)
+                   
+                    point.y += (relativeHeight - point.y) / 15    
+                }
+            }
+        })
+    }
+    // Draw the view now:
+    paper.view.draw();
+// }
+</script>
