@@ -12,9 +12,20 @@ import { Controller } from '@hotwired/stimulus';
             
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
-            spaceBetween: 80,
+            spaceBetween: 20,
             freeMode: true,
             pagination:false,
+            breakpoints : {
+                500 : {
+                    spaceBetween: 40,
+                },
+                768 : {
+                    spaceBetween: 80,
+                },
+                1700 : {
+                    spaceBetween: 120,
+                }
+            }
         });
         
               

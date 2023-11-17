@@ -1,21 +1,20 @@
 <script type="module">
 
-// new paper()
 
 paper.install(window)
-window.onload = function() {
+// window.onload = function() {
     // Get a reference to the canvas object
     let canvas = document.getElementById('canvas');
     // Create an empty project and a view for the canvas:
     paper.setup(canvas);
     // Permet de classifier chaque project/canvas
     // paper individuellement
-        console.log(paper.setup)
 // Fonction pour importer l'élément SVG
 function importCitySVG() {
     return new Promise((resolve, reject) => {
         paper.project.importSVG("./paperSVG/Plan_de_travail_2.svg", function (item) {
             if (item) {
+                console.log("paper chargé");
                 // Opérations sur l'élément SVG
                 item.strokeColor = "white";
                 item.strokeWidth = 0.9;
@@ -26,6 +25,7 @@ function importCitySVG() {
                 
                 resolve(item);
             } else {
+                console.log("paper non chargé");
                 reject("Erreur lors de l'importation de l'élément SVG.");
             }
         });
@@ -33,7 +33,6 @@ function importCitySVG() {
 }
 
 let city;
-
 importCitySVG()
     .then((importedCity) => {
         
@@ -143,5 +142,5 @@ importCitySVG()
     }
     // Draw the view now:
     paper.view.draw();
-}
+// }
 </script>

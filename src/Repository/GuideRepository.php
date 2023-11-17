@@ -45,4 +45,26 @@ class GuideRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function matchSlug($oldSlug)
+    {
+        $qb = $this->createQueryBuilder('g')
+        ->where("g.old_slugs LIKE :slug")
+        ->andWhere('g.isPublished = 1')
+        ->setParameter('slug','%'.$oldSlug.'%')
+        ->getQuery()
+        ->getOneOrNullResult();
+
+        return $qb;
+    }
+    public function get10LastGuides(){
+        $qb = $this->createQueryBuilder('g')
+        ->where("g.isPublished = 1")
+        ->setMaxResults(10)
+        ->orderBy('g.id','ASC')
+        ->getQuery()
+        ->getResult();
+
+        return $qb;
+    }
 }

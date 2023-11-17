@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Cabinet Okaï{% endblock %}</title>
         <link rel="icon" type="image/png" href="{{asset("images/logo.png")}}">
+        <meta name="robots" content="noindex">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
-
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {{ encore_entry_script_tags('paper') }}
@@ -25,7 +25,7 @@
                 <li><a class="nav-link" href="{{path("app_about")}}">Qui sommes-nous</a></li>
                 <li><a class="nav-link" href="{{path("app_expertise")}}">Expertise</a></li>
                 <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
-                {# <li class="temp-hidden"><a class="nav-link" href="">Guides</a></li> #}
+                <li><a class="nav-link" href="{{path("app_blog")}}">Guides</a></li>
                 <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
                 
                 <li class="btn-container"><a class="btn-contact-small" href="{{path('app_contact')}}">Contacter-nous</a></li>
@@ -45,10 +45,12 @@
 
     <body {{ stimulus_controller('swup') }}>
     
-    <div id="swup" class="transition-main">
-        {% block body %}{% endblock %}
-    </div>
-
+              {% include "/components/_canvas.html.twig" %}  
+        <div id="swup" class="transition-main">
+            <div class="swup-content">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
     <footer id="footer">
         <div class="logo-container">
             <img src="{{asset("images/logo-footer.svg")}}" alt="">
@@ -57,7 +59,6 @@
             
             <div class="text">
                 <p>
-                
                     <gras>Cabinet OKAÏ</gras>, votre référence en urbanisme en Guadeloupe.<br>
                      Études et conception de plans urbains.
                 </p>
@@ -83,7 +84,7 @@
                         <img src="{{asset("/images/instagram.svg")}}" alt="">
                     </a>
                  </div>
-                 <button class="btn-contact-small">Contacter-nous</button>
+                 <a href="{{path("app_urbanisme")}}" class="btn-contact-small">Contacter-nous</a>
             </div>
         </div>
         <div class="small-line"></div>
@@ -93,7 +94,8 @@
         </p>
         <a class="smalltext" href="#">Site Cabinet Okaï - 2023</a>
     </footer>
-</body>
+
+    </body>
 <script>
     //====================================
     //===SCRIPT MENU RESPONSIVE===========
@@ -118,7 +120,7 @@
             });
 
             menuIconClose.addEventListener("click",toggleNav)
-            
+          
         }else{
             nav.classList.remove("hidden")
         }
@@ -166,11 +168,6 @@
                 }
                 
             }
-            // if (window.innerWidth <= 768) {
-            //     title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
-            // }else{
-            //     title.innerHTML ="ÉCLAIRER LES DÉCISIONS <br>DE DEMAIN <br>AVEC NOTRE EXPERTISE <br>D’AUJOURD’HUI"
-            // }
         })
     }
 

@@ -46,72 +46,7 @@
     }
 
 
-    section#guide{
-        min-height: 100vh;
 
-        &>.first-title{
-            margin-inline: auto;
-            text-align: center;
-            @extend %fdb-bl70;
-            // line-height: 75px;
-            margin-bottom: 110px;
-        }
-        &>.btn-contact{
-            margin-inline: auto;
-            margin-bottom: 140px;
-        }
-        &>.second-title{
-            @extend %fdb-bl70;
-            line-height: 75px;
-            margin-left: 13vw;
-            margin-bottom: 150px;
-        }
-        &>p{
-            @extend %nunito-r25;
-            width: 50vw;
-            float: right;
-            text-align: right;
-            margin-right: 50px;
-            margin-bottom: 100px;
-        }
-        .swiper {
-            width: 100%;
-            height: 100%;
-            margin-left: 10vw;
-        }
-    
-            .swiper-slide {
-                cursor: grab;
-            text-align: center;
-            font-size: 18px;
-            // background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            }
-         
-            .swiper-slide img {
-                display: block;
-                width: 70%;
-                object-fit: cover;
-                border-radius: 30px;
-            }
-            .swiper-slide h4{
-                font-weight: normal;
-                width: 70%;
-                margin-block: 33px 20px;
-                font-size: 21px;
-                line-height: initial;
-                font-family: "nunito-black";
-                color: white;
-            }
-            .swiper-slide p{
-                width: 70%;
-                margin-bottom: 8vh;
-                @extend %nunito-l20;
-            }
-    }
 }
 
 

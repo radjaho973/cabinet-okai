@@ -29,7 +29,9 @@
     },
     "dependencies": {
         "acorn": "^8.10.0",
+        "bootstrap-icons": "^1.11.1",
         "paper": "^0.12.17",
-        "swiper": "^10.2.0"
+        "swiper": "^10.2.0",
+        "tinymce": "^6.7.2"
     }
 }

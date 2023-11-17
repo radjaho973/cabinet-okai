@@ -62,24 +62,24 @@ $transparent : #cac6c629;
 %btn-contact{
     cursor: pointer;
     border: none;
-  background-color: white;
-  border-radius: 30px;
-  width: 192px;
-  height: 46px;
-  @extend %flex-center;
-  text-align: center;
-  color: $midblue;
-  font-family: "Nunito-black";
-  font-size: clamp(0.75rem, 0.6757rem + 0.3604vw, 1rem);
-  transition: all 0.2s linear;
-
-
-  @media screen and (max-width:768px) {
-    width: 178px;
-    height: 45px;
+    background-color: white;
     border-radius: 30px;
+    width: 192px;
+    height: 46px;
+    @extend %flex-center;
+    text-align: center;
+    color: $midblue;
+    font-family: "Nunito-black";
+    font-size: clamp(0.75rem, 0.6757rem + 0.3604vw, 1rem);
+    transition: all 0.2s linear;
 
-  }
+    
+    @media screen and (max-width:768px) {
+        width: 178px;
+        height: 45px;
+        border-radius: 30px;
+        
+    }
 }
 .btn-contact{
     @extend %btn-contact;
@@ -89,6 +89,16 @@ $transparent : #cac6c629;
     height: 39px;
     @extend %btn-contact;
 }
+.btn-contact:hover{
+    background-color: $midblue;
+    color: white;
+}
+.btn-contact-small:hover{
+    background-color: $midblue;
+    color: white;
+}
+
+
 
 %btn-info{
     cursor: pointer;
@@ -114,11 +124,89 @@ $transparent : #cac6c629;
 .btn-info{
     @extend %btn-info;
 }
-.btn-contact:hover{
-    background-color: $midblue;
-    color: white;
-}
 .btn-info:hover{
     background-color: rgba(255, 255, 255, 0.796);
     color: rgb(41, 39, 39);
+}
+
+.btn-info-small{
+    width: 160px;
+    height: 39px;
+    @extend %btn-info;
+}
+.btn-info-small:hover{
+    background-color: rgba(255, 255, 255, 0.796);
+    color: rgb(41, 39, 39);
+}
+
+
+
+%btn-delete{
+    cursor: pointer;
+    border: none;
+    background-color: rgba(190, 28, 28, 0.247);
+    border-radius: 30px;
+    width: 192px;
+    height: 46px;
+    @extend %flex-center;
+    text-align: center;
+    color: white;
+    font-family: "Nunito-black";
+    font-size: 18px;
+    transition: all 0.2s linear;
+    
+    @media screen and (max-width:768px) {
+        width: 178px;
+        height: 45px;
+        font-size: 13px;
+        border-radius: 30px;
+    }
+}
+.btn-delete{
+    @extend %btn-delete;
+}
+.btn-delete-small{
+    width: 160px;
+    height: 39px;
+    @extend %btn-delete;
+}
+.btn-delete-small:hover{
+    background-color: rgba(255, 255, 255, 0.966);
+    color: rgb(189, 53, 53);
+}
+
+
+.btn-nextpost{
+    background-color: #373737;
+    border-radius: 20px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    max-width: 300px;
+    height: 100px;
+    transition: all 0.2s linear;
+    
+    .btn-text{
+        @extend %flex-center-column;
+        align-items: end;
+        
+        .next-subpart-title{
+            text-align: end;
+        }
+    }
+    .btn-img-container{
+        @extend %flex-center;
+        
+        img{
+            width: 30%;
+            transform: rotate(-90deg);
+        }
+    }
+}
+.btn-nextpost:hover{
+    background-color: #CADCF9;
+    color: #2D5299;
+    // font-weight: bold;
 }

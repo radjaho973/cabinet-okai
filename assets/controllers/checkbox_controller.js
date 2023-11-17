@@ -7,6 +7,12 @@ export default class extends Controller {
         let checkbox = document.querySelector(".checkmark")
        
         let hiddenCheckbox = checkbox.firstElementChild
+        
+        if (hiddenCheckbox.checked == false) {
+            checkbox.classList.remove("checked")
+        }else{
+            checkbox.classList.add("checked")
+        }
         checkbox.addEventListener("click",toggleCheck)
        
        function toggleCheck() {

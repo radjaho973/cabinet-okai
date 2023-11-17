@@ -4,11 +4,13 @@ namespace App\Form;
 
 use App\Entity\Guide;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class GuideType extends AbstractType
 {
@@ -17,8 +19,17 @@ class GuideType extends AbstractType
         $builder
             ->add('titre')
             ->add('auteur')
-            ->add('description')
-            ->add('readingTime')
+            ->add('description',options:[
+                
+            ])
+            ->add('readingTime',options:[
+                'label' => 'Temps de lecture'
+                ])
+            ->add('ispublished',CheckboxType::class,[
+                'mapped' => true,
+                'label' => 'Publier',
+                'required' => false,
+            ])
             ->add('image',FileType::class, [
                 'label'=> 'Fichier Image',
                 'mapped'=> false,
@@ -38,13 +49,11 @@ class GuideType extends AbstractType
             ])
             // ->add('publishAt')
             // ->add('modifiedAt')
-            ->add("subPart",CollectionType::class,[
-                'mapped' => false,
-                'entry_type' => SubPartType::class,
-                'by_reference'=> false,
-                'allow_add'=> true,
-                'allow_delete'=> true,
-                'prototype'=> true,
+
+            ->add('content',TextareaType::class,[
+                'label' =>false,
+                'attr' => [
+                    'data-controller' => 'tinymce'                ]
             ])
         ;
     }

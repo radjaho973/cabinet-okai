@@ -3,7 +3,6 @@
 .acceuil-container{
 
     section#acceuil{
-        background-color: $black;
         padding-top: 90px;
         min-height: 100vh;
         align-items: start;
@@ -55,7 +54,7 @@
 
             &>p{
                 width: 24%;
-                @extend %nunito-b25;
+                @extend %nunito-semib25;
                 flex-shrink: 0;
             }
             
@@ -108,7 +107,6 @@
 
 
     section#advantages{
-        background-color: $black;
         margin-bottom: 110px;
 
         &>h2{
@@ -176,7 +174,6 @@
     
 
     section#urbanisme{
-        background-color: $black;
 
         &>h2{
             @extend %fdb-bl60;
@@ -290,7 +287,7 @@
                 height: 362px;
                 @extend %flex-center-column;
                 gap: 37px;
-                // padding-inline: 15px;
+                backdrop-filter: blur(12px);
                 box-shadow: 0px 0px 10px 0px rgba(214, 208, 224, 0.51);
                 
                 .card-icon{
@@ -353,11 +350,12 @@
             @extend %flex-center;
             gap: 147px;
             margin-bottom: 163px;
+            backdrop-filter: blur(6px);
 
             &>img{
                 // width: 344px;
                 width: 20%;
-                // height: 183px;
+                height: auto;
             }
             &>.image-container-title{
                 display: none;
@@ -425,7 +423,7 @@
             padding-left: 0;
             gap: 0;
             // padding-bottom: 10vh;
-            background:  url(../../../../public/images/ligne-bg-up-down.png);
+            // background:  url(../../../../public/images/ligne-bg-up-down.png);
             background-size: 101%;
             background-repeat: no-repeat;
             background-position-y: 85%;
@@ -451,7 +449,7 @@
         }
         
         section#activity{
-            background:  url("../../../../public/images/ligne-bg.png");
+            // background:  url("../../../../public/images/ligne-bg.png");
             background-size: 101%;
             background-position-y: 25%;
             background-repeat: no-repeat;
@@ -466,40 +464,6 @@
             &>p{
                 display: none;
             }
-
-            // &>.container{
-            //     width: 90% !important;
-            //     margin-inline: 5vw !important;
-
-            //     &>p{
-            //         transform: none;
-            //         padding-bottom: 104px;
-            //         width: 55%;
-
-            //     }
-            //     &>.title-container:first-of-type{
-            //         float: right;
-            //         margin-left: 50px;
-            //         margin-bottom: 105px ;
-            //     }
-
-            //     &>.title-container{
-            //         position: relative;
-            //         display: block;
-            //         border-radius: 30px;
-            //         width: 221px !important ;
-            //         height: 112px !important;
-            //         margin-bottom: 65px;
-            //         float: left;
-
-            //         &>p{
-            //             position: absolute !important;
-            //             text-align: start !important;
-            //             top: -24%;
-            //             left: -21px;
-            //         }
-            //     }
-            // }
             .btn-info{
                 float: right;
                 margin: 0;
@@ -524,7 +488,7 @@
         }
 
         section#urbanisme{
-            background:  url('../../../../public/images/ligne-bg.png');
+            // background:  url('../../../../public/images/ligne-bg.png');
             background-position-y:top;
             background-repeat: no-repeat;
             background-size: cover;
@@ -647,6 +611,7 @@
                 }
                 &>img{
                     width: 46%;
+                    height: auto;
                 }
             }
         }
@@ -765,8 +730,7 @@
                 }
             }
         }
-    }
-                
+    }            
 }
 
 @media screen and (min-width:1780px) {

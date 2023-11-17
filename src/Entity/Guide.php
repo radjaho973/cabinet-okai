@@ -29,7 +29,7 @@ class Guide
     private ?int $readingTime = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
+    private ?string $thumbnail = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $publishAt = null;
@@ -37,15 +37,24 @@ class Guide
     #[ORM\Column]
     private ?\DateTimeImmutable $modifiedAt = null;
 
-    #[ORM\OneToMany(mappedBy: 'guide', targetEntity: SubPart::class, orphanRemoval: true)]
-    private Collection $subParts;
-
     #[ORM\Column(length: 500)]
     private ?string $slug = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $content = null;
+
+    #[ORM\OneToMany(mappedBy: 'guide', targetEntity: ImagesGuide::class)]
+    private Collection $imagesGuide;
+
+    #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]
+    private ?array $old_slugs = null;
+
+    #[ORM\Column]
+    private ?bool $isPublished = null;
+
     public function __construct()
     {
-        $this->subParts = new ArrayCollection();
+        $this->imagesGuide = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -101,14 +110,14 @@ class Guide
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getThumbnail(): ?string
     {
-        return $this->image;
+        return $this->thumbnail;
     }
 
-    public function setImage(string $image): static
+    public function setThumbnail(string $thumbnail): static
     {
-        $this->image = $image;
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }
@@ -137,36 +146,6 @@ class Guide
         return $this;
     }
 
-    /**
-     * @return Collection<int, SubPart>
-     */
-    public function getSubParts(): Collection
-    {
-        return $this->subParts;
-    }
-
-    public function addSubPart(SubPart $subPart): static
-    {
-        if (!$this->subParts->contains($subPart)) {
-            $this->subParts->add($subPart);
-            $subPart->setGuide($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSubPart(SubPart $subPart): static
-    {
-        if ($this->subParts->removeElement($subPart)) {
-            // set the owning side to null (unless already changed)
-            if ($subPart->getGuide() === $this) {
-                $subPart->setGuide(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -175,6 +154,77 @@ class Guide
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): static
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ImagesGuide>
+     */
+    public function getImagesGuide(): Collection
+    {
+        return $this->imagesGuide;
+    }
+
+    public function addImagesGuide(ImagesGuide $imagesGuide): static
+    {
+        if (!$this->imagesGuide->contains($imagesGuide)) {
+            $this->imagesGuide->add($imagesGuide);
+            $imagesGuide->setGuide($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImagesGuide(ImagesGuide $imagesGuide): static
+    {
+        if ($this->imagesGuide->removeElement($imagesGuide)) {
+            // set the owning side to null (unless already changed)
+            if ($imagesGuide->getGuide() === $this) {
+                $imagesGuide->setGuide(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getOldSlugs(): ?array
+    {
+        return $this->old_slugs;
+    }
+
+    public function setOldSlugs(?array $old_slugs): static
+    {
+        $this->old_slugs = $old_slugs;
+
+        return $this;
+    }
+    
+    public function addOldSlugs(string $slug)
+    {
+        return $this->old_slugs[] = $slug;
+    }
+
+    public function isPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): static
+    {
+        $this->isPublished = $isPublished;
 
         return $this;
     }

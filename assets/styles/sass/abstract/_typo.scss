@@ -18,19 +18,19 @@ font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
     }
 @font-face {
     font-family: "Nunito-light";
-    src: url(../../fonts/Nunito-Light.ttf);
+    src: url(../../../../public/fonts/Nunito-Light.ttf);
 }
 @font-face {
     font-family: "Nunito-black";
-    src: url(../../fonts/Nunito-Black.ttf);
+    src: url(../../../../public/fonts/Nunito-Black.ttf);
 }
 @font-face {
     font-family: "Nunito-regular";
-    src: url(../../fonts/Nunito-Regular.ttf);
+    src: url(../../../../public/fonts/Nunito-Regular.ttf);
 }
 @font-face {
     font-family: "Nunito-semibold";
-    src: url(../../fonts/Nunito-SemiBold.ttf);
+    src: url(../../../../public/fonts/Nunito-SemiBold.ttf);
 }
 
 gras{
@@ -115,12 +115,19 @@ gras{
     line-height: 34px;
 }
 
-%nunito-b25{
+%nunito-semib25{
     font-family: "Nunito-semibold";
     color: white;
     line-height: 120%;
     font-size: clamp(0.9375rem, 0.7589rem + 0.8929vw, 1.5625rem);
 
+}
+// Reading time sur les carte
+%nunito-semib20{
+    font-family: "Nunito-semibold";
+    color: white;
+    line-height: 120%;
+    font-size: clamp(0.5rem, 0.277rem + 1.0811vw, 1.25rem);
 }
 %nunito-l25{
     font-family: "Nunito-light";
@@ -230,6 +237,12 @@ gras{
     line-height: 160%;
     font-size: clamp(2.1875rem, 1.5625rem + 3.125vw, 4.375rem);
 }
+%fdb-extrab70{
+    font-family:"forma-djr-display-extra-bold";
+    color: white;
+    text-transform: uppercase;
+    line-height: 160%;
+    font-size: clamp(1.5625rem, 0.7264rem + 4.0541vw, 4.375rem);}
 %fdb-bl70{
     font-family: "forma-djr-display-black";
     color: white;

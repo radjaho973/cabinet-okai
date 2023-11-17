@@ -17457,7 +17457,7 @@ Base.exports.PaperScript = function() {
 	Symbol: SymbolDefinition,
 	PlacedSymbol: SymbolItem
 }))();
-console.log("paper-full.js :",paper)
+
 if (paper.agent.node) {
 	require('./node/extend.js')(paper);
 }
