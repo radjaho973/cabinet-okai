@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes nous{% endblock %}
+
+{% block body %}
+
+{% include "./components/_sticky_column.html.twig" %}
+
+<div class="about-container">
+
+    <section id="hero">
+        <h1 class ="titre">L’URBANISME <span class="line-break-md"></span> À <span class="line-break"></span>
+        <span class="titre lightblue"> VOTRE SERVICE !</span></h1>
+        
+        <p>Donnez vie à vos visions urbaines en Guadeloupe.
+        Expertise, innovation et transition écologique au
+        cœur de chaque projet. Faites le choix de l’harmonie
+        et du durable avec nous.</p>
+
+        <a href="{{path('app_contact')}}" class="btn-contact">PRENDRE RDV</a>
+    </section>
+
+    <section id="about">
+        <h2>À PROPOS DU CABINET</h2>
+        <div class="text-container">
+            <p>
+            Fondé en 2020 par Allan BOUCARD, urbaniste dédié aux habitats et
+            à la transition écologique, le cabinet Okai, autrefois Okaï 
+            DESIGN, est devenu un acteur incontournable de l’urbanisme
+            guadeloupéen. Nous offrons des services spécialisés en étude,
+            expertise et conception de documents d’urbanisme, tout en
+            mettant à profit notre connaissance unique du territoire.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="values">
+        <h2>VALEURS &<br> ENGAGEMENTS</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="icon">
+                    <img src="{{asset("images/planet.svg")}}" alt="">
+                </div>
+                <h3 class="card-title">
+                    ENGAGEMENT POUR LA <br>
+                    TRANSITION ÉCOLOGIQUE
+                </h3>
+                <p class="card-text">
+                    Au Cabinet Okai, nous plaçons la transition
+                    écologique au centre de notre démarche.
+                    Pour nous, chaque projet est l’occasion
+                    d’adopter et de promouvoir des pratiques 
+                    plus respectueuses de notre planète.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <img src="{{asset("images/eco-bat.svg")}}" alt="">
+                </div>
+                <h3 class="card-title">
+                    PASSION POUR<br>
+                    L’ÉCO-CONSTRUCTION
+                </h3>
+                <p class="card-text">
+                    Conscients de l’impact de l’urbanisme
+                    sur notre environnement, nous nous
+                    investissons pleinement dans 
+                    l’éco-construction. Notre ambition :
+                    créer des espaces durables qui valorisent
+                    la richesse naturelle de la Guadeloupe.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="studio-okai">
+        <div class="img-container">
+            <img src="{{asset("images/studio_okai_logo.png")}}" alt="">
+        </div>
+
+        <div class="cover">
+            <h2>PROJETEZ-VOUS DANS VOS PROJETS IMMOBILIERS
+            </h2>
+            <a target="_blank" href="https://studio-okai.com/" 
+            class="btn-transparent">Découvrir notre site</a>
+        </div>
+        <div class="bg-overlay"></div>
+    </section>
+</div>
+{% endblock %}

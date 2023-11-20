@@ -1,0 +1,55 @@
+
+@import url("https://p.typekit.net/p.css?s=1&k=hps1gxf&ht=tk&f=30349.30350.30355.47613.47614&a=25653109&app=typekit&e=css");
+
+@font-face {
+    font-family:"forma-djr-display-bold";
+    src:url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/7337ff/00000000000000003b9ae4da/27/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n7&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+    font-family:"forma-djr-display-black";
+    src:url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/89aaa4/00000000000000007735ea60/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n9&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:900;font-stretch:normal;
+}
+@font-face {
+    font-family:"forma-djr-display-extra-bold";
+    src:url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/a9e1ab/00000000000000007735ea5f/30/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n8&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:800;font-stretch:normal;
+}
+@font-face {
+    font-family: "Nunito-light";
+    src: url(fonts/Nunito-Light.ttf);
+}
+@font-face {
+    font-family: "Nunito-black";
+    src: url(fonts/Nunito-Black.ttf);
+}
+@font-face {
+    font-family: "Nunito-regular";
+    src: url(fonts/Nunito-Regular.ttf);
+}
+@font-face {
+    font-family: "Nunito-semibold";
+    src: url(fonts/Nunito-SemiBold.ttf);
+}
+/*!==================================================
+ /*? Fichier utilisé pour appliquer les styles par défauts de l'éditeur de texte, dans l'éditeur et la page post  */
+ /* !=================================================*/ 
+
+
+ body{
+    background-color: #111;
+    caret-color: white;
+}
+
+p,h1,h2,h3,h4,h6{
+    color: white;
+    line-height: 1.4;
+    font-family: "Nunito-regular";
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,212 @@
+@use '../../abstract/' as *;
+
+.blog-container{
+    section#hero{
+        padding-top: 90px;
+        // min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+        .text-side{
+            width: 49.9%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            h1{
+                @extend %fdb-bl70;
+                margin-bottom: 70px;
+                width: 90%
+            }
+            p{
+                @extend %nunito-l30;
+                margin-bottom: 70px;
+                width: 90%;
+            }
+            gras{
+                width: 90%;
+                text-align: start;
+                margin-bottom: 10px;
+            }
+            .btn-container{
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+                margin-bottom: 70px;
+                margin-inline: auto;
+
+                a{
+                    background-color: #ffffff2e;
+                    padding: 15px;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 15px;
+                    width: auto;
+                    border-radius: 20px;
+                    color: white;
+
+                }
+            }
+        }
+        .img-side{
+            width: 49.9%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .guide-card-hero{
+                width: 50%;
+                aspect-ratio: 1/1;
+                border-radius: 30px;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                z-index: 0;
+            }
+            .bg-overlay{
+                border-radius: 30px;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.274);
+                z-index: 1;
+                pointer-events: none;
+            }
+            .guide-info{
+                z-index: 2;
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px;
+                padding-inline: 15px;
+                color: white;
+                
+                .guide-tag{
+                    padding-inline: 8px;
+                    padding-block: 5px;
+                    background-color: white;
+                    color: black;
+                    @extend %nunito-r20;
+                    border-radius: 20px
+                }
+                .reading-time{
+                    @extend %nunito-semib25;
+                }
+            }
+            .guide-title-container{
+                z-index: 2;
+                padding: 10px 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                margin-inline: auto;
+
+                .guide-title{
+                    background-color: #ffffff2e;
+                    backdrop-filter: blur(20px);
+                    border-radius: 20px;
+                    padding: 10px;
+
+                    .title-txt{
+                        @extend %nunito-bl20;
+                        padding-inline: 15px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    section#guide-grid{
+        .grid {
+            display:flex;
+            grid-column-gap: 30px;
+            justify-content: center;
+
+            .left-grid,.right-grid{
+                display: grid;
+                grid-template-columns: repeat(2, 276px);
+                grid-template-rows: repeat(3, 345px);
+                grid-column-gap: 37px;
+                row-gap: 28px;
+                
+                .grid-full-space{
+                    grid-column : 1 / 3;
+                }
+                .guide-card{
+                    border-radius: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: relative;
+                    z-index: 0;
+
+                    .bg-overlay{
+                        border-radius: 30px;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.274);
+                        z-index: 1;
+                        pointer-events: none;
+                    }
+                    .guide-info{
+                        z-index: 2;
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: 20px;
+                        padding-inline: 15px;
+                        color: white;
+                        
+                        .guide-tag{
+                            padding-inline: 8px;
+                            padding-block: 5px;
+                            background-color: white;
+                            color: black;
+                            @extend %nunito-r20;
+                            border-radius: 20px
+                        }
+                        .reading-time{
+                            @extend %nunito-semib20;
+                        }
+                    }
+                    .guide-title-container{
+                        z-index: 2;
+                        padding: 10px 15px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 90%;
+                        margin-inline: auto;
+                        
+                        .guide-title{
+                            background-color: #ffffff2e;
+                            backdrop-filter: blur(20px);
+                            border-radius: 20px;
+                            padding: 10px;
+                            
+                            .title-txt{
+                                @extend %nunito-bl20;
+                                padding-inline: 15px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .card-hidden{
+                    display: none;
+                }
+            }
+        }     
+    }
+}

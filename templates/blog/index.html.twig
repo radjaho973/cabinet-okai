@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Tous nos guides {% endblock %}
+
+{% block body %}
+
+{% include "./components/_sticky_column.html.twig" %}
+
+<div class="blog-container">
+<section id="hero">
+    <div class="text-side">
+        <h1>NOS GUIDE EN URBANISME</h1>
+        <p>
+            Explorez nos guides d’urbanisme :
+             une ressource pour modeler et comprendre nos futurs espaces.
+              De la passion à la pratique, découvrez l’aménagement 
+              de demain.
+        </p>
+        <gras>Choisir une thématique</gras>
+        <div class="btn-container">
+            <a href="">Point juridique</a>
+            <a href="">Écologie & Environnement</a>
+        </div>
+    </div>
+
+    <div class="img-side">
+        <div class="guide-card-hero" style="background-image : url('{{asset('images/4.1.webp')}}')">
+        <div class="bg-overlay"></div>
+            <div class="guide-info">
+                <p class="guide-tag">GUIDE</p>
+                <p class="reading-time">2min</p>
+            </div>
+            <div class="guide-title-container">
+                <div class="guide-title">
+                    <h6 class="title-txt">
+                       L’Art du Permis de Construire : Conseils et Méthodes Éprouvés
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="guide-grid">
+    <div class="grid">
+
+        <div class="left-grid">
+            {% for guide in guidesLeft %}
+                <div 
+                class="guide-card
+                 {% if loop.first or loop.index == 4 %} grid-full-space {% endif %}
+                 {% if loop.last %} card-hidden{% endif %}
+                 " 
+                style="background-image : url('{{asset('guide_uploads/' ~ guide.thumbnail)}}')"
+                >
+                    <div class="bg-overlay"></div>
+                    <div class="guide-info">
+                        <p class="guide-tag">GUIDE</p>
+                        <p class="reading-time"> {{guide.readingTime}} min</p>
+                    </div>
+                    <div class="guide-title-container">
+                        <div class="guide-title">
+                            <h6 class="title-txt">
+                                {{guide.titre}}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="right-grid">
+            {% for guide in guidesLeft %}
+                <div 
+                class="guide-card
+                 {% if loop.index == 3 %} grid-full-space {% endif %}
+                 " 
+                style="background-image : url('{{asset('guide_uploads/' ~ guide.thumbnail)}}')"
+                >
+                <div class="bg-overlay"></div>
+                    <div class="guide-info">
+                        <p class="guide-tag">GUIDE</p>
+                        <p class="reading-time"> {{guide.readingTime}} min</p>
+                    </div>
+                    <div class="guide-title-container">
+                        <div class="guide-title">
+                            <h6 class="title-txt">
+                                {{guide.titre}}
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+</div>
+{% endblock %}

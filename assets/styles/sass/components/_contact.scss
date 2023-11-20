@@ -1,0 +1,260 @@
+@use '../abstract/' as *;
+
+section#contact{
+    @extend %flex-center;
+    background: url('../../../../public/images/4.1.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 792px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    position: relative;
+    
+    &>.bg-overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #00000095;
+        z-index: 1;
+        pointer-events: none;
+    }
+    .contact-container{
+        display: flex;
+        gap: 6.2vw;
+        margin-inline: 6.7vw;
+        z-index: 2;
+    }
+    .text-container{
+        width: 40%;
+        align-items: start;
+        @extend %flex-center-column;
+        gap: 50px;
+
+        &>h2{
+            @extend %fdb-extrab80;
+        }
+        &>h3{
+            @extend %nunito-bl30;
+        }
+        &>p{
+            @extend %nunito-r30;
+        }
+
+    }
+    .form-container{
+        border-radius: 21px;
+        width: 50%;
+        background-color: $lightblue;
+        @extend %flex-center;
+
+        &>form{
+            @extend %flex-center;
+
+            &>.form-text{
+                display: none;
+            }
+
+            #contact{
+                padding-top: 39px;
+                width: 80%;
+                align-items: end;
+                gap: 30px;
+                @extend %flex-center-column;
+
+                &>div{
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    gap: 30px;
+
+                    &>label{
+                        color: #2D5299;
+                        @extend %nunito-l25;
+                    }
+                    
+                    &>input{
+                        color: black;
+                        border: none;
+                        width: 70%;
+                        background-color: white;
+                        border-radius: 12px;
+                        height: 35px;
+                        @extend %nunito-l25;
+                        padding-left: 5px;
+                    }
+                    &>textarea{
+                        border: none;
+                        width: 100%;
+                        height: 60px;
+                        resize: none;
+                        background-color: white;
+                        border-radius: 12px;
+                        padding-left: 5px;
+                        color: #2D5299;
+                        font-size: 17px;
+                    }
+                    &>textarea:focus{
+                        outline: 2px solid #2D5299;
+                    }
+                    &>input:focus{
+                        color: white;
+                        background-color: #2D5299;
+                        outline: none;
+                    }
+                }
+                //Accept conditions Checkbox
+                &>div:nth-child(6){
+                    flex-direction: row-reverse;
+                    position: relative;
+                    align-items: center;
+
+                    &>label{
+                        font-size: 17px;
+
+                        &>a{
+                            color: #2D5299;
+                            text-decoration: underline;
+                        }
+                    }
+
+                    &>.checkmark{
+                        flex-shrink: 0;
+                        width: 34px;
+                        height: 34px;
+                        border-radius: 10px;
+                        outline: 3px solid #2D5299;
+                        position: relative;
+
+                        
+                        &>input[type="checkbox"]{
+                            display: none;
+                        }
+                    }
+                    .checked{
+                        background-color: white;
+                    }
+
+                    .checked::before{
+                        content: "";
+                        position: absolute;
+                        border-color: #86B4FE;
+                        border-style: solid;
+                        border-width: 0 0.3em 0.25em 0;
+                        height: 1em;
+                        top: 5px;
+                        left: 11px;
+                        // margin-top: -1em;
+                        transform: rotate(45deg);
+                        width: 0.5em;
+                    }
+                    
+                }
+                &>div:nth-child(7){
+                    // margin-right: 50%;
+                    // transform: translateX(50%);
+
+                    &>button{
+                        // border: 1px solid #707070;
+                        // background-color: white;
+                        // border-radius: 15px;
+                        // height: 73px;
+                        // width: 245px;
+                        // @extend %flex-center;
+                        // color: black;
+                        // @extend %nunito-r30;
+                        transform: translateY(25px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+section#contact{
+
+    background: #111111;
+
+    &>.bg-overlay{
+        background: none;
+    }
+
+    .contact-container{
+        flex-direction: column;
+        
+        &>.text-container{
+
+            &>h2{
+                margin: auto;
+                text-align: center;
+            }
+
+            &>h3, p{
+                display: none;
+            }
+        }
+        &>.form-container{
+            width: 100%;
+
+            &>form{
+                display: flex;
+                flex-direction: column;
+                
+                &>.form-text{
+                    display: block;
+                    color: #2D5299;
+                    font-size: 19px;
+                    margin-bottom: 50px;
+                    width: 70%;
+                    text-align: center;
+                    padding-top: 55px;
+                }
+
+                div#contact{
+                    padding-top: 0;
+                    div{
+                        width: 100%;
+
+                        &>input{
+                            width: 70%;
+                        }
+
+                        &>button{
+                            width: 160px;
+                            height: 39px;
+                            cursor: pointer;
+                            border: none;
+                            background-color: white;
+                            border-radius: 20px;
+                            text-align: center;
+                            color: $midblue;
+                            font-family: "Nunito-black";
+                            font-size: 18px;
+                            transform: translateY(15px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
+@media screen and (max-width:385px) {
+
+section#contact .form-container > form #contact{
+    width: 90%;
+    align-items: center;
+    
+    &> div{
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        
+        &>button{
+            transform: none;
+        }
+    }
+}
+}

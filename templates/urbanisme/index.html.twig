@@ -1,0 +1,150 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documents d'urbanisme{% endblock %}
+
+{% block body %}
+{% include "./components/_sticky_column.html.twig" %}
+
+<div class="urbanisme-container">
+
+    <section id="hero">
+        <h1 id="hero-title">L’URBANISME SUR MESURE<br>
+         NOUS ÉLABORONS,<br>
+         VOUS CONCRÉTISEZ !</h1>
+        <p>Expertise et précision : nous réalisons vos <span class="line-break-md"></span> documents d’urbanisme.</p>
+        <a href="{{path("app_contact")}}" class="btn-contact">PRENDRE RDV</a>
+        <div class="bg-overlay"></div>
+        <div class="bg-overlay-gradient"></div>
+    </section>
+
+    <section id="about">
+        <h2>NOTRE CABINET AU SERVICE<br>
+         DE VOS PROJETS !</h2>
+        <div class="text-container">
+            <p>
+            L’urbanisme requiert une <span class="card-txt-weight">compréhension 
+            nuancée</span> et une <span class ="card-txt-weight">analyse approfondie</span> pour façonner des territoires harmonieux et 
+            durables. Au Au Cabinet Okai, nous mettons
+             notre expertise à la disposition des 
+             <span class ="card-txt-weight">collectivités, institutions, 
+             professionnels et particuliers</span>, offrant des analyses rigoureuses et des 
+              perspectives innovantes pour la 
+              <span class ="card-txt-weight">Guadeloupe</span>.
+            </p>
+        </div>
+    </section>
+
+    <section id="prestation">
+        <h2>NOS PRESTATIONS</h2>
+        <p>De l’individuel au collectif, transformez vos visions
+         urbaines en réalité avec nos documents d’urbanisme sur mesure.</p>
+        
+        <div class="card-container">
+            <div class="card">
+                <h3 class="card-title">Professionnels</h3>
+                <p class="card-text">
+                    Plans de Zonage.<br>
+                    Aménagement de zones d’activités. <br>
+                    Diagnostic territorial Étude de faisabilité
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Particuliers</h3>
+                <p class="card-text">
+                    Permis de construire.<br>
+                    Conseils en aménagement.<br>
+                    Orientation réglementaire.
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Collectivités et Institutions</h3>
+                <p class="card-text">
+                    Analyse de capacité foncière<br>
+                     Diagnostic de territoire et analyse<br>
+                    Étude de préemption <br>
+                    Programme préliminaire de renouvellement urbain<br>
+                    Accompagnement et assistance divers en urbanisme
+                </p>
+            </div>
+            <div class="contact-card">
+                <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
+                <a href="{{path('app_contact')}}" class="btn-contact">CONTACTEZ-NOUS</a>
+            </div>
+        </div>
+    </section>
+
+    {% include "./components/_guide_slider.html.twig" %}
+
+<div class="urbanisme-container2">
+        <section id="faq" {{stimulus_controller("accordion")}}>
+        <h2>FAQ</h2>
+        <p>Des questions sur l’urbanisme ? Notre FAQ détaille nos services pour vous.</p>
+
+        <div class="grid-container">
+            <div class="card">
+                <h6 class="card-title accordion-toggle">1. Qu’est-ce que la conception de document d’urbanisme ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text">La conception de document d’urbanisme implique la création et la structuration de documents officiels qui guident et régulent le développement et l’utilisation des terrains dans un espace urbain ou rural.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">2. Pourquoi mon institution / collectivité a-t-elle besoin d’un tel service ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text"> Un document d’urbanisme judicieusement élaboré éclaire la future planification, se conforme aux normes locales et nationales, et promeut un développement régional équilibré et pérenne.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">3. Comment le Cabinet Okai assure-t-il une conception adaptée à la Guadeloupe ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text"> Fort de notre connaissance de la Guadeloupe, nous intégrons pleinement ses enjeux culturels, écologiques et économiques dans nos réalisations.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">4. Combien de temps prend généralement la conception d’un document d’urbanisme ? </h6>
+                    <div class="accordion-content">
+                        <p class="card-text">La durée varie en fonction de la complexité du projet et des besoins spécifiques du client. Après une consultation initiale, nous pourrons vous fournir une estimation plus précise.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">5. Est-ce que vous collaborez avec des experts locaux ou d’autres institutions pendant la conception ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text"> Oui, nous croyons fermement en la collaboration et en la consultation. Nous travaillons en étroite relation avec divers experts et institutions pour garantir que le document reflète une vision complète et équilibrée.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">6. Dans quelle mesure la durabilité et la transition écologique sont-elles intégrées dans votre processus ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text">La durabilité est au cœur de notre approche. Nous intégrons les principes de l’éco-construction, de la transition écologique et de la préservation environnementale dans chaque document que nous concevons.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">7. Comment puis-je suivre l’avancement du projet ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Nous maintenons une communication ouverte et régulière avec nos clients. Vous serez informé des principales étapes du projet et des décisions importantes à prendre. </p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">8. Combien coûte ce service ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text"> Les coûts varient en fonction de la complexité et de l’envergure du projet. Veuillez nous contacter pour obtenir un devis adapté à vos besoins.</p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">9. Quelle est la prochaine étape après la conception du document ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text"> Après la conception, le document passe généralement par des phases de révision, d’approbation et de mise en œuvre. Nous pouvons également vous assister dans ces étapes si nécessaire. </p>
+                    </div>
+            </div>
+            <div class="card">
+                <h6 class="card-title accordion-toggle">10. Comment puis-je démarrer un projet avec le Cabinet Okai ?</h6>
+                    <div class="accordion-content">
+                        <p class="card-text">Contactez-nous via notre formulaire en ligne, par téléphone ou par e-mail. Nous serons ravis de discuter de vos besoins et de voir comment nous pouvons vous aider.</p>
+                    </div>
+            </div>
+            
+        </div>
+    </section>
+    {% include "./components/_contact.html.twig" %}
+</div>
+</div>
+{% endblock %}
