@@ -1,30 +1,5 @@
 @use '../../abstract/' as *;
-// .guide-container {
-//     padding: 20px;
-//     min-height: 100vh;
-//     padding-top: 90px;
-//     background-color: gray;
-// }
 
-// .guide-container .titre {
-//     font-size: 24px;
-//     padding-bottom: 20px;
-// }
-
-// .guide-container table {
-//     width: 100%;
-//     border-collapse: collapse;
-// }
-
-// .guide-container table th, .guide-container table td {
-//     padding: 10px;
-//     text-align: left;
-//     border: 1px solid #ccc;
-// }
-
-// .guide-container table th {
-//     background-color: #f0f0f0;
-// }
 
 .guide-container table td img {
     max-width: 70px;
@@ -47,6 +22,12 @@
     @extend %fdb-b30;
     text-align: center;
 
+  }
+  .btn-contact-small{
+
+    i{
+      display: flex;
+    }
   }
     table {
         margin-top: 25px;

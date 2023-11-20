@@ -7,6 +7,7 @@
         <meta name="robots" content="noindex">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
@@ -17,6 +18,9 @@
         <a class="logo-container" href="{{ path("app_home")}}">
             <img class="logo" src="{{asset("images/logo.png")}}" alt="">
         </a>
+            <div id="anim-handle">
+                <i class="bi bi-pause"></i>
+            </div>
         <nav class="">
             <img id="menu_icon_close" 
             class="menu-icon menu-icon-close" 
@@ -27,6 +31,15 @@
                 <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
                 <li><a class="nav-link" href="{{path("app_blog")}}">Guides</a></li>
                 <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
+                <li><a class="nav-link" href="{{path("app_guide_index")}}">
+                    <i class="bi bi-person-gear" 
+                    style="background-color: yellow;
+                            border-radius: 25%;
+                            padding: 7px;
+                            color : black;
+                            ">
+                    </i>
+                </a></li>
                 
                 <li class="btn-container"><a class="btn-contact-small" href="{{path('app_contact')}}">Contacter-nous</a></li>
             </ul>
@@ -170,6 +183,26 @@
             }
         })
     }
+    //====================================
+    //===SCRIPT PAUSE ANIMATION PAPERJS===
+    //====================================
+    let icon = document.querySelector('#anim-handle').firstElementChild
+    let citylinesController = document.querySelector('#canvas')
+ 
+    
+    icon.addEventListener('click',()=>{
+        this.isAnimating = !this.isAnimating
+        
+        if (this.isAnimating) {
+            icon.classList.replace("bi-play","bi-pause")
+            citylinesController.setAttribute("data-controller","cityline")
+            citylinesController.style.backgroundImage = ""
+        }else{
+            icon.classList.replace("bi-pause","bi-play")
+            citylinesController.setAttribute("data-controller","")
+            citylinesController.style.backgroundImage = "url('images/ligne-bg.png')"
+        }
+    })
 
 
 

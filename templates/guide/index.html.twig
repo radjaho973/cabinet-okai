@@ -5,7 +5,7 @@
 {% block body %}
 <div class="guide-container">
   <h1>Liste Des Guides</h1>
-<a class="btn-contact-small" href="{{ path('app_guide_new') }}"><p>Article</p><img src="{{asset('/build/bootstrap/icons/plus.svg')}}"></a>
+<a class="btn-contact-small" href="{{ path('app_guide_new') }}"><p>Article</p><i class="bi bi-plus"></i></a>
 <table>
   <thead>
     <tr>
@@ -42,7 +42,7 @@
         <td data-label="Modifier">{{ guide.modifiedAt ? guide.modifiedAt|date('Y-m-d H:i:s') : '' }}</td>
         <td data-label="actions">
         <div>
-            <a href="{{ path('app_guide_edit', {'id': guide.id}) }}"><img src="{{asset('/build/bootstrap/icons/pen-fill.svg')}}"></a>
+            <a href="{{ path('app_guide_edit', {'id': guide.id}) }}"><i class="bi bi-pen-fill"></i></a>
             {{ include('guide/_delete_form_icon.html.twig') }}
         </div>
         </td>

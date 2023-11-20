@@ -1,12 +1,15 @@
 import { Controller } from '@hotwired/stimulus';
-import paper from 'paper';
+// import paper from 'paper';
 export default class extends Controller {
 
+isAnimating = true
+
+initialize(){
+
+}
 
 
-
-    
-    initialize() {
+connect() {
         // http://paperjs.org/
         paper.install(window)
         // Get a reference to the canvas object
@@ -53,7 +56,9 @@ export default class extends Controller {
 
                 // on définie tool ici pour ne pas en créer un nvx à chaque function call
                 let tool = new Tool
+
                 InitalizeDrawing()
+
             })
             .catch((error) => {
                 console.error(error);
@@ -64,9 +69,9 @@ export default class extends Controller {
         }
 
         function InitalizeDrawing() {
-
+                
             registerBaseHeight(lines)
-
+            
             // redéssine le canva 60x par seconde
             view.onFrame = function (event) {
                 AnimationOnFrame(event,lines)
@@ -75,6 +80,7 @@ export default class extends Controller {
             tool.onMouseMove = function(event) {        
                 mouseEffect(event,lines)
             }
+            
         }
 
         // place un object au centre du rectangle 
@@ -177,14 +183,15 @@ export default class extends Controller {
         paper.view.draw();
     }
 
-    // disconnect(){
-    //     // clear scope
-    //     scope.remove();
-    //     // remove element
-    //     canvas.remove();
+    disconnect(){
+        project.clear()
+        // clear scope
+        // paper.scope.remove();
+        // remove element
+        // paper.canvas.clear();
 
-    //     // clear variables so they can be garbage collected
-    //     canvas = null;
-    //     scope  = null;
-    // }
+        // clear variables so they can be garbage collected
+        // paper.canvas = null;
+        // paper.scope  = null;
+    }
 }
