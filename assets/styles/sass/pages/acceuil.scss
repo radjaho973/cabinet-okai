@@ -142,6 +142,7 @@
                 @extend %flex-center-column;
                 height: 245px;
                 transition: background-color 0.2s ease;
+                backdrop-filter: blur(19px);
                 
                 
                 &>.card-title{

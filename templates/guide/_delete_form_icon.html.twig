@@ -2,6 +2,6 @@
  onsubmit="return confirm('Supprimer l&quot; article ?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ guide.id) }}">
     <button style="border:none; background-color:transparent;cursor:pointer;">
-        <img src="{{asset('/build/bootstrap/icons/trash.svg')}}">
+        <i class="bi bi-trash"></i>
     </button>
 </form>
