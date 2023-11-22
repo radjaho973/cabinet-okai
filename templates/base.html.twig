@@ -56,11 +56,11 @@
         <img id="menu_icon" class="menu-icon" src="{{asset("images/menu-burger.svg")}}" alt="">
     </header>
 
-    <body {{ stimulus_controller('swup') }}>
+    <body {{ stimulus_controller('swup dispatchAnim') }}>
     
               {% include "/components/_canvas.html.twig" %}  
         <div id="swup" class="transition-main">
-            <div class="swup-content">
+            <div class="swup-content" >
                 {% block body %}{% endblock %}
             </div>
         </div>
@@ -183,26 +183,7 @@
             }
         })
     }
-    //====================================
-    //===SCRIPT PAUSE ANIMATION PAPERJS===
-    //====================================
-    let icon = document.querySelector('#anim-handle').firstElementChild
-    let citylinesController = document.querySelector('#canvas')
- 
-    
-    icon.addEventListener('click',()=>{
-        this.isAnimating = !this.isAnimating
-        
-        if (this.isAnimating) {
-            icon.classList.replace("bi-play","bi-pause")
-            citylinesController.setAttribute("data-controller","cityline")
-            citylinesController.style.backgroundImage = ""
-        }else{
-            icon.classList.replace("bi-pause","bi-play")
-            citylinesController.setAttribute("data-controller","")
-            citylinesController.style.backgroundImage = "url('images/ligne-bg.png')"
-        }
-    })
+
 
 
 

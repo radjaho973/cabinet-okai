@@ -185,13 +185,5 @@ connect() {
 
     disconnect(){
         project.clear()
-        // clear scope
-        // paper.scope.remove();
-        // remove element
-        // paper.canvas.clear();
-
-        // clear variables so they can be garbage collected
-        // paper.canvas = null;
-        // paper.scope  = null;
     }
 }
