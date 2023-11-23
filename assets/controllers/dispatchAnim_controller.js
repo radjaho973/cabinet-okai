@@ -38,14 +38,22 @@ export default class extends Controller {
     // choisi si l'animation va être lancé ou non
     animDispatch(){
         let windowUrl = window.location.href
-
+        
         // si l'url contient ces mots on affiche pas l'animation
         if (windowUrl.includes('post') || windowUrl.includes('guide')){
             
             this.iconWrapper.style.display = "none"
             // on déconnecte le controller qui gère l'animation
             this.citylinesController.setAttribute("data-controller","")
+            
+        }else if(windowUrl.includes('contact')){
+            
+            this.iconWrapper.style.display = "none"
+            this.citylinesController.setAttribute("data-controller","")
+            this.citylinesController.style.backgroundImage = `url('${window.origin}/images/ligne-bg.png')`
+        
         }else{
+
             this.iconWrapper.style.display ="flex"
             this.toggleAnim()
         }
