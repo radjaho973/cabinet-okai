@@ -13,7 +13,11 @@
 
         .titre{
             @extend %fdb-bl70;
-            padding-bottom: 25px
+            padding-bottom: 25px;
+
+            &>.lightblue{
+                color: $lightblue;
+            }
         }
         &>p{
             @extend %nunito-r30;
@@ -111,9 +115,12 @@
 
         &>h2{
             margin-left: 10vw;
-            @extend %fdb-bl60;
-            width: 61vw;
+            width: 80%;
             margin-bottom: 75px;
+            
+            span{
+                @extend %fdb-bl60;
+            }
         }
         &>p{
             width: 65vw;
@@ -434,9 +441,6 @@
                 padding-bottom: 0;
                 text-align: center;
                 
-                &>.lightblue{
-                    color: $lightblue;
-                }
             }
             &>p{
                 text-align: center;

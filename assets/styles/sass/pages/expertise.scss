@@ -20,6 +20,7 @@
             &>.lightblue{
                 z-index: 3;
                 @extend %fdb-bl70;
+                color: $lightblue;
             }
         }
         &>.btn-contact{
@@ -59,9 +60,7 @@
                margin-inline: auto;
                text-align: center;
                
-               &>.lightblue{
-                color: $lightblue;
-               }
+
             }
             &>.btn-contact{
                 margin-inline: auto;
