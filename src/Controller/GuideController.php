@@ -22,6 +22,7 @@ class GuideController extends AbstractController
     #[Route('/', name: 'app_guide_index', methods: ['GET'])]
     public function index(GuideRepository $guideRepository): Response
     {
+        $this->denyAccessUnlessGranted('ADMIN');
         return $this->render('guide/index.html.twig', [
             'guides' => $guideRepository->findAll(),
         ]);
@@ -30,20 +31,23 @@ class GuideController extends AbstractController
     #[Route('/new', name: 'app_guide_new', methods: ['GET', 'POST'])]
     public function new(SluggerInterface $slugger,Request $request,ImageSaver $imageSaver, EntityManagerInterface $entityManager): JsonResponse | Response 
     {
+        $this->denyAccessUnlessGranted('ADMIN');
         $guide = new Guide();
-
+        $imagesGuideArray = [];
+        // récupère les images envoyées depuis l'éditeur
         if ($request->isXmlHttpRequest()) {
-        
-            $file = $request->files->get('file');
+            
             $imagesGuide = new ImagesGuide();
+            
+            $file = $request->files->get('file');
             $imageSaver->persistImage($file, $imagesGuide);
-            
+            $imagesGuideArray[] = $imagesGuide;
             $guide->addImagesGuide($imagesGuide);
-            //retourne une réponse contenant du Json
-            return $this->json(["location" => "/images_guide_uploads/".$imagesGuide->getImageUrl()]);
-
-        }else{
             
+            //retourne une réponse contenant du Json avec l'emplacement de l'image
+            return $this->json(["location" => "/images_guide_uploads/".$imagesGuide->getImageUrl()]);
+            
+        }
             $form = $this->createForm(GuideType::class, $guide);
             $form->handleRequest($request);
             
@@ -51,7 +55,6 @@ class GuideController extends AbstractController
                 // on enregistre l'image 
                 $image = $form->get("image")->getData();
                 $imageSaver->persistImage($image,$guide);
-                
                 
                 //on défini les heures de publication
                 date_default_timezone_set("America/Guadeloupe");
@@ -72,7 +75,7 @@ class GuideController extends AbstractController
                 'guide' => $guide,
                 'form' => $form,
             ]);
-        }
+        
     }
 
     // #[Route('/{id}', name: 'app_guide_show', methods: ['GET'])]
@@ -86,6 +89,7 @@ class GuideController extends AbstractController
     #[Route('/{id}/edit', name: 'app_guide_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, ImageSaver $imageSaver, Guide $guide,SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ADMIN');
         $form = $this->createForm(GuideType::class, $guide);
         $form->handleRequest($request);
         $oldSlug = $guide->getSlug();
@@ -129,6 +133,7 @@ class GuideController extends AbstractController
     #[Route('/{id}', name: 'app_guide_delete', methods: ['POST','GET'])]
     public function delete(Request $request, Guide $guide, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ADMIN');
         if ($this->isCsrfTokenValid('delete'.$guide->getId(), $request->request->get('_token'))) {
             $entityManager->remove($guide);
             $entityManager->flush();
