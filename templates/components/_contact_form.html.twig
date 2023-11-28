@@ -18,7 +18,9 @@
         {{form_row(form.name)}}
         {{form_row(form.email)}}
         {{form_row(form.phone)}}
-        {{form_row(form.message)}}
+        <div {{stimulus_controller('guideForm')}}>
+        {{form_widget(form.message)}}
+        </div>
     <div>
         {{form_label(form.agreeTerm)}}
 
