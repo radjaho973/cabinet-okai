@@ -20,6 +20,7 @@ class ContactController extends AbstractController
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
+        $mailSent = false;
 
         if ($form->isSubmitted() && $form->isValid()) {
             
@@ -30,15 +31,21 @@ class ContactController extends AbstractController
                 "phone" => $form->get('phone')->getData(),
                 "message" => $form->get('message')->getData()
             ];
+            
             $bus->dispatch(New ContactMail($mailContent));
+            $mailSent = true;
 
             return $this->render('contact/index.html.twig', [
                 'form' => $form,
+                'mailSent' => $mailSent,
+
             ]);
         }
         
         return $this->render('contact/index.html.twig', [
             'form' => $form,
+            'mailSent' => $mailSent,
+
         ]);
     }
 }

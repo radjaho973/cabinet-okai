@@ -80,6 +80,7 @@
             width: 58%;
             background-color: $lightblue;
             @extend %flex-center;
+            height: 530px;
     
             &>form{
                 @extend %flex-center;
