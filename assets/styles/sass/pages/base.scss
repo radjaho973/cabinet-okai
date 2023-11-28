@@ -1,8 +1,9 @@
 @use '../abstract/' as *;
 
 //!==============================================
-//!===============Mobile========================
-//!=============================================
+//!===============Mobile First===================
+//!==============================================
+
 header{
     z-index: 1000;
     position:fixed;
@@ -100,7 +101,7 @@ header{
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(17,17,17,1) 82%);
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(17,17,17,1) 92%);
             z-index: 1002;
             top: 0;
             right: 0;
@@ -247,7 +248,6 @@ footer{
 //!===========FIN Mobile========================
 //!=============================================
 
-/* Medium devices (landscape tablets, 1265px and up) */
 @media screen and (min-width: 1265px) {
     
     header{
