@@ -4,17 +4,15 @@ section#about{
     margin-top: 100px;
     margin-bottom: 202px;
     min-height: 100vh;
-    
 
     &>h2{
-        // line-height: 75px;
         margin-left: 13vw;
         margin-bottom: 136px;
         @extend %fdb-extrab60;
     }
     &>.text-container{
         float: right;
-        width: 75vw;
+        width: 65vw;
         background-color: $transparent;
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
@@ -25,10 +23,10 @@ section#about{
 
         &>p{
             text-align: center;
-            @extend %nunito-r30;
+            @extend %nunito-r25;
             
             &>.card-txt-weight{
-                @extend %nunito-r30;
+                @extend %nunito-r25;
                 font-family: "Nunito-black";
             }
         }

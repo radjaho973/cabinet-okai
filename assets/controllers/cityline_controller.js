@@ -66,7 +66,6 @@ connect() {
             point: [0, 0],
             size: [window.innerWidth, window.innerHeight],
             });
-            rectangle.fullySelected = true
 
         view.onResize = function (event) {
 

@@ -362,7 +362,7 @@
 
             &>img{
                 // width: 344px;
-                width: 20%;
+                width: 14%;
                 height: auto;
             }
             &>.image-container-title{
@@ -610,12 +610,13 @@
                 padding-block: 50px;
 
                 &>.image-container-title{
+                    width: 95%;
                     display: inline;
                     text-align: center;
                     
                 }
                 &>img{
-                    width: 46%;
+                    width: 36%;
                     height: auto;
                 }
             }
