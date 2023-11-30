@@ -175,7 +175,7 @@ gras{
 }
 %nunito-l20{
     font-family: "Nunito-light";
-    font-size: 20px;
+    font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
     color: white;
     line-height: 21px;
 }

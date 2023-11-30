@@ -11,7 +11,7 @@ section#prestation{
     }
     &>p{
         text-align: center;
-        width: 85vw;
+        width: 65vw;
         margin: auto;
         @extend %nunito-r25;
         margin-bottom: 70px;
@@ -24,6 +24,7 @@ section#prestation{
         grid-template-rows: repeat(2, 1fr); 
         row-gap: 5VW;
         column-gap: 5VW;
+        justify-items: center;
 
         &>.card{
             @extend %flex-center-column;
@@ -34,55 +35,62 @@ section#prestation{
             padding-block: 31px;
             padding-inline: 12px;
             gap: 25px;
+            height: 450px;
+            width: 450px;
 
             &>.card-title{
                 text-align: center;
-                @extend %nunito-bl40;
+                @extend %nunito-bl30;
                 
             }
             &>.card-text{
                 width: 90%;
                 text-align: center;
-                @extend %nunito-r30;
+                @extend %nunito-r20;
 
                 &>.card-txt-weight{
-                    @extend %nunito-r30;
+                    @extend %nunito-r20;
+                    font-family: "Nunito-black";
                 }
             }
         }
         &>.contact-card{
+            height: 450px;
+            width: 450px;
             justify-content: space-around;
             align-items: start;
             @extend %flex-center-column;
 
-            &>h2{
+            &>h2,span{
                 @extend %fdb-bl60;
             }
         }
     }
 }
-
+@media screen and (max-width:1300px) {
+    section#prestation{
+        &>.card-container{
+            margin-inline: 5vw;
+        }
+    }
+}
 @media screen and (max-width:1000px) {
     
     section#prestation{
         &>.card-container{
             margin-inline: auto;
             grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(4, 1fr); 
-            height: auto;
-            gap: 43px;
+            grid-template-rows: repeat(4, 300px);
             width: 90vw;
             
-            // &>.card:nth-child(2),.card:nth-child(3){
-            // }
             &>.card{
                 padding-top: 40px !important;
-                width: 100%;
+                width: 71%;
                 padding: 0;
+                height: 296px;
 
                 &>.card-title{
                     margin-inline: 15px;
-                    // margin-bottom: 40px;
                     color: $lightblue;
 
                     &>.card-txt-weight{
@@ -91,14 +99,12 @@ section#prestation{
                 }
                 &>.card-text{
                     padding-bottom: 30px;
-                    
-                    &>.card-txt-weight{
-                        font-family: "Nunito-black";
-                    }
                 }
             }
             &>.contact-card{
                 align-items: center;
+                width: 71%;
+                height: auto;
 
                 &>h2{
                     text-align: center;
@@ -107,25 +113,3 @@ section#prestation{
         }
     }
 }
-// @media screen and (max-width:1025px) {
-        
-//     section#prestation{
-        
-//         &>.card-container{
-//             width: 90vw;
-//             min-height: 420px;
-
-//             &>.card{
-//                 padding-top: 50px;
-//                 justify-content: center; 
-                
-//                 &>.card-title{
-//                 margin-bottom: 50px;
-//                 }
-//                 &>.card-text{
-//                     width: 90%;
-//                 }
-//             }
-//         }
-//     }
-// }

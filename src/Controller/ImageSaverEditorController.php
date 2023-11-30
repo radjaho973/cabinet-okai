@@ -31,7 +31,7 @@ class ImageSaverEditorController extends AbstractController
             
             $guide->addImagesGuide($imagesGuide);
             $em->flush();
-
+            
             //retourne une réponse contenant du Json
             return $this->json(["location" => "/images_guide_uploads/".$imagesGuide->getImageUrl()]);
             

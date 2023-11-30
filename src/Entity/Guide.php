@@ -43,7 +43,7 @@ class Guide
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
-    #[ORM\OneToMany(mappedBy: 'guide', targetEntity: ImagesGuide::class)]
+    #[ORM\OneToMany(mappedBy: 'guide', targetEntity: ImagesGuide::class,orphanRemoval:true,fetch:"EAGER")]
     private Collection $imagesGuide;
 
     #[ORM\Column(type: Types::SIMPLE_ARRAY, nullable: true)]

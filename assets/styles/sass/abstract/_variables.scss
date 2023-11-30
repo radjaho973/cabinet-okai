@@ -113,6 +113,7 @@ $transparent : #cac6c629;
     font-family: "Nunito-black";
     font-size: 18px;
     transition: all 0.2s linear;
+    backdrop-filter: blur(19px);
     
     @media screen and (max-width:768px) {
         width: 178px;

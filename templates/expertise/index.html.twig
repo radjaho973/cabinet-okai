@@ -10,7 +10,7 @@
 
 <div class="expertise-container">
     <section id="hero">
-        <h1 id="hero-title">
+        <h1 id="hero-title" {{stimulus_controller('changeTitle')}}>
         ÉCLAIRER LES DÉCISIONS <br>
         DE DEMAIN <br>
         AVEC NOTRE EXPERTISE <br>
@@ -67,7 +67,18 @@
                 </p>
             </div>
             <div class="contact-card">
-                <h2 class="first-title">VOUS AVEZ BESOIN D’UNE <span class="line-break-md"></span> EXPERTISE EN URBANISME ?</h2>
+                <h2 class="first-title">
+                    VOUS AVEZ
+                    <span class="line-break-md">
+                        BESOIN D’UNE 
+                    </span>
+                    <span class="line-break-md">
+                        EXPERTISE EN 
+                    </span>
+                    <span class="line-break-md">
+                        URBANISME ?
+                    </span>
+                </h2>
                 <a href="#hero" class="btn-contact">CONTACTEZ-NOUS</a>
             </div>
         </div>

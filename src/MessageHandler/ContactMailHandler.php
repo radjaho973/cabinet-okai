@@ -21,11 +21,11 @@ class ContactMailHandler
     public function __invoke(ContactMail $mailContent)
     {
         $contentArray = $mailContent->getContent();
-        // dd($contentArray);
+
         $email = (new TemplatedEmail())
-        ->from('adresse@cabinet-okai.com')
+        ->from('a.barbier@studio-okai.com')
         ->to('hello@studio-okai.com')
-        ->subject('Nouvelle demande de contact')
+        ->subject('Nouvelle demande de contact [Cabinet Okaï]')
         ->htmlTemplate('mail/contact_mail.html.twig')
         ->context([
             'mail' => $contentArray["mail"],

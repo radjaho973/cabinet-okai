@@ -2,8 +2,6 @@
 {% block stylesheets %}
 {{ parent() }}
 
-
-  <link rel="stylesheet" href="{{asset('tiny.css')}}">
 <meta name="description" content="{{guide.description}}">
 <meta name="robots" content="max-image-preview:standard">
 <meta property="og:title" content="{{guide.titre}}">
@@ -57,7 +55,7 @@
         </div>
     </div>
 
-        <div class="post-content" >
+        <div class="post-content" {{stimulus_controller('tinycss')}} >
 
                 {{guide.content | raw}}
 

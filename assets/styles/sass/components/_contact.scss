@@ -37,7 +37,7 @@ section#contact{
             @extend %nunito-bl30;
         }
         &>p{
-            @extend %nunito-r30;
+            @extend %nunito-r25;
         }
 
     }
@@ -66,10 +66,12 @@ section#contact{
                     justify-content: end;
                     align-items: center;
                     gap: 30px;
+                    width: 100%;
 
                     &>label{
                         color: #2D5299;
-                        @extend %nunito-l25;
+                        // @extend %nunito-l25;
+                        font-size: 17px;
                     }
                     
                     &>input{
@@ -170,6 +172,15 @@ section#contact{
     }
 }
 
+@media screen and (max-width:898px) {
+section#contact{
+
+    span.line-break-md{
+        display: inline;
+    }
+
+}
+}
 @media screen and (max-width:768px) {
 section#contact{
 

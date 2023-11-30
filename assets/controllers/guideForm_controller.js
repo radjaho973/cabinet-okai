@@ -2,17 +2,21 @@ import { Controller } from '@hotwired/stimulus';
 
 
 export default class extends Controller {
+    //défini la taille de l'input description au chargement 
     initialize() {
-        //défini la taille de l'input description au chargement 
-        let description = document.querySelector("#guide_description")
-        description.style.height = ""
-        description.style.height = description.scrollHeight + 3 + "px"
-        description.addEventListener('input',()=>{
-        //  console.log(description.scrollHeight);
-            description.style.height = description.scrollHeight  + "px"
-        })
+        let description = document.querySelector("#guide_description") || document.querySelector('#contact_message')
+
+        console.log(description.scrollHeight);
+        description.addEventListener('input', () => {
+            // hauteur min
+            description.style.height = '60px';
+        
+            // Met à jour le texte area pour refléter la hauteur du contenu
+            description.style.height = description.scrollHeight + 'px';
+        });
 
         //change le label du champ fichier
+        // inutile sur les formulaire de contact
         var input = document.querySelector( '#guide_image' );
 
         let label	 = document.querySelector('.custom-file-upload')
@@ -20,7 +24,7 @@ export default class extends Controller {
 
         input.addEventListener( 'change', function( e )
         {
-            console.log(this.files);
+            
             if(this.files.length > 0){
                 console.log(this.files);
                 let file = this.files[0]

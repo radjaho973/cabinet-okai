@@ -47,21 +47,6 @@ class ImageSaver
         }
     
     }
-    // /**
-    //  *  @deprecated
-    //  */
-    // public function persistThubmnail(UploadedFile $uploadedFile, Guide $entity)
-    // {
-    //     //on vérifie que le fichier est bien le type attendu
-    //     if($this->validateUpload($uploadedFile) && $this->validateExtension($uploadedFile));
-            
-    //     // crée un nom de fichier utilisable 
-    //     $newFileName = uniqid().'.'.$uploadedFile->guessExtension();
-        
-    //     // on déplace le fichier dans le dossier choisi
-    //     $this->persistGuide($uploadedFile,$entity,$newFileName);
-
-    // }
 
     private function validateUpload(UploadedFile $uploadedFile)
     {
@@ -117,7 +102,7 @@ class ImageSaver
             );
             $imagesGuide->setImageUrl($newFileName);
 
-            $this->em->persist($imagesGuide,true);
+            $this->em->persist($imagesGuide);
         
         }catch (FileException $e){
             return new $e(`Une erreur c'est produite durant

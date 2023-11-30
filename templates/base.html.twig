@@ -21,7 +21,7 @@
             <div id="anim-handle">
                 <i class="bi bi-pause"></i>
             </div>
-        <nav class="">
+        <nav class="hidden">
             <img id="menu_icon_close" 
             class="menu-icon menu-icon-close" 
             src="{{asset("images/menu-croix.svg")}}" alt="">
@@ -29,17 +29,9 @@
                 <li><a class="nav-link" href="{{path("app_about")}}">Qui sommes-nous</a></li>
                 <li><a class="nav-link" href="{{path("app_expertise")}}">Expertise</a></li>
                 <li><a class="nav-link" href="{{path("app_urbanisme")}}">Documents d'urbanisme</a></li>
-                <li><a class="nav-link" href="{{path("app_blog")}}">Guides</a></li>
+                {# <li><a class="nav-link" href="{{path("app_blog")}}">Guides</a></li> #}
                 <li><a class="nav-link" href="https://studio-okai.com">Studio OKAÏ</a></li>
-                <li><a class="nav-link" href="{{path("app_guide_index")}}">
-                    <i class="bi bi-person-gear" 
-                    style="background-color: yellow;
-                            border-radius: 25%;
-                            padding: 7px;
-                            color : black;
-                            ">
-                    </i>
-                </a></li>
+
                 
                 <li class="btn-container"><a class="btn-contact-small" href="{{path('app_contact')}}">Contacter-nous</a></li>
             </ul>
@@ -56,11 +48,11 @@
         <img id="menu_icon" class="menu-icon" src="{{asset("images/menu-burger.svg")}}" alt="">
     </header>
 
-    <body {{ stimulus_controller('swup') }}>
+    <body {{ stimulus_controller('swup dispatchAnim') }}>
     
               {% include "/components/_canvas.html.twig" %}  
         <div id="swup" class="transition-main">
-            <div class="swup-content">
+            <div class="swup-content" >
                 {% block body %}{% endblock %}
             </div>
         </div>
@@ -72,7 +64,9 @@
             
             <div class="text">
                 <p>
-                    <gras>Cabinet OKAÏ</gras>, votre référence en urbanisme en Guadeloupe.<br>
+                    <gras>Cabinet OKAÏ</gras>, votre <span class="line-break-md"></span>
+                     référence en urbanisme en <span class="line-break-md"></span>
+                      Guadeloupe.<br>
                      Études et conception de plans urbains.
                 </p>
             </div>
@@ -86,9 +80,9 @@
             </ul>
 
             <div class="contact">
-                <p>Suivez-nous pour vous tenir informé de
+                {# <p>Suivez-nous pour vous tenir informé de
                  nos offres et astuces !
-                </p>
+                </p> #}
                  <div class="rs">
                     <a href="https://www.facebook.com/cabinetokai/">
                         <img src="{{asset("/images/facebook.svg")}}" alt="">
@@ -141,72 +135,6 @@
     function toggleNav() {
         nav.classList.toggle("show")
     }
-
-    //====================================
-    //===SCRIPT CHANGEMENT DE TITRE=======
-    //====================================
-    
-    let titles = document.querySelectorAll("#hero-title")
-
-    function ChangeTitles() {
-        titles.forEach(title => {
-            
-            let pathname =window.location.pathname
-
-            if (window.innerWidth <= 768) {
-
-                switch (pathname) {
-                    case "/expertise":
-                        title.innerHTML ="NOTRE EXPERTISE <br> <span class=\"lightblue\">VOS DÉCISIONS</span>"
-                        break;
-                    case "/urbanisme":
-                        title.innerHTML ="L’URBANISME SUR MESURE<br>NOUS CRÉONS,<br>VOUS RÉALISEZ !"
-                        break;
-                
-                    default:
-                        break;
-                }
-            }else{
-
-                switch (pathname) {
-                    case "/expertise":
-                        title.innerHTML ="ÉCLAIRER LES DÉCISIONS <br>DE DEMAIN <br>AVEC NOTRE EXPERTISE <br>D’AUJOURD’HUI"
-                        break;
-                    case "/urbanisme":
-                        title.innerHTML ="L’URBANISME SUR MESURE<br>NOUS ÉLABORONS,<br>VOUS CONCRÉTISEZ !"
-                        break;
-                
-                    default:
-                        break;
-                }
-                
-            }
-        })
-    }
-    //====================================
-    //===SCRIPT PAUSE ANIMATION PAPERJS===
-    //====================================
-    let icon = document.querySelector('#anim-handle').firstElementChild
-    let citylinesController = document.querySelector('#canvas')
- 
-    
-    icon.addEventListener('click',()=>{
-        this.isAnimating = !this.isAnimating
-        
-        if (this.isAnimating) {
-            icon.classList.replace("bi-play","bi-pause")
-            citylinesController.setAttribute("data-controller","cityline")
-            citylinesController.style.backgroundImage = ""
-        }else{
-            icon.classList.replace("bi-pause","bi-play")
-            citylinesController.setAttribute("data-controller","")
-            citylinesController.style.backgroundImage = "url('images/ligne-bg.png')"
-        }
-    })
-
-
-
-
 
 </script>
 

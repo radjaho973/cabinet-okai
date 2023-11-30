@@ -8,9 +8,6 @@ use App\Repository\GuideRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bridge\Doctrine\Attribute\MapEntity;
-use Symfony\Component\HttpFoundation\ParameterBag;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 
@@ -21,6 +18,7 @@ class BlogController extends AbstractController
     #[Route('/', name: 'app_blog')]
     public function index(GuideRepository $guideRepo): Response
     {
+        $this->denyAccessUnlessGranted('ADMIN');
         // sépare les 10 derniers guides en 2 pour faciliter
         // l'affichage coté front
          $guides = array_chunk($guideRepo->get10LastGuides(),5);
@@ -36,7 +34,7 @@ class BlogController extends AbstractController
     #[Route('/post/{slug}',name: 'app_slug_handler',methods: ['GET'],)]
     public function dispatchLinks(Request $request ,GuideRepository $guideRepo): Response | BadRequestException
     {   
-        // dd( $request->getUriForPath('/post'));
+        $this->denyAccessUnlessGranted('ADMIN');
         $requestedSlug = $request->get("slug");
         
         // vérifie si le slug match un ancien slug d'article

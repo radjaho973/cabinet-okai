@@ -7,7 +7,6 @@ export default class extends Controller {
         let titlesContainer = document.querySelectorAll(".title-container")
         let titles = document.querySelectorAll(".anim-title")
         
-        console.log(titles)
         
         titles.forEach(element => {
             element.addEventListener("mouseenter",(e)=>{addClass(element,e)})

@@ -44,22 +44,7 @@
                 width: 100%;
                 z-index: 0;
                 pointer-events: none;
-        }
-    }
-    section#prestation{
-        &>.card-container{
-
-            &>.card:nth-child(3){
-                grid-column-start: 1;
-                grid-column-end: 3;
             }
-            &>.contact-card{
-                grid-column-start: 1;
-                grid-column-end: 3;
-                align-items: center;
-                gap: 25px;
-            }
-        }
     }
 
 }
@@ -75,7 +60,6 @@
                 &>.contact-card{
                     grid-column-start: auto;
                     grid-column-end: auto;
-                    // align-items: ;
                     gap: unset;
 
                 }
